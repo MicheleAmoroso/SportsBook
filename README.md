@@ -14,7 +14,9 @@ SportsBook è un sito che permette agli amanti dello sport di prenotare campi sp
 
 # Ruoli
 •	Admin: Ha completo controllo su tutte le funzionalità del sistema.
+
 •	Utente non registrato: Può visualizzare i campi disponibili ma non può eﬀettuare prenotazioni.
+
 •	Utente registrato: Può visualizzare i campi disponibili ed eﬀettuare prenotazioni.
 
 
