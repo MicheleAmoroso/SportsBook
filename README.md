@@ -1,32 +1,33 @@
 # SportsBook
 Laboratorio di Architetture Software e Sicurezza Informatica
 
-Partecipanti
+# Partecipanti
 
 Andrea Soda 1601829
 
 Michele Amoroso 1760027
 
 
-Titolo e descrizione
+# Titolo e descrizione
 SportsBook è un sito che permette agli amanti dello sport di prenotare campi sportivi direttamente online. Basterà aggiungere l’orario e il luogo per avere una lista di tutti i campi disponibili. Ci sarà la possibilità di aggiungere dei campi preferiti da poter controllare rapidamente.
 
 
-Ruoli
+# Ruoli
 •	Admin: Ha completo controllo su tutte le funzionalità del sistema.
 •	Utente non registrato: Può visualizzare i campi disponibili ma non può eﬀettuare prenotazioni.
 •	Utente registrato: Può visualizzare i campi disponibili ed eﬀettuare prenotazioni.
 
 
-Autenticazione
+# Autenticazione
 Locale e OAuth.
 
 
-Servizio REST esterno
+# Servizio REST esterno
 Come servizio REST esterno si utilizzeranno le API di Google Maps per localizzare il luogo dei campi sportivi.
 
 
-User Stories
+# User Stories
+
 1.	As a registered user THAT IS NOT LOGGED I want to login with email
 
 2.	As an unregistered user I want to SIGN UP using Facebook account so that I can become a registered user
