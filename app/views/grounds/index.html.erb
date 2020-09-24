@@ -91,7 +91,7 @@
 		</select>
 	      </td>
 	      <td><%= text_field_tag :search, params[:search], placeholder: 'Cerca qui...', id: 'w2' %></td>
-	      <td><%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search' %></td>
+	      <td><%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search', id: "w3" %></td>
 	    </tr>
 	  </table>
 	  <table>
@@ -150,12 +150,29 @@
 	document.getElementById("price-text2").value="";
 	document.getElementById("time-text1").value="";
 	document.getElementById("time-text2").value="";
+
+	/*
+	localStorage.setItem("category", selected);
+	localStorage.setItem("search_text", search_text);
+	localStorage.setItem("priceChecked", priceCheck.checked);
+	localStorage.setItem("timeChecked", timeCheck.checked);
+	localStorage.setItem("priceFrom", priceFrom_text);
+	localStorage.setItem("priceTo", priceTo_text);
+	localStorage.setItem("timeFrom", timeFrom_text);
+	localStorage.setItem("timeTo", timeTo_text);*/
+	
+	if(localStorage.getItem("homepage") == "true"){
+	    document.getElementById("w2").value = localStorage.getItem("search_text");
+	    document.getElementById("w1").value = localStorage.getItem("category");
+	    document.getElementById("price-text1").value = localStorage.getItem("priceFrom");
+	    document.getElementById("price-text2").value = localStorage.getItem("priceTo");
+	    document.getElementById("time-text1").value = localStorage.getItem("timeFrom");
+	    document.getElementById("time-text2").value = localStorage.getItem("timeTo");
+	    document.getElementById("w3").click();
+	    localStorage.setItem("homepage", "false");
+	}
     }
     init();
-
-    function search_grounds(){
-	allert("Cercato");
-    }
 
     function priceChecked(){
 	var checkBox = document.getElementById("priceCheckBox");

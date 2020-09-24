@@ -25964,3 +25964,2890 @@ Processing by GroundsController#index as HTML
 Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.3ms | Allocations: 5925)
 
 
+Started GET "/" for 127.0.0.1 at 2020-09-24 22:51:37 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 360)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 8188)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 22:51:41 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 8902)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.5ms | Allocations: 13299)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-24 22:51:47 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.0ms | Allocations: 1929)
+
+
+  
+ActionController::MissingExactTemplate (GroundsController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-09-24 22:59:47 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 251)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4766)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 22:59:51 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.6ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 2964)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.6ms | Allocations: 7022)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:00:10 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2921)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 7340)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:00:12 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2414)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 5918)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:00:16 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 4333)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:00:17 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2413)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 5933)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:00:35 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 4716)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:00:38 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2921)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms | Allocations: 6971)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:00:53 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2924)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 7354)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:00:55 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 4351)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:00:56 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2409)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.3ms | Allocations: 5902)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:01:15 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 251)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4744)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:01:17 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2925)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.1ms | Allocations: 6979)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:01:57 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2918)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 7353)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=klklkl&priceFrom=dfs&priceTo=dds&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:02:09 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"klklkl", "priceFrom"=>"dfs", "priceTo"=>"dds", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%klklkl%') AND (price >= 0) AND (price <= 0)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 943)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 4615)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:02:16 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2411)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.3ms | Allocations: 5910)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:02:40 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4712)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:02:41 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2907)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 6971)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:02:55 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2908)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 7334)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:03:06 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2916)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 7353)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:03:08 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2409)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 5906)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:03:27 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2914)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 7344)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:03:29 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2405)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 5897)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:03:34 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 4341)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:03:36 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2405)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.3ms | Allocations: 5914)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:04:01 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2917)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 7348)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:04:03 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2415)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.3ms | Allocations: 5905)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:04:07 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 4347)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:04:08 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2405)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 5908)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:04:34 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2929)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 7364)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:04:48 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2920)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 7348)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:05:25 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2923)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 7359)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:06:31 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2916)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 7337)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:06:35 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 4353)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:06:39 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2405)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 5904)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:06:50 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4710)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:06:54 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2916)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.3ms | Allocations: 6962)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:07:02 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2922)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 7350)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:07:18 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2923)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 7356)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:07:21 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 4347)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:07:25 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 2409)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.3ms | Allocations: 5908)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:08:08 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2922)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 7367)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:08:33 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2917)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 7344)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:08:53 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2917)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 7348)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:10:24 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2918)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 7348)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:10:29 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 251)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4356)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:10:53 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2409)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.3ms | Allocations: 5898)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:12:25 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2925)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.3ms | Allocations: 7348)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:12:27 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2411)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 5905)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:12:34 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2399)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 5894)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:12:51 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2924)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 7356)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:16:10 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2926)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 7351)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:16:12 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2405)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 5901)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:16:15 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 249)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4361)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:16:19 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2411)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 5921)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:17:34 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2933)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 7370)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:17:43 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4343)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:17:46 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2409)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 5904)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:20:13 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2923)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 7361)
+
+
+Started GET "/" for ::1 at 2020-09-24 23:24:27 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 4280)
+
+
+Started GET "/grounds" for ::1 at 2020-09-24 23:24:30 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 2405)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.3ms | Allocations: 5904)
+
+
+Started GET "/grounds" for ::1 at 2020-09-24 23:24:59 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2436)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 5932)
+
+
+Started GET "/grounds" for ::1 at 2020-09-24 23:25:07 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2403)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 5888)
+
+
+Started GET "/grounds/1" for ::1 at 2020-09-24 23:25:19 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.0ms | Allocations: 1924)
+
+
+  
+ActionController::MissingExactTemplate (GroundsController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/grounds" for ::1 at 2020-09-24 23:25:40 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2404)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 5901)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=Campo+da+calcio&priceFrom=&priceTo=&timeFrom=&timeTo=" for ::1 at 2020-09-24 23:26:02 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"Campo da calcio", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%Campo da calcio%')[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1567)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 5083)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:27:01 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2919)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 7351)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:27:55 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2918)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.1ms | Allocations: 7347)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:30:51 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2923)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 7356)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:30:58 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 4343)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:31:07 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2405)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.3ms | Allocations: 5899)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=aawdwq&priceFrom=123&priceTo=321&timeFrom=qw&timeTo=ewr" for 127.0.0.1 at 2020-09-24 23:31:13 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"aawdwq", "priceFrom"=>"123", "priceTo"=>"321", "timeFrom"=>"qw", "timeTo"=>"ewr"}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%aawdwq%') AND (price >= 123) AND (price <= 321)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 933)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 4585)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:32:45 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  Rendered grounds/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1425)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2609)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+  
+  <head>
+    <style type="text/css">
+      html{
+	  color: black;
+      }
+      
+      .price-text{
+	  width: 60px;
+      }
+
+      .time-text{
+	  width: 60px;
+      }
+
+      #w2{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  border: 1px solid darkgray; 
+      }
+
+      .category-select{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+      }
+
+      .btn-search{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  background-color: #c12400;
+	  font-weight: bold;
+	  color:white;
+      }
+      .btn-search:active{
+	  background-color: #b52100;
+      }
+
+      .search-bar{
+	  position: relative;
+	  background-color: #275a74;
+      }
+      .search-wrap{
+	  color:white;
+	  position:relative;
+	  left: 35%;
+      }
+      .ground-title{
+	  padding: 10px;
+	  font-size: 30px;
+      }
+      .ground-element{
+	  padding: 10px;
+	  font-size: 18px;
+      }
+      .grounds-info{
+	  position: relative;
+	  left: 25%;
+      }
+
+      
+    </style>
+  </head>
+  
+  <body>
+    <div class = "search-bar">
+      <div class = "search-wrap">
+	<form>
+	  <table class="search-table">
+	    <tr>
+	      <td>
+		<select id="w1" class="category-select" name="choices-single-defaul">
+                  <option placeholder="" value="Qualsiasi">Qualsiasi</option>
+                  <option value="Calcio">Calcio</option>
+                  <option value="Tennis">Tennis</option>
+                  <option value="Basket">Basket</option>
+		</select>
+	      </td>
+	      <td><%= text_field_tag :search, params[:search], placeholder: 'Cerca qui...', id: 'w2' %></td>
+	      <td><%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search' id:'w3' %></td>
+	    </tr>
+	  </table>
+	  <table>
+	    <tr>
+	      <td><input type="checkbox" onClick="priceChecked()" id="priceCheckBox">Prezzo</input></td>
+	      <td><input type="checkbox" onClick="timeChecked()" id="timeCheckBox">Orario</input></td>
+	    </tr>
+	    <tr>
+	      <td>
+		<table id="price-table">
+		  <tr>
+		    <td><%= text_field_tag :priceFrom, params[:priceFrom], placeholder: 'Da...', class: 'price-text', id: 'price-text1'%>€</td>
+		    <td><%= text_field_tag :priceTo, params[:priceTo], placeholder: 'a...', class: 'price-text', id: 'price-text2'%>€</td>
+		  </tr>
+		</table>
+	      </td>
+	      <td>
+		<table id="time-table">
+		  <tr>
+		    <td><%= text_field_tag :timeFrom, params[:timeFrom], placeholder: 'Dalle...', class: 'time-text', id: 'time-text1'%></td>
+		    <td><%= text_field_tag :timeTo, params[:timeTo], placeholder: 'alle...', class: 'time-text', id: 'time-text2'%></td>
+		  </tr>
+		</table>
+	      </td>
+	    </tr>
+	  </table>
+	</form>
+      </div>
+    </div>
+    <div class="grounds-info">
+      <table id="fixedheight">
+	<% @grounds.each do |ground| %>
+	<tr>
+	  <td> <%= image_tag ground.image %> </td>
+	  <td>
+	    <table class="table-prova">
+	      <tr><td class="ground-title"> <%= link_to ground.title, ground_path(ground) %> </td></tr>
+	      <tr><td class="ground-element"> <b>Prezzo</b>: <%= ground.price %>€ </td></tr>
+	      <tr><td class="ground-element"> <b>Voto</b>: <%= ground.rating %> </td></tr>
+	      <tr><td class="ground-element"> <b>Città</b>: <%= ground.city %> </td></tr>
+	      <tr><td class="ground-element"> <b>Indirizzo</b>: <%= ground.address %> </td></tr>
+	      <tr><td class="ground-element"> <b>Descrizione</b>: <%= ground.description %> </td></tr>
+	    </table>
+	  </td>
+	</tr>
+	<% end %>
+      </table>
+    </div>
+  </body>
+
+  <script>
+    function init(){
+	document.getElementById("price-table").style.visibility="hidden";
+	document.getElementById("time-table").style.visibility="hidden";
+	document.getElementById("price-text1").value="";
+	document.getElementById("price-text2").value="";
+	document.getElementById("time-text1").value="";
+	document.getElementById("time-text2").value="";
+
+	/*
+	localStorage.setItem("category", selected);
+	localStorage.setItem("search_text", search_text);
+	localStorage.setItem("priceChecked", priceCheck.checked);
+	localStorage.setItem("timeChecked", timeCheck.checked);
+	localStorage.setItem("priceFrom", priceFrom_text);
+	localStorage.setItem("priceTo", priceTo_text);
+	localStorage.setItem("timeFrom", timeFrom_text);
+	localStorage.setItem("timeTo", timeTo_text);*/
+	
+	if(localStorage.getItem("homepage") == "true"){
+	    document.getElementById("w2").value = localStorage.getItem("search_text");
+	    document.getElementById("w1").value = localStorage.getItem("category");
+	    document.getElementById("price-text1").value = localStorage.getItem("priceFrom");
+	    document.getElementById("price-text2").value = localStorage.getItem("priceTo");
+	    document.getElementById("time-text1").value = localStorage.getItem("timeFrom");
+	    document.getElementById("time-text2").value = localStorage.getItem("timeTo");
+	    document.getElementById("w3").click();
+	}
+    }
+    init();
+
+    function priceChecked(){
+	var checkBox = document.getElementById("priceCheckBox");
+	if (checkBox.checked == true){
+	    document.getElementById("price-table").style.visibility="visible";
+	} else {
+	    document.getElementById("price-table").style.visibility="hidden";
+	    document.getElementById("price-text1").value="";
+	    document.getElementById("price-text2").value="";
+	}
+    }
+
+    function timeChecked(){
+	var checkBox = document.getElementById("timeCheckBox");
+	if (checkBox.checked == true){
+	    document.getElementById("time-table").style.visibility="visible";
+	} else {
+	    document.getElementById("time-table").style.visibility="hidden";
+	    document.getElementById("time-text1").value="";
+	    document.getElementById("time-text2").value="";
+	}
+    }
+    
+  </script>
+
+<html>
+
+):
+1:    <html>
+2:      
+3:      <head>
+4:        <style type="text/css">
+5:          html{
+6:    	  color: black;
+7:          }
+8:          
+9:          .price-text{
+10:    	  width: 60px;
+11:          }
+12:    
+13:          .time-text{
+14:    	  width: 60px;
+15:          }
+16:    
+17:          #w2{
+18:    	  width: 100%;
+19:    	  padding: 12px 20px;
+20:    	  margin: 8px 0;
+21:    	  display: inline-block;
+22:    	  border-radius: 4px;
+23:    	  box-sizing: border-box;
+24:    	  border: 1px solid darkgray; 
+25:          }
+26:    
+27:          .category-select{
+28:    	  width: 100%;
+29:    	  padding: 12px 20px;
+30:    	  margin: 8px 0;
+31:    	  display: inline-block;
+32:    	  border: 1px solid #ccc;
+33:    	  border-radius: 4px;
+34:    	  box-sizing: border-box;
+35:          }
+36:    
+37:          .btn-search{
+38:    	  width: 100%;
+39:    	  padding: 12px 20px;
+40:    	  margin: 8px 0;
+41:    	  display: inline-block;
+42:    	  border: 1px solid #ccc;
+43:    	  border-radius: 4px;
+44:    	  box-sizing: border-box;
+45:    	  background-color: #c12400;
+46:    	  font-weight: bold;
+47:    	  color:white;
+48:          }
+49:          .btn-search:active{
+50:    	  background-color: #b52100;
+51:          }
+52:    
+53:          .search-bar{
+54:    	  position: relative;
+55:    	  background-color: #275a74;
+56:          }
+57:          .search-wrap{
+58:    	  color:white;
+59:    	  position:relative;
+60:    	  left: 35%;
+61:          }
+62:          .ground-title{
+63:    	  padding: 10px;
+64:    	  font-size: 30px;
+65:          }
+66:          .ground-element{
+67:    	  padding: 10px;
+68:    	  font-size: 18px;
+69:          }
+70:          .grounds-info{
+71:    	  position: relative;
+72:    	  left: 25%;
+73:          }
+74:    
+75:          
+76:        </style>
+77:      </head>
+78:      
+79:      <body>
+80:        <div class = "search-bar">
+81:          <div class = "search-wrap">
+82:    	<form>
+83:    	  <table class="search-table">
+84:    	    <tr>
+85:    	      <td>
+86:    		<select id="w1" class="category-select" name="choices-single-defaul">
+87:                      <option placeholder="" value="Qualsiasi">Qualsiasi</option>
+88:                      <option value="Calcio">Calcio</option>
+89:                      <option value="Tennis">Tennis</option>
+90:                      <option value="Basket">Basket</option>
+91:    		</select>
+92:    	      </td>
+93:    	      <td><%= text_field_tag :search, params[:search], placeholder: 'Cerca qui...', id: 'w2' %></td>
+94:    	      <td><%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search' id:'w3' %></td>
+95:    	    </tr>
+96:    	  </table>
+97:    	  <table>
+98:    	    <tr>
+99:    	      <td><input type="checkbox" onClick="priceChecked()" id="priceCheckBox">Prezzo</input></td>
+100:    	      <td><input type="checkbox" onClick="timeChecked()" id="timeCheckBox">Orario</input></td>
+101:    	    </tr>
+102:    	    <tr>
+103:    	      <td>
+104:    		<table id="price-table">
+105:    		  <tr>
+106:    		    <td><%= text_field_tag :priceFrom, params[:priceFrom], placeholder: 'Da...', class: 'price-text', id: 'price-text1'%>€</td>
+107:    		    <td><%= text_field_tag :priceTo, params[:priceTo], placeholder: 'a...', class: 'price-text', id: 'price-text2'%>€</td>
+108:    		  </tr>
+109:    		</table>
+110:    	      </td>
+111:    	      <td>
+112:    		<table id="time-table">
+113:    		  <tr>
+114:    		    <td><%= text_field_tag :timeFrom, params[:timeFrom], placeholder: 'Dalle...', class: 'time-text', id: 'time-text1'%></td>
+115:    		    <td><%= text_field_tag :timeTo, params[:timeTo], placeholder: 'alle...', class: 'time-text', id: 'time-text2'%></td>
+116:    		  </tr>
+117:    		</table>
+118:    	      </td>
+119:    	    </tr>
+120:    	  </table>
+121:    	</form>
+122:          </div>
+123:        </div>
+124:        <div class="grounds-info">
+125:          <table id="fixedheight">
+126:    	<% @grounds.each do |ground| %>
+127:    	<tr>
+128:    	  <td> <%= image_tag ground.image %> </td>
+129:    	  <td>
+130:    	    <table class="table-prova">
+131:    	      <tr><td class="ground-title"> <%= link_to ground.title, ground_path(ground) %> </td></tr>
+132:    	      <tr><td class="ground-element"> <b>Prezzo</b>: <%= ground.price %>€ </td></tr>
+133:    	      <tr><td class="ground-element"> <b>Voto</b>: <%= ground.rating %> </td></tr>
+134:    	      <tr><td class="ground-element"> <b>Città</b>: <%= ground.city %> </td></tr>
+135:    	      <tr><td class="ground-element"> <b>Indirizzo</b>: <%= ground.address %> </td></tr>
+136:    	      <tr><td class="ground-element"> <b>Descrizione</b>: <%= ground.description %> </td></tr>
+137:    	    </table>
+138:    	  </td>
+139:    	</tr>
+140:    	<% end %>
+141:          </table>
+142:        </div>
+143:      </body>
+144:    
+145:      <script>
+146:        function init(){
+147:    	document.getElementById("price-table").style.visibility="hidden";
+148:    	document.getElementById("time-table").style.visibility="hidden";
+149:    	document.getElementById("price-text1").value="";
+150:    	document.getElementById("price-text2").value="";
+151:    	document.getElementById("time-text1").value="";
+152:    	document.getElementById("time-text2").value="";
+153:    
+154:    	/*
+155:    	localStorage.setItem("category", selected);
+156:    	localStorage.setItem("search_text", search_text);
+157:    	localStorage.setItem("priceChecked", priceCheck.checked);
+158:    	localStorage.setItem("timeChecked", timeCheck.checked);
+159:    	localStorage.setItem("priceFrom", priceFrom_text);
+160:    	localStorage.setItem("priceTo", priceTo_text);
+161:    	localStorage.setItem("timeFrom", timeFrom_text);
+162:    	localStorage.setItem("timeTo", timeTo_text);*/
+163:    	
+164:    	if(localStorage.getItem("homepage") == "true"){
+165:    	    document.getElementById("w2").value = localStorage.getItem("search_text");
+166:    	    document.getElementById("w1").value = localStorage.getItem("category");
+167:    	    document.getElementById("price-text1").value = localStorage.getItem("priceFrom");
+168:    	    document.getElementById("price-text2").value = localStorage.getItem("priceTo");
+169:    	    document.getElementById("time-text1").value = localStorage.getItem("timeFrom");
+170:    	    document.getElementById("time-text2").value = localStorage.getItem("timeTo");
+171:    	    document.getElementById("w3").click();
+172:    	}
+173:        }
+174:        init();
+175:    
+176:        function priceChecked(){
+177:    	var checkBox = document.getElementById("priceCheckBox");
+178:    	if (checkBox.checked == true){
+179:    	    document.getElementById("price-table").style.visibility="visible";
+180:    	} else {
+181:    	    document.getElementById("price-table").style.visibility="hidden";
+182:    	    document.getElementById("price-text1").value="";
+183:    	    document.getElementById("price-text2").value="";
+184:    	}
+185:        }
+186:    
+187:        function timeChecked(){
+188:    	var checkBox = document.getElementById("timeCheckBox");
+189:    	if (checkBox.checked == true){
+190:    	    document.getElementById("time-table").style.visibility="visible";
+191:    	} else {
+192:    	    document.getElementById("time-table").style.visibility="hidden";
+193:    	    document.getElementById("time-text1").value="";
+194:    	    document.getElementById("time-text2").value="";
+195:    	}
+196:        }
+197:        
+198:      </script>
+199:    
+200:    <html>
+  
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:32:51 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  Rendered grounds/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1411)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1866)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+  
+  <head>
+    <style type="text/css">
+      html{
+	  color: black;
+      }
+      
+      .price-text{
+	  width: 60px;
+      }
+
+      .time-text{
+	  width: 60px;
+      }
+
+      #w2{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  border: 1px solid darkgray; 
+      }
+
+      .category-select{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+      }
+
+      .btn-search{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  background-color: #c12400;
+	  font-weight: bold;
+	  color:white;
+      }
+      .btn-search:active{
+	  background-color: #b52100;
+      }
+
+      .search-bar{
+	  position: relative;
+	  background-color: #275a74;
+      }
+      .search-wrap{
+	  color:white;
+	  position:relative;
+	  left: 35%;
+      }
+      .ground-title{
+	  padding: 10px;
+	  font-size: 30px;
+      }
+      .ground-element{
+	  padding: 10px;
+	  font-size: 18px;
+      }
+      .grounds-info{
+	  position: relative;
+	  left: 25%;
+      }
+
+      
+    </style>
+  </head>
+  
+  <body>
+    <div class = "search-bar">
+      <div class = "search-wrap">
+	<form>
+	  <table class="search-table">
+	    <tr>
+	      <td>
+		<select id="w1" class="category-select" name="choices-single-defaul">
+                  <option placeholder="" value="Qualsiasi">Qualsiasi</option>
+                  <option value="Calcio">Calcio</option>
+                  <option value="Tennis">Tennis</option>
+                  <option value="Basket">Basket</option>
+		</select>
+	      </td>
+	      <td><%= text_field_tag :search, params[:search], placeholder: 'Cerca qui...', id: 'w2' %></td>
+	      <td><%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search' id:'w3' %></td>
+	    </tr>
+	  </table>
+	  <table>
+	    <tr>
+	      <td><input type="checkbox" onClick="priceChecked()" id="priceCheckBox">Prezzo</input></td>
+	      <td><input type="checkbox" onClick="timeChecked()" id="timeCheckBox">Orario</input></td>
+	    </tr>
+	    <tr>
+	      <td>
+		<table id="price-table">
+		  <tr>
+		    <td><%= text_field_tag :priceFrom, params[:priceFrom], placeholder: 'Da...', class: 'price-text', id: 'price-text1'%>€</td>
+		    <td><%= text_field_tag :priceTo, params[:priceTo], placeholder: 'a...', class: 'price-text', id: 'price-text2'%>€</td>
+		  </tr>
+		</table>
+	      </td>
+	      <td>
+		<table id="time-table">
+		  <tr>
+		    <td><%= text_field_tag :timeFrom, params[:timeFrom], placeholder: 'Dalle...', class: 'time-text', id: 'time-text1'%></td>
+		    <td><%= text_field_tag :timeTo, params[:timeTo], placeholder: 'alle...', class: 'time-text', id: 'time-text2'%></td>
+		  </tr>
+		</table>
+	      </td>
+	    </tr>
+	  </table>
+	</form>
+      </div>
+    </div>
+    <div class="grounds-info">
+      <table id="fixedheight">
+	<% @grounds.each do |ground| %>
+	<tr>
+	  <td> <%= image_tag ground.image %> </td>
+	  <td>
+	    <table class="table-prova">
+	      <tr><td class="ground-title"> <%= link_to ground.title, ground_path(ground) %> </td></tr>
+	      <tr><td class="ground-element"> <b>Prezzo</b>: <%= ground.price %>€ </td></tr>
+	      <tr><td class="ground-element"> <b>Voto</b>: <%= ground.rating %> </td></tr>
+	      <tr><td class="ground-element"> <b>Città</b>: <%= ground.city %> </td></tr>
+	      <tr><td class="ground-element"> <b>Indirizzo</b>: <%= ground.address %> </td></tr>
+	      <tr><td class="ground-element"> <b>Descrizione</b>: <%= ground.description %> </td></tr>
+	    </table>
+	  </td>
+	</tr>
+	<% end %>
+      </table>
+    </div>
+  </body>
+
+  <script>
+    function init(){
+	document.getElementById("price-table").style.visibility="hidden";
+	document.getElementById("time-table").style.visibility="hidden";
+	document.getElementById("price-text1").value="";
+	document.getElementById("price-text2").value="";
+	document.getElementById("time-text1").value="";
+	document.getElementById("time-text2").value="";
+
+	/*
+	localStorage.setItem("category", selected);
+	localStorage.setItem("search_text", search_text);
+	localStorage.setItem("priceChecked", priceCheck.checked);
+	localStorage.setItem("timeChecked", timeCheck.checked);
+	localStorage.setItem("priceFrom", priceFrom_text);
+	localStorage.setItem("priceTo", priceTo_text);
+	localStorage.setItem("timeFrom", timeFrom_text);
+	localStorage.setItem("timeTo", timeTo_text);*/
+	
+	if(localStorage.getItem("homepage") == "true"){
+	    document.getElementById("w2").value = localStorage.getItem("search_text");
+	    document.getElementById("w1").value = localStorage.getItem("category");
+	    document.getElementById("price-text1").value = localStorage.getItem("priceFrom");
+	    document.getElementById("price-text2").value = localStorage.getItem("priceTo");
+	    document.getElementById("time-text1").value = localStorage.getItem("timeFrom");
+	    document.getElementById("time-text2").value = localStorage.getItem("timeTo");
+	    document.getElementById("w3").click();
+	}
+    }
+    init();
+
+    function priceChecked(){
+	var checkBox = document.getElementById("priceCheckBox");
+	if (checkBox.checked == true){
+	    document.getElementById("price-table").style.visibility="visible";
+	} else {
+	    document.getElementById("price-table").style.visibility="hidden";
+	    document.getElementById("price-text1").value="";
+	    document.getElementById("price-text2").value="";
+	}
+    }
+
+    function timeChecked(){
+	var checkBox = document.getElementById("timeCheckBox");
+	if (checkBox.checked == true){
+	    document.getElementById("time-table").style.visibility="visible";
+	} else {
+	    document.getElementById("time-table").style.visibility="hidden";
+	    document.getElementById("time-text1").value="";
+	    document.getElementById("time-text2").value="";
+	}
+    }
+    
+  </script>
+
+<html>
+
+):
+1:    <html>
+2:      
+3:      <head>
+4:        <style type="text/css">
+5:          html{
+6:    	  color: black;
+7:          }
+8:          
+9:          .price-text{
+10:    	  width: 60px;
+11:          }
+12:    
+13:          .time-text{
+14:    	  width: 60px;
+15:          }
+16:    
+17:          #w2{
+18:    	  width: 100%;
+19:    	  padding: 12px 20px;
+20:    	  margin: 8px 0;
+21:    	  display: inline-block;
+22:    	  border-radius: 4px;
+23:    	  box-sizing: border-box;
+24:    	  border: 1px solid darkgray; 
+25:          }
+26:    
+27:          .category-select{
+28:    	  width: 100%;
+29:    	  padding: 12px 20px;
+30:    	  margin: 8px 0;
+31:    	  display: inline-block;
+32:    	  border: 1px solid #ccc;
+33:    	  border-radius: 4px;
+34:    	  box-sizing: border-box;
+35:          }
+36:    
+37:          .btn-search{
+38:    	  width: 100%;
+39:    	  padding: 12px 20px;
+40:    	  margin: 8px 0;
+41:    	  display: inline-block;
+42:    	  border: 1px solid #ccc;
+43:    	  border-radius: 4px;
+44:    	  box-sizing: border-box;
+45:    	  background-color: #c12400;
+46:    	  font-weight: bold;
+47:    	  color:white;
+48:          }
+49:          .btn-search:active{
+50:    	  background-color: #b52100;
+51:          }
+52:    
+53:          .search-bar{
+54:    	  position: relative;
+55:    	  background-color: #275a74;
+56:          }
+57:          .search-wrap{
+58:    	  color:white;
+59:    	  position:relative;
+60:    	  left: 35%;
+61:          }
+62:          .ground-title{
+63:    	  padding: 10px;
+64:    	  font-size: 30px;
+65:          }
+66:          .ground-element{
+67:    	  padding: 10px;
+68:    	  font-size: 18px;
+69:          }
+70:          .grounds-info{
+71:    	  position: relative;
+72:    	  left: 25%;
+73:          }
+74:    
+75:          
+76:        </style>
+77:      </head>
+78:      
+79:      <body>
+80:        <div class = "search-bar">
+81:          <div class = "search-wrap">
+82:    	<form>
+83:    	  <table class="search-table">
+84:    	    <tr>
+85:    	      <td>
+86:    		<select id="w1" class="category-select" name="choices-single-defaul">
+87:                      <option placeholder="" value="Qualsiasi">Qualsiasi</option>
+88:                      <option value="Calcio">Calcio</option>
+89:                      <option value="Tennis">Tennis</option>
+90:                      <option value="Basket">Basket</option>
+91:    		</select>
+92:    	      </td>
+93:    	      <td><%= text_field_tag :search, params[:search], placeholder: 'Cerca qui...', id: 'w2' %></td>
+94:    	      <td><%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search' id:'w3' %></td>
+95:    	    </tr>
+96:    	  </table>
+97:    	  <table>
+98:    	    <tr>
+99:    	      <td><input type="checkbox" onClick="priceChecked()" id="priceCheckBox">Prezzo</input></td>
+100:    	      <td><input type="checkbox" onClick="timeChecked()" id="timeCheckBox">Orario</input></td>
+101:    	    </tr>
+102:    	    <tr>
+103:    	      <td>
+104:    		<table id="price-table">
+105:    		  <tr>
+106:    		    <td><%= text_field_tag :priceFrom, params[:priceFrom], placeholder: 'Da...', class: 'price-text', id: 'price-text1'%>€</td>
+107:    		    <td><%= text_field_tag :priceTo, params[:priceTo], placeholder: 'a...', class: 'price-text', id: 'price-text2'%>€</td>
+108:    		  </tr>
+109:    		</table>
+110:    	      </td>
+111:    	      <td>
+112:    		<table id="time-table">
+113:    		  <tr>
+114:    		    <td><%= text_field_tag :timeFrom, params[:timeFrom], placeholder: 'Dalle...', class: 'time-text', id: 'time-text1'%></td>
+115:    		    <td><%= text_field_tag :timeTo, params[:timeTo], placeholder: 'alle...', class: 'time-text', id: 'time-text2'%></td>
+116:    		  </tr>
+117:    		</table>
+118:    	      </td>
+119:    	    </tr>
+120:    	  </table>
+121:    	</form>
+122:          </div>
+123:        </div>
+124:        <div class="grounds-info">
+125:          <table id="fixedheight">
+126:    	<% @grounds.each do |ground| %>
+127:    	<tr>
+128:    	  <td> <%= image_tag ground.image %> </td>
+129:    	  <td>
+130:    	    <table class="table-prova">
+131:    	      <tr><td class="ground-title"> <%= link_to ground.title, ground_path(ground) %> </td></tr>
+132:    	      <tr><td class="ground-element"> <b>Prezzo</b>: <%= ground.price %>€ </td></tr>
+133:    	      <tr><td class="ground-element"> <b>Voto</b>: <%= ground.rating %> </td></tr>
+134:    	      <tr><td class="ground-element"> <b>Città</b>: <%= ground.city %> </td></tr>
+135:    	      <tr><td class="ground-element"> <b>Indirizzo</b>: <%= ground.address %> </td></tr>
+136:    	      <tr><td class="ground-element"> <b>Descrizione</b>: <%= ground.description %> </td></tr>
+137:    	    </table>
+138:    	  </td>
+139:    	</tr>
+140:    	<% end %>
+141:          </table>
+142:        </div>
+143:      </body>
+144:    
+145:      <script>
+146:        function init(){
+147:    	document.getElementById("price-table").style.visibility="hidden";
+148:    	document.getElementById("time-table").style.visibility="hidden";
+149:    	document.getElementById("price-text1").value="";
+150:    	document.getElementById("price-text2").value="";
+151:    	document.getElementById("time-text1").value="";
+152:    	document.getElementById("time-text2").value="";
+153:    
+154:    	/*
+155:    	localStorage.setItem("category", selected);
+156:    	localStorage.setItem("search_text", search_text);
+157:    	localStorage.setItem("priceChecked", priceCheck.checked);
+158:    	localStorage.setItem("timeChecked", timeCheck.checked);
+159:    	localStorage.setItem("priceFrom", priceFrom_text);
+160:    	localStorage.setItem("priceTo", priceTo_text);
+161:    	localStorage.setItem("timeFrom", timeFrom_text);
+162:    	localStorage.setItem("timeTo", timeTo_text);*/
+163:    	
+164:    	if(localStorage.getItem("homepage") == "true"){
+165:    	    document.getElementById("w2").value = localStorage.getItem("search_text");
+166:    	    document.getElementById("w1").value = localStorage.getItem("category");
+167:    	    document.getElementById("price-text1").value = localStorage.getItem("priceFrom");
+168:    	    document.getElementById("price-text2").value = localStorage.getItem("priceTo");
+169:    	    document.getElementById("time-text1").value = localStorage.getItem("timeFrom");
+170:    	    document.getElementById("time-text2").value = localStorage.getItem("timeTo");
+171:    	    document.getElementById("w3").click();
+172:    	}
+173:        }
+174:        init();
+175:    
+176:        function priceChecked(){
+177:    	var checkBox = document.getElementById("priceCheckBox");
+178:    	if (checkBox.checked == true){
+179:    	    document.getElementById("price-table").style.visibility="visible";
+180:    	} else {
+181:    	    document.getElementById("price-table").style.visibility="hidden";
+182:    	    document.getElementById("price-text1").value="";
+183:    	    document.getElementById("price-text2").value="";
+184:    	}
+185:        }
+186:    
+187:        function timeChecked(){
+188:    	var checkBox = document.getElementById("timeCheckBox");
+189:    	if (checkBox.checked == true){
+190:    	    document.getElementById("time-table").style.visibility="visible";
+191:    	} else {
+192:    	    document.getElementById("time-table").style.visibility="hidden";
+193:    	    document.getElementById("time-text1").value="";
+194:    	    document.getElementById("time-text2").value="";
+195:    	}
+196:        }
+197:        
+198:      </script>
+199:    
+200:    <html>
+  
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:33:11 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4724)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:33:18 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1424)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2437)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+  
+  <head>
+    <style type="text/css">
+      html{
+	  color: black;
+      }
+      
+      .price-text{
+	  width: 60px;
+      }
+
+      .time-text{
+	  width: 60px;
+      }
+
+      #w2{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  border: 1px solid darkgray; 
+      }
+
+      .category-select{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+      }
+
+      .btn-search{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  background-color: #c12400;
+	  font-weight: bold;
+	  color:white;
+      }
+      .btn-search:active{
+	  background-color: #b52100;
+      }
+
+      .search-bar{
+	  position: relative;
+	  background-color: #275a74;
+      }
+      .search-wrap{
+	  color:white;
+	  position:relative;
+	  left: 35%;
+      }
+      .ground-title{
+	  padding: 10px;
+	  font-size: 30px;
+      }
+      .ground-element{
+	  padding: 10px;
+	  font-size: 18px;
+      }
+      .grounds-info{
+	  position: relative;
+	  left: 25%;
+      }
+
+      
+    </style>
+  </head>
+  
+  <body>
+    <div class = "search-bar">
+      <div class = "search-wrap">
+	<form>
+	  <table class="search-table">
+	    <tr>
+	      <td>
+		<select id="w1" class="category-select" name="choices-single-defaul">
+                  <option placeholder="" value="Qualsiasi">Qualsiasi</option>
+                  <option value="Calcio">Calcio</option>
+                  <option value="Tennis">Tennis</option>
+                  <option value="Basket">Basket</option>
+		</select>
+	      </td>
+	      <td><%= text_field_tag :search, params[:search], placeholder: 'Cerca qui...', id: 'w2' %></td>
+	      <td><%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search' id:'w3' %></td>
+	    </tr>
+	  </table>
+	  <table>
+	    <tr>
+	      <td><input type="checkbox" onClick="priceChecked()" id="priceCheckBox">Prezzo</input></td>
+	      <td><input type="checkbox" onClick="timeChecked()" id="timeCheckBox">Orario</input></td>
+	    </tr>
+	    <tr>
+	      <td>
+		<table id="price-table">
+		  <tr>
+		    <td><%= text_field_tag :priceFrom, params[:priceFrom], placeholder: 'Da...', class: 'price-text', id: 'price-text1'%>€</td>
+		    <td><%= text_field_tag :priceTo, params[:priceTo], placeholder: 'a...', class: 'price-text', id: 'price-text2'%>€</td>
+		  </tr>
+		</table>
+	      </td>
+	      <td>
+		<table id="time-table">
+		  <tr>
+		    <td><%= text_field_tag :timeFrom, params[:timeFrom], placeholder: 'Dalle...', class: 'time-text', id: 'time-text1'%></td>
+		    <td><%= text_field_tag :timeTo, params[:timeTo], placeholder: 'alle...', class: 'time-text', id: 'time-text2'%></td>
+		  </tr>
+		</table>
+	      </td>
+	    </tr>
+	  </table>
+	</form>
+      </div>
+    </div>
+    <div class="grounds-info">
+      <table id="fixedheight">
+	<% @grounds.each do |ground| %>
+	<tr>
+	  <td> <%= image_tag ground.image %> </td>
+	  <td>
+	    <table class="table-prova">
+	      <tr><td class="ground-title"> <%= link_to ground.title, ground_path(ground) %> </td></tr>
+	      <tr><td class="ground-element"> <b>Prezzo</b>: <%= ground.price %>€ </td></tr>
+	      <tr><td class="ground-element"> <b>Voto</b>: <%= ground.rating %> </td></tr>
+	      <tr><td class="ground-element"> <b>Città</b>: <%= ground.city %> </td></tr>
+	      <tr><td class="ground-element"> <b>Indirizzo</b>: <%= ground.address %> </td></tr>
+	      <tr><td class="ground-element"> <b>Descrizione</b>: <%= ground.description %> </td></tr>
+	    </table>
+	  </td>
+	</tr>
+	<% end %>
+      </table>
+    </div>
+  </body>
+
+  <script>
+    function init(){
+	document.getElementById("price-table").style.visibility="hidden";
+	document.getElementById("time-table").style.visibility="hidden";
+	document.getElementById("price-text1").value="";
+	document.getElementById("price-text2").value="";
+	document.getElementById("time-text1").value="";
+	document.getElementById("time-text2").value="";
+
+	/*
+	localStorage.setItem("category", selected);
+	localStorage.setItem("search_text", search_text);
+	localStorage.setItem("priceChecked", priceCheck.checked);
+	localStorage.setItem("timeChecked", timeCheck.checked);
+	localStorage.setItem("priceFrom", priceFrom_text);
+	localStorage.setItem("priceTo", priceTo_text);
+	localStorage.setItem("timeFrom", timeFrom_text);
+	localStorage.setItem("timeTo", timeTo_text);*/
+	
+	if(localStorage.getItem("homepage") == "true"){
+	    document.getElementById("w2").value = localStorage.getItem("search_text");
+	    document.getElementById("w1").value = localStorage.getItem("category");
+	    document.getElementById("price-text1").value = localStorage.getItem("priceFrom");
+	    document.getElementById("price-text2").value = localStorage.getItem("priceTo");
+	    document.getElementById("time-text1").value = localStorage.getItem("timeFrom");
+	    document.getElementById("time-text2").value = localStorage.getItem("timeTo");
+	    
+	}
+    }
+    init();
+
+    function priceChecked(){
+	var checkBox = document.getElementById("priceCheckBox");
+	if (checkBox.checked == true){
+	    document.getElementById("price-table").style.visibility="visible";
+	} else {
+	    document.getElementById("price-table").style.visibility="hidden";
+	    document.getElementById("price-text1").value="";
+	    document.getElementById("price-text2").value="";
+	}
+    }
+
+    function timeChecked(){
+	var checkBox = document.getElementById("timeCheckBox");
+	if (checkBox.checked == true){
+	    document.getElementById("time-table").style.visibility="visible";
+	} else {
+	    document.getElementById("time-table").style.visibility="hidden";
+	    document.getElementById("time-text1").value="";
+	    document.getElementById("time-text2").value="";
+	}
+    }
+    
+  </script>
+
+<html>
+
+):
+1:    <html>
+2:      
+3:      <head>
+4:        <style type="text/css">
+5:          html{
+6:    	  color: black;
+7:          }
+8:          
+9:          .price-text{
+10:    	  width: 60px;
+11:          }
+12:    
+13:          .time-text{
+14:    	  width: 60px;
+15:          }
+16:    
+17:          #w2{
+18:    	  width: 100%;
+19:    	  padding: 12px 20px;
+20:    	  margin: 8px 0;
+21:    	  display: inline-block;
+22:    	  border-radius: 4px;
+23:    	  box-sizing: border-box;
+24:    	  border: 1px solid darkgray; 
+25:          }
+26:    
+27:          .category-select{
+28:    	  width: 100%;
+29:    	  padding: 12px 20px;
+30:    	  margin: 8px 0;
+31:    	  display: inline-block;
+32:    	  border: 1px solid #ccc;
+33:    	  border-radius: 4px;
+34:    	  box-sizing: border-box;
+35:          }
+36:    
+37:          .btn-search{
+38:    	  width: 100%;
+39:    	  padding: 12px 20px;
+40:    	  margin: 8px 0;
+41:    	  display: inline-block;
+42:    	  border: 1px solid #ccc;
+43:    	  border-radius: 4px;
+44:    	  box-sizing: border-box;
+45:    	  background-color: #c12400;
+46:    	  font-weight: bold;
+47:    	  color:white;
+48:          }
+49:          .btn-search:active{
+50:    	  background-color: #b52100;
+51:          }
+52:    
+53:          .search-bar{
+54:    	  position: relative;
+55:    	  background-color: #275a74;
+56:          }
+57:          .search-wrap{
+58:    	  color:white;
+59:    	  position:relative;
+60:    	  left: 35%;
+61:          }
+62:          .ground-title{
+63:    	  padding: 10px;
+64:    	  font-size: 30px;
+65:          }
+66:          .ground-element{
+67:    	  padding: 10px;
+68:    	  font-size: 18px;
+69:          }
+70:          .grounds-info{
+71:    	  position: relative;
+72:    	  left: 25%;
+73:          }
+74:    
+75:          
+76:        </style>
+77:      </head>
+78:      
+79:      <body>
+80:        <div class = "search-bar">
+81:          <div class = "search-wrap">
+82:    	<form>
+83:    	  <table class="search-table">
+84:    	    <tr>
+85:    	      <td>
+86:    		<select id="w1" class="category-select" name="choices-single-defaul">
+87:                      <option placeholder="" value="Qualsiasi">Qualsiasi</option>
+88:                      <option value="Calcio">Calcio</option>
+89:                      <option value="Tennis">Tennis</option>
+90:                      <option value="Basket">Basket</option>
+91:    		</select>
+92:    	      </td>
+93:    	      <td><%= text_field_tag :search, params[:search], placeholder: 'Cerca qui...', id: 'w2' %></td>
+94:    	      <td><%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search' id:'w3' %></td>
+95:    	    </tr>
+96:    	  </table>
+97:    	  <table>
+98:    	    <tr>
+99:    	      <td><input type="checkbox" onClick="priceChecked()" id="priceCheckBox">Prezzo</input></td>
+100:    	      <td><input type="checkbox" onClick="timeChecked()" id="timeCheckBox">Orario</input></td>
+101:    	    </tr>
+102:    	    <tr>
+103:    	      <td>
+104:    		<table id="price-table">
+105:    		  <tr>
+106:    		    <td><%= text_field_tag :priceFrom, params[:priceFrom], placeholder: 'Da...', class: 'price-text', id: 'price-text1'%>€</td>
+107:    		    <td><%= text_field_tag :priceTo, params[:priceTo], placeholder: 'a...', class: 'price-text', id: 'price-text2'%>€</td>
+108:    		  </tr>
+109:    		</table>
+110:    	      </td>
+111:    	      <td>
+112:    		<table id="time-table">
+113:    		  <tr>
+114:    		    <td><%= text_field_tag :timeFrom, params[:timeFrom], placeholder: 'Dalle...', class: 'time-text', id: 'time-text1'%></td>
+115:    		    <td><%= text_field_tag :timeTo, params[:timeTo], placeholder: 'alle...', class: 'time-text', id: 'time-text2'%></td>
+116:    		  </tr>
+117:    		</table>
+118:    	      </td>
+119:    	    </tr>
+120:    	  </table>
+121:    	</form>
+122:          </div>
+123:        </div>
+124:        <div class="grounds-info">
+125:          <table id="fixedheight">
+126:    	<% @grounds.each do |ground| %>
+127:    	<tr>
+128:    	  <td> <%= image_tag ground.image %> </td>
+129:    	  <td>
+130:    	    <table class="table-prova">
+131:    	      <tr><td class="ground-title"> <%= link_to ground.title, ground_path(ground) %> </td></tr>
+132:    	      <tr><td class="ground-element"> <b>Prezzo</b>: <%= ground.price %>€ </td></tr>
+133:    	      <tr><td class="ground-element"> <b>Voto</b>: <%= ground.rating %> </td></tr>
+134:    	      <tr><td class="ground-element"> <b>Città</b>: <%= ground.city %> </td></tr>
+135:    	      <tr><td class="ground-element"> <b>Indirizzo</b>: <%= ground.address %> </td></tr>
+136:    	      <tr><td class="ground-element"> <b>Descrizione</b>: <%= ground.description %> </td></tr>
+137:    	    </table>
+138:    	  </td>
+139:    	</tr>
+140:    	<% end %>
+141:          </table>
+142:        </div>
+143:      </body>
+144:    
+145:      <script>
+146:        function init(){
+147:    	document.getElementById("price-table").style.visibility="hidden";
+148:    	document.getElementById("time-table").style.visibility="hidden";
+149:    	document.getElementById("price-text1").value="";
+150:    	document.getElementById("price-text2").value="";
+151:    	document.getElementById("time-text1").value="";
+152:    	document.getElementById("time-text2").value="";
+153:    
+154:    	/*
+155:    	localStorage.setItem("category", selected);
+156:    	localStorage.setItem("search_text", search_text);
+157:    	localStorage.setItem("priceChecked", priceCheck.checked);
+158:    	localStorage.setItem("timeChecked", timeCheck.checked);
+159:    	localStorage.setItem("priceFrom", priceFrom_text);
+160:    	localStorage.setItem("priceTo", priceTo_text);
+161:    	localStorage.setItem("timeFrom", timeFrom_text);
+162:    	localStorage.setItem("timeTo", timeTo_text);*/
+163:    	
+164:    	if(localStorage.getItem("homepage") == "true"){
+165:    	    document.getElementById("w2").value = localStorage.getItem("search_text");
+166:    	    document.getElementById("w1").value = localStorage.getItem("category");
+167:    	    document.getElementById("price-text1").value = localStorage.getItem("priceFrom");
+168:    	    document.getElementById("price-text2").value = localStorage.getItem("priceTo");
+169:    	    document.getElementById("time-text1").value = localStorage.getItem("timeFrom");
+170:    	    document.getElementById("time-text2").value = localStorage.getItem("timeTo");
+171:    	    
+172:    	}
+173:        }
+174:        init();
+175:    
+176:        function priceChecked(){
+177:    	var checkBox = document.getElementById("priceCheckBox");
+178:    	if (checkBox.checked == true){
+179:    	    document.getElementById("price-table").style.visibility="visible";
+180:    	} else {
+181:    	    document.getElementById("price-table").style.visibility="hidden";
+182:    	    document.getElementById("price-text1").value="";
+183:    	    document.getElementById("price-text2").value="";
+184:    	}
+185:        }
+186:    
+187:        function timeChecked(){
+188:    	var checkBox = document.getElementById("timeCheckBox");
+189:    	if (checkBox.checked == true){
+190:    	    document.getElementById("time-table").style.visibility="visible";
+191:    	} else {
+192:    	    document.getElementById("time-table").style.visibility="hidden";
+193:    	    document.getElementById("time-text1").value="";
+194:    	    document.getElementById("time-text2").value="";
+195:    	}
+196:        }
+197:        
+198:      </script>
+199:    
+200:    <html>
+  
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+app/views/grounds/index.html.erb:94: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:34:03 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2967)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 7396)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:03 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 942)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 4591)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:03 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 4586)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:03 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 4596)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 4585)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 4588)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 4586)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 4588)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 4598)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.4ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.4ms | Allocations: 4593)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 4586)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 4602)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 4596)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 4586)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 4594)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 4588)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 4602)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 4588)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 4594)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 4594)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 4588)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 4599)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.4ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 4584)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 4593)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 4592)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 4600)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 4594)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 4591)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 4594)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 4596)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 4594)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 4584)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 4596)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 4593)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 4594)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 4595)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 4608)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 4598)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 939)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 4597)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 4594)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 4600)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 4596)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 4588)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 4600)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 4606)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 4603)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 4588)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 4587)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 4602)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 4588)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 4589)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 4600)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 4596)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 4588)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 4584)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 4588)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 4594)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 4591)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 4590)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 4589)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 4602)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:07 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 4600)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:08 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 4604)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=sdaas&priceFrom=12&priceTo=43&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:08 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"sdaas", "priceFrom"=>"12", "priceTo"=>"43", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%sdaas%') AND (price >= 12) AND (price <= 43)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 4604)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-24 23:34:37 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 251)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 4726)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:34:52 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 2936)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 0.5ms | Allocations: 6990)
+
+
+Started GET "/grounds?choices-single-defaul=Tennis&search=Campo+da+tennis&priceFrom=1&priceTo=23&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:34:52 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Tennis", "search"=>"Campo da tennis", "priceFrom"=>"1", "priceTo"=>"23", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%Campo da tennis%') AND (price >= 1) AND (price <= 23)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1581)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 5164)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-24 23:36:17 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2406)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 5909)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=1&priceTo=6&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:36:17 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"1", "priceTo"=>"6", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (price >= 1) AND (price <= 6)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2109)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 5646)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-24 23:36:27 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2417)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 5918)
+
+
