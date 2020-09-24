@@ -1,0 +1,170 @@
+<html>
+  <head>
+    <style type="text/css">
+      html{
+	  background-color: #275a74;
+	  color: white;
+      }
+      .search-bar{
+	  position:fixed;
+	  top: 50%;
+	  left: 50%;
+	  width:45em;
+	  margin-top: -9em;
+	  margin-left: -25em;
+	  padding: 10px;
+	  border-radius: 25px;
+	  background-color: #24536b;
+      }
+      .price-text{
+	  width: 60px;
+      }
+
+      .time-text{
+	  width: 60px;
+      }
+
+      #w2{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  border: 1px solid darkgray; 
+      }
+
+      .category-select{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+      }
+
+      .btn-search{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  background-color: #c12400;
+	  font-weight: bold;
+	  color:white;
+      }
+      .btn-search:active{
+	  background-color: #b52100;
+      }
+
+      .search-wrap{
+	  position:relative;
+	  left: 15%;
+      }
+     
+      
+    </style>
+  </head>
+  <body>
+    <div class="search-bar">
+      <div class = "search-wrap">
+	<form>
+	  <table class="search-table">
+	    <tr>
+	      <td>
+		<select id="w1" class="category-select" name="choices-single-defaul">
+                  <option placeholder="" value="Qualsiasi">Qualsiasi</option>
+                  <option value="Calcio">Calcio</option>
+                  <option value="Tennis">Tennis</option>
+                  <option value="Basket">Basket</option>
+		</select>
+	      </td>
+	      <td><input id="w2" type="text" placeholder="Cerca qui..." /></td>
+	      <td><input type="button" id="w3" class="btn-search" value="Cerca" onclick="search_grounds()"></td>
+	    </tr>
+	  </table>
+	  <table>
+	    <tr>
+	      <td><input type="checkbox" onClick="priceChecked()" id="priceCheckBox">Prezzo</input></td>
+	      <td><input type="checkbox" onClick="timeChecked()" id="timeCheckBox">Orario</input></td>
+	    </tr>
+	    <tr>
+	      <td>
+		<table id="price-table">
+		  <tr>
+		    <td><input id="priceFrom" class="price-text" type="text" placeholder="Da..."/>€</td>
+		    <td><input id="priceTo" class="price-text" type="text" placeholder="a..."/>€</td>
+		  </tr>
+		</table>
+	      </td>
+	      <td>
+		<table id="time-table">
+		  <tr>
+		    <td><input id="timeFrom" class="time-text" type="text" placeholder="Dalle..."/></td>
+		    <td><input id="timeTo" class="time-text" type="text" placeholder="alle..."/></td>
+		  </tr>
+		</table>
+	      </td>
+	    </tr>
+	</form>
+      </div>
+    </div>
+  </body>
+  
+  <script>
+    function init(){
+	document.getElementById("price-table").style.visibility="hidden";
+	document.getElementById("time-table").style.visibility="hidden";
+    }
+    init();
+
+    function search_grounds(){
+	//Prendo i valori della ricerca e li salvo in memoria locale
+	var e = document.getElementById("w1");
+	var selected = e.options[e.selectedIndex].value;
+	localStorage.setItem("category", selected);
+	var search_text = document.getElementById("w2").value;
+	localStorage.setItem("search_text", search_text);
+	var priceCheck = document.getElementById("priceCheckBox");
+	localStorage.setItem("priceChecked", priceCheck.checked);
+	var timeCheck = document.getElementById("timeCheckBox");
+	localStorage.setItem("timeChecked", timeCheck.checked);
+	var priceFrom_text = document.getElementById("priceFrom").value;
+	localStorage.setItem("priceFrom", priceFrom_text);
+	var priceTo_text = document.getElementById("priceTo").value;
+	localStorage.setItem("priceTo", priceTo_text);
+	var timeFrom_text = document.getElementById("timeFrom").value;
+	localStorage.setItem("timeFrom", timeFrom_text);
+	var timeTo_text = document.getElementById("timeTo").value;
+	localStorage.setItem("timeTo", timeTo_text);
+
+	//TEST
+	//alert(localStorage.getItem("category") + " " + localStorage.getItem("search_text") + " " + localStorage.getItem("priceChecked") + " " + localStorage.getItem("timeChecked") + " " + localStorage.getItem("priceFrom") + " " + localStorage.getItem("priceTo") + " " + localStorage.getItem("timeFrom") + " " + localStorage.getItem("timeTo"));
+	
+	
+	location.href = "/grounds";
+    }
+
+    function priceChecked(){
+	var checkBox = document.getElementById("priceCheckBox");
+	if (checkBox.checked == true){
+	    document.getElementById("price-table").style.visibility="visible";
+	} else {
+	    document.getElementById("price-table").style.visibility="hidden";
+	}
+    }
+
+    function timeChecked(){
+	var checkBox = document.getElementById("timeCheckBox");
+	if (checkBox.checked == true){
+	    document.getElementById("time-table").style.visibility="visible";
+	} else {
+	    document.getElementById("time-table").style.visibility="hidden";
+	}
+    }
+    
+  </script>
+</html>

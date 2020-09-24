@@ -1,0 +1,172 @@
+<html>
+  
+  <head>
+    <style type="text/css">
+      html{
+	  color: black;
+      }
+      
+      .price-text{
+	  width: 60px;
+      }
+
+      .time-text{
+	  width: 60px;
+      }
+
+      #w2{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  border: 1px solid darkgray; 
+      }
+
+      .category-select{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+      }
+
+      .btn-search{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  background-color: #c12400;
+	  font-weight: bold;
+	  color:white;
+      }
+      .btn-search:active{
+	  background-color: #b52100;
+      }
+
+      .search-bar{
+	  position: relative;
+	  background-color: #275a74;
+      }
+      .search-wrap{
+	  color:white;
+	  position:relative;
+	  left: 35%;
+      }
+
+      
+    </style>
+  </head>
+  
+  <body>
+    <div class = "search-bar">
+      <div class = "search-wrap">
+	<form>
+	  <table class="search-table">
+	    <tr>
+	      <td>
+		<select id="w1" class="category-select" name="choices-single-defaul">
+                  <option placeholder="" value="Qualsiasi">Qualsiasi</option>
+                  <option value="Calcio">Calcio</option>
+                  <option value="Tennis">Tennis</option>
+                  <option value="Basket">Basket</option>
+		</select>
+	      </td>
+	      <td><%= text_field_tag :search, params[:search], placeholder: 'Cerca qui...', id: 'w2' %></td>
+	      <td><%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search' %></td>
+	    </tr>
+	  </table>
+	  <table>
+	    <tr>
+	      <td><input type="checkbox" onClick="priceChecked()" id="priceCheckBox">Prezzo</input></td>
+	      <td><input type="checkbox" onClick="timeChecked()" id="timeCheckBox">Orario</input></td>
+	    </tr>
+	    <tr>
+	      <td>
+		<table id="price-table">
+		  <tr>
+		    <td><%= text_field_tag :priceFrom, params[:priceFrom], placeholder: 'Da...', class: 'price-text', id: 'price-text1'%>€</td>
+		    <td><%= text_field_tag :priceTo, params[:priceTo], placeholder: 'a...', class: 'price-text', id: 'price-text2'%>€</td>
+		  </tr>
+		</table>
+	      </td>
+	      <td>
+		<table id="time-table">
+		  <tr>
+		    <td><%= text_field_tag :timeFrom, params[:timeFrom], placeholder: 'Dalle...', class: 'time-text', id: 'time-text1'%></td>
+		    <td><%= text_field_tag :timeTo, params[:timeTo], placeholder: 'alle...', class: 'time-text', id: 'time-text2'%></td>
+		  </tr>
+		</table>
+	      </td>
+	    </tr>
+	  </table>
+	</form>
+      </div>
+    </div>
+    <div class="grounds-info">
+      <table id="fixedheight">
+	<% @grounds.each do |ground| %>
+	<tr>
+	  <td> <%= image_tag ground.image %> </td>
+	  <td>
+	    <table class="table-prova">
+	      <tr><td> <%= link_to ground.title, ground_path(ground) %> </td></tr>
+	      <tr><td> <b>Prezzo</b>: <%= ground.price %>€ </td></tr>
+	      <tr><td> <b>Voto</b>: <%= ground.rating %> </td></tr>
+	      <tr><td> <b>Città</b>: <%= ground.city %> </td></tr>
+	      <tr><td> <b>Indirizzo</b>: <%= ground.address %> </td></tr>
+	      <tr><td> <b>Descrizione</b>: <%= ground.description %> </td></tr>
+	    </table>
+	  </td>
+	</tr>
+	<% end %>
+      </table>
+    </div>
+  </body>
+
+  <script>
+    function init(){
+	document.getElementById("price-table").style.visibility="hidden";
+	document.getElementById("time-table").style.visibility="hidden";
+	document.getElementById("price-text1").value="";
+	document.getElementById("price-text2").value="";
+	document.getElementById("time-text1").value="";
+	document.getElementById("time-text2").value="";
+    }
+    init();
+
+    function search_grounds(){
+	allert("Cercato");
+    }
+
+    function priceChecked(){
+	var checkBox = document.getElementById("priceCheckBox");
+	if (checkBox.checked == true){
+	    document.getElementById("price-table").style.visibility="visible";
+	} else {
+	    document.getElementById("price-table").style.visibility="hidden";
+	    document.getElementById("price-text1").value="";
+	    document.getElementById("price-text2").value="";
+	}
+    }
+
+    function timeChecked(){
+	var checkBox = document.getElementById("timeCheckBox");
+	if (checkBox.checked == true){
+	    document.getElementById("time-table").style.visibility="visible";
+	} else {
+	    document.getElementById("time-table").style.visibility="hidden";
+	    document.getElementById("time-text1").value="";
+	    document.getElementById("time-text2").value="";
+	}
+    }
+    
+  </script>
+
+<html>

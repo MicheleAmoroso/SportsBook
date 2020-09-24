@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SportsBook</title>
+    <style type="text/css">
+      .header{
+	  background-color: #24536b;
+	  padding: 15px;
+	  overflow: auto;
+      }
+      .logo{
+	  float: left;
+      }
+      .user{
+	  float: right;
+      }
+    </style>
+    <div class="header">
+      <div class="logo">
+	<table>
+	  <tr><td><h1>SportsBook</h1></td></tr>
+	</table>
+      </div>
+      <div class="user">
+	<p>Login</p>
+      </div>
+    </div>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
