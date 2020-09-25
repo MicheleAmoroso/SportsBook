@@ -17,6 +17,20 @@
 	  margin-left: 40%;
 	  margin-top: 0%;
       }
+      #prezzo{
+	  color: gray;
+	  font-size: 30px;
+	  
+      }
+      .grounds-info{
+	  margin-left: 25%;
+      }
+      .ground-element{
+	  padding: 20px;
+      }
+      .td-description{
+	  width: 512px;
+      }
     </style>
   </head>
   
@@ -24,6 +38,60 @@
     <div class="title-container">
       <h1 class="title"><%= @ground.title %></h1>
     </div>
-    
+    <div class="grounds-info">
+      <table id="fixedheight">
+	<tr>
+	  <td> <%= image_tag @ground.image %> </td>
+	  <td>
+	    <table class="table-prova">
+	      <tr><td class="ground-element" id ="prezzo"><b><%= @ground.price %>€ </b></td></tr>
+	      <tr><td class="ground-element"> <b>Voto</b>: <%= @ground.rating %> </td></tr>
+	      <tr><td class="ground-element"> <b>Città</b>: <%= @ground.city %> </td></tr>
+	      <tr><td class="ground-element"> <b>Indirizzo</b>: <%= @ground.address %> </td></tr>
+	    </table>
+	  </td>
+	</tr>
+      </table>
+      <table class="description">
+	<tr><td><b> DESCRIZIONE </b></td></tr>
+	<tr><td class="td-description"><%= @ground.description %></td></tr>
+      </table>
+
+      <form>
+	<select name="dayChoice" id="dayID">
+	  <option> Lunedì </option>
+	  <option> Martedì </option>
+	  <option> Mercoledì </option>
+	  <option> Giovedì </option>
+	  <option> Venerdì </option>
+	  <option> Sabato </option>
+	  <option> Domenica </option>
+	</select>
+	
+	<%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search', id: "search-timetable" %>
+	
+	<table>
+	  <% @books.each do |book| %>
+	  <% if Timetable.find(book.timetable_id).day == params[:dayChoice] %>
+	  <% if book.ground_id == params[:id].to_i %>
+	  <% if book.user_id == nil %>
+	  <tr>
+	    <td style="color: green;"><b><%= book.timetable.from %>:00 - </b></td>
+	    <td style="color: green;"><b><%= book.timetable.to %>:00 </b></td>
+	    <td><%= link_to "Prenota" %></td>
+	  </tr>
+	  <% else %>
+	  <tr>
+	    <td style="color: red;"><%= book.timetable.from %>:00 - </td>
+	    <td style="color: red;"><%= book.timetable.to %>:00</td>
+	  </tr>
+	  <% end %>
+	  <% end %>
+	  <% end %> 
+	  <% end %>
+	</table>
+      </form>
+    </div>
+
   </body>
 </html>

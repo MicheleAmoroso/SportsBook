@@ -17,6 +17,8 @@ class GroundsController < ApplicationController
   def show
     id = params[:id]
     @ground = Ground.find(id)
+
+    @books = Book.all
   end
 
 end
