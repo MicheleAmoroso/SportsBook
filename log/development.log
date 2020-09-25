@@ -28851,3 +28851,980 @@ Processing by GroundsController#index as HTML
 Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 5918)
 
 
+Started GET "/" for 127.0.0.1 at 2020-09-25 09:53:09 +0200
+  [1m[35m (27.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 363)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 540ms (Views: 501.2ms | ActiveRecord: 0.0ms | Allocations: 8890)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-25 09:53:26 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (16.6ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 106.0ms | Allocations: 8947)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 191ms (Views: 93.4ms | ActiveRecord: 18.3ms | Allocations: 13377)
+
+
+Started GET "/grounds?choices-single-defaul=Basket&search=Campo+da+basket&priceFrom=1&priceTo=7&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-25 09:53:26 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Basket", "search"=>"Campo da basket", "priceFrom"=>"1", "priceTo"=>"7", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%Campo da basket%') AND (price >= 1) AND (price <= 7)[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1595)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 5190)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-25 09:53:31 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2451)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.3ms | Allocations: 5980)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 09:54:23 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.0ms | Allocations: 1937)
+
+
+  
+ActionController::MissingExactTemplate (GroundsController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 09:54:36 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 667)
+
+
+  
+ActionController::MissingExactTemplate (GroundsController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-25 09:58:51 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2467)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 6000)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 09:59:03 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.0ms | Allocations: 656)
+
+
+  
+ActionController::MissingExactTemplate (GroundsController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:00:04 +0200
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 3)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 608)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:00:07 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 2)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 334)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:00:08 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 2)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-25 10:00:24 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 8020)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.5ms | Allocations: 11838)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:00:30 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering html template
+  Rendered html template (Duration: 0.1ms | Allocations: 2)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:00:36 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering html template
+  Rendered html template (Duration: 0.1ms | Allocations: 2)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:00:42 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | Allocations: 2)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 334)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:00:46 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering html template
+  Rendered html template (Duration: 0.1ms | Allocations: 2)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:01:08 +0200
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 607)
+
+
+  
+ActionController::MissingExactTemplate (GroundsController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:02:50 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 4583)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:02:53 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 16)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 3561)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:05:12 +0200
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms | Allocations: 42549)
+
+
+  
+NoMethodError (undefined method `find' for #<GroundsController:0x0000557d638c0880>):
+  
+app/controllers/grounds_controller.rb:19:in `show'
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:05:56 +0200
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 101)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 6.8ms | ActiveRecord: 0.5ms | Allocations: 11336)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:07:16 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 105)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 5105)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:09:09 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3213)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 4893)
+
+
+  
+ActionView::Template::Error (undefined method `first' for #<Ground:0x00007efecc981580>):
+     8:   </head>
+     9:   
+    10:   <body>
+    11:     <h1><% @ground.first.title %></h1>
+    12:     
+    13:   </body>
+    14: </html>
+  
+app/views/grounds/show.html.erb:11
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:09:20 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1479)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 3169)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+     8:   </head>
+     9:   
+    10:   <body>
+    11:     <h1><% @ground[0].title %></h1>
+    12:     
+    13:   </body>
+    14: </html>
+  
+app/views/grounds/show.html.erb:11
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:11:57 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 3239)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 4923)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Ground:0x00007efecc41a3d0>):
+     8:   </head>
+     9:   
+    10:   <body>
+    11:     <% @ground.each do |gr| %>
+    12:     <h1><% gr.title %></h1>
+    13:     <% end %>
+    14:     
+  
+app/views/grounds/show.html.erb:11
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:13:04 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 105)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 5117)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:14:36 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 113)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 5126)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:16:32 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 5114)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:16:45 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 5116)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:17:44 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 118)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5123)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:17:55 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 119)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 5124)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-25 10:18:11 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.6ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 2969)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.6ms | Allocations: 6610)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-25 10:18:16 +0200
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 4312)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-25 10:18:18 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.7ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2442)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.7ms | Allocations: 5933)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-25 10:18:18 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2422)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 5925)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-25 10:18:45 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:126
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2947)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 7381)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:18:57 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 118)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5149)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:20:21 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 119)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 5120)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-25 10:20:55 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:130
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2951)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 7362)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-25 10:21:01 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:130
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2422)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 5908)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-25 10:21:02 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:130
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2418)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 5906)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:21:03 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 12.5ms | ActiveRecord: 0.3ms | Allocations: 4337)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:23:19 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 120)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5137)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:23:32 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 5131)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:23:49 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 5136)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:23:58 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 5121)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:24:09 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 5124)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:24:44 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 5122)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:24:51 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 5116)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-25 10:24:59 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:130
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2937)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 6579)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-25 10:25:02 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:130
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2418)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 5926)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:25:04 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 4078)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:25:13 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5124)
+
+
+Started GET "/grounds/" for 127.0.0.1 at 2020-09-25 10:25:16 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:130
+  Rendered grounds/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2925)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 6552)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:25:17 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.3ms | Allocations: 4079)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:25:32 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 5123)
+
+
+Started GET "/grounds/" for 127.0.0.1 at 2020-09-25 10:25:36 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:130
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2925)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 6561)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:25:37 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 4087)
+
+
+Started GET "/grounds/2" for 127.0.0.1 at 2020-09-25 10:25:39 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 4086)
+
+
+Started GET "/grounds/3" for 127.0.0.1 at 2020-09-25 10:25:46 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.3ms | Allocations: 4081)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:25:52 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.3ms | Allocations: 4099)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:26:00 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 4100)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-25 10:27:33 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:130
+  Rendered grounds/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2410)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 5901)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-25 10:29:33 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.4ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:19:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  Rendered grounds/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.4ms | Allocations: 4080)
+
+

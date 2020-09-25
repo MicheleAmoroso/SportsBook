@@ -14,8 +14,9 @@ class GroundsController < ApplicationController
     @grounds = grounds
   end
 
-def show
-
-end
+  def show
+    id = params[:id]
+    @ground = Ground.find(id)
+  end
 
 end

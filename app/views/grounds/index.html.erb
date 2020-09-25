@@ -5,6 +5,10 @@
       html{
 	  color: black;
       }
+
+      body{
+	  margin: 0px;
+      }
       
       .price-text{
 	  width: 60px;
@@ -57,7 +61,7 @@
       .search-wrap{
 	  color:white;
 	  position:relative;
-	  left: 35%;
+	  margin-left: 35%;
       }
       .ground-title{
 	  padding: 10px;
@@ -69,7 +73,7 @@
       }
       .grounds-info{
 	  position: relative;
-	  left: 25%;
+	  margin-left: 25%;
       }
 
       
@@ -150,16 +154,6 @@
 	document.getElementById("price-text2").value="";
 	document.getElementById("time-text1").value="";
 	document.getElementById("time-text2").value="";
-
-	/*
-	localStorage.setItem("category", selected);
-	localStorage.setItem("search_text", search_text);
-	localStorage.setItem("priceChecked", priceCheck.checked);
-	localStorage.setItem("timeChecked", timeCheck.checked);
-	localStorage.setItem("priceFrom", priceFrom_text);
-	localStorage.setItem("priceTo", priceTo_text);
-	localStorage.setItem("timeFrom", timeFrom_text);
-	localStorage.setItem("timeTo", timeTo_text);*/
 	
 	if(localStorage.getItem("homepage") == "true"){
 	    document.getElementById("w2").value = localStorage.getItem("search_text");
