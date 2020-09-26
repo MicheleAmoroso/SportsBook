@@ -19,6 +19,8 @@ class GroundsController < ApplicationController
     @ground = Ground.find(id)
 
     @books = Book.all
+
+    @reviews = Review.all.where(["ground_id LIKE ?", "%#{params[:ground_id]}"])
   end
 
 end

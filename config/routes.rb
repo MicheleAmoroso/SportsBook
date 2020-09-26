@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   resources :homepage 
   resources :grounds do
-    resources :book
+    resources :books
+    resources :reviews
   end
 
-  
+  get '/callback' => 'session#create'
+  get '/login' => 'session#login'
   root 'homepage#index'
 end

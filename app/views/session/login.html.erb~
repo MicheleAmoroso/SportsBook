@@ -1,0 +1,6 @@
+
+<h2> SportsBook Login </h2>
+<%= form_tag callback_path(), :method => :get do %> 
+  <input type="text" name="user_id"/>
+  <input type="submit"/>
+<% end %>

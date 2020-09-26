@@ -31,9 +31,48 @@
       .td-description{
 	  width: 512px;
       }
+      #hidden-link{
+	  visibility: hidden;
+      }
+      span{
+	  cursor: pointer;
+	  font-size: larger;
+      }
+
+      #commentbtn{
+	  
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  background-color: #c12400;
+	  font-weight: bold;
+	  color:white;
+	  cursor: pointer;
+      }
+      #commentbtn:active{
+	  background-color: #b52100;
+      }
+
+      #comment{
+	  border-radius: 0.5px;
+	  resize: none;
+	  width: 512px;
+	  height: 150px;
+      }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      .checked {
+	  color: orange;
+      }
+      
     </style>
   </head>
-  
+
   <body>
     <div class="title-container">
       <h1 class="title"><%= @ground.title %></h1>
@@ -91,7 +130,105 @@
 	  <% end %>
 	</table>
       </form>
+      
+      <table class="review-table">
+	<tr><td>
+	    <big><big><span class="fa fa-star checked" id="star1" onclick="ratingChecked1()"></span></big></big>
+	    <big><big><span class="fa fa-star" id="star2" onclick="ratingChecked2()"></span></big></big>
+	    <big><big><span class="fa fa-star" id="star3" onclick="ratingChecked3()"></span></big></big>
+	    <big><big><span class="fa fa-star" id="star4" onclick="ratingChecked4()"></span></big></big>
+	    <big><big><span class="fa fa-star" id="star5" onclick="ratingChecked5()"></span></big></big>
+	</td></tr>
+	<tr>
+	  <td><textarea id="comment" placeholder="Scrivi una recensione"></textarea></td>
+	</tr>
+      </table>
+      <td><button id="commentbtn" onclick="addReview()">Commenta!</button></td>
+      <%= link_to "Commenta!", new_ground_review_path(@ground), id:"hidden-link"%>
     </div>
 
+    <table>
+      <% @reviews.each do |review| %>
+      <tr>
+	<td><%= review.comments %></td>
+      </tr>
+      <% end %>
+    </table>
+    
   </body>
+  
+  <script>
+
+    function addReview(){
+	//Attraverso questo script attivo il link nascosto per andare nella pagina new della review
+	localStorage.setItem("comment", document.getElementById("comment").value);
+	if(document.getElementById("star5").className == "fa fa-star checked"){
+	    localStorage.setItem("rating", "5");
+	}else if(document.getElementById("star4").className == "fa fa-star checked"){
+	    localStorage.setItem("rating", "4");
+	}else if(document.getElementById("star3").className == "fa fa-star checked"){
+	    localStorage.setItem("rating", "3");
+	}else if(document.getElementById("star2").className == "fa fa-star checked"){
+	    localStorage.setItem("rating", "2");
+	}else{
+	    localStorage.setItem("rating", "1");
+	}
+	document.getElementById("hidden-link").click();
+    }
+
+    function ratingChecked1(){
+	if(document.getElementById("star1").className == "fa fa-star checked"){
+	    document.getElementById("star5").className = "fa fa-star";
+	    document.getElementById("star4").className = "fa fa-star";
+	    document.getElementById("star3").className = "fa fa-star";
+	    document.getElementById("star2").className = "fa fa-star";
+	}else{
+	    document.getElementById("star1").className = "fa fa-star checked";
+	}
+    }
+
+    function ratingChecked2(){
+	if(document.getElementById("star2").className == "fa fa-star checked"){
+	    document.getElementById("star5").className = "fa fa-star";
+	    document.getElementById("star4").className = "fa fa-star";
+	    document.getElementById("star3").className = "fa fa-star";
+	}else{
+	    document.getElementById("star1").className = "fa fa-star checked";
+	    document.getElementById("star2").className = "fa fa-star checked";
+	}
+    }
+
+    function ratingChecked3(){
+	if(document.getElementById("star3").className == "fa fa-star checked"){
+	    document.getElementById("star5").className = "fa fa-star";
+	    document.getElementById("star4").className = "fa fa-star";
+	}else{
+	    document.getElementById("star1").className = "fa fa-star checked";
+	    document.getElementById("star2").className = "fa fa-star checked";
+	    document.getElementById("star3").className = "fa fa-star checked";
+	}
+    }
+
+    function ratingChecked4(){
+	if(document.getElementById("star4").className == "fa fa-star checked"){
+	    document.getElementById("star5").className = "fa fa-star";
+	}else{
+	    document.getElementById("star1").className = "fa fa-star checked";
+	    document.getElementById("star2").className = "fa fa-star checked";
+	    document.getElementById("star3").className = "fa fa-star checked";
+	    document.getElementById("star4").className = "fa fa-star checked";
+	}
+    }
+
+    function ratingChecked5(){
+	if(!(document.getElementById("star5").className == "fa fa-star checked")){
+	    document.getElementById("star1").className = "fa fa-star checked";
+	    document.getElementById("star2").className = "fa fa-star checked";
+	    document.getElementById("star3").className = "fa fa-star checked";
+	    document.getElementById("star4").className = "fa fa-star checked";
+	    document.getElementById("star5").className = "fa fa-star checked";
+	}
+    }
+    
+  </script>
 </html>
