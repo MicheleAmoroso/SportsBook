@@ -20,7 +20,9 @@ class GroundsController < ApplicationController
 
     @books = Book.all
 
-    @reviews = Review.all.where(["ground_id LIKE ?", "%#{params[:ground_id]}"])
+    reviews = Review.all
+    reviews = reviews.where(["ground_id LIKE ?", "#{params[:id]}"])
+    @reviews = reviews
   end
 
 end

@@ -1,28 +1,62 @@
 <body>
-  <h2> Create a review </h2>
-  <%= form_tag ground_reviews_path(), id:"new_form", :method => :post do %>
-  <select name="rating" id="rating_id">
-    <option> 1 </option>
-    <option> 2 </option>
-    <option> 3 </option>
-    <option> 4 </option>
-    <option> 5 </option>
-  </select>
-  <input type="text" name="review" id="comment"/>
-  <input type="submit" id="submit_it"/>
-  <% end %>
+  <div class="wrap">
+    <h2> Questa è la tua recensione, sicuro di volerla inviare? </h2>
+    <%= form_tag ground_reviews_path(), id:"new_form", :method => :post do %>
+    <table>
+      <tr>
+	<td class="align-center"><label class="align-center"><b> Voto </b></label></td>
+	<td class="align-center"><label class="align-center"> <b> Commento </b> </label></td>
+      </tr>
+      <tr>
+	<td class="rating-cell"><input type="text" class="align-center" name="rating" id="rating_id" readonly/></td>
+	<td><input type="text" name="review" id="comment" readonly/></td>
+	<td><input type="submit" id="confirmbtn" value="Confermo"/></td>
+      </tr>
+    </table>
+    <% end %>
+  </div>
 </body>  
 <script>
   function init(){
       document.getElementById("comment").value = localStorage.getItem("comment");
       document.getElementById("rating_id").value = localStorage.getItem("rating");
-      document.getElementById("new_form").submit();
   }
   init();
 </script>
 
 <style>
-  body{
-      visibility: hidden;
+  .wrap{
+      margin-left: 25%;
+  }
+  #confirmbtn{
+      
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #00008B;
+      font-weight: bold;
+      color:white;
+      cursor: pointer;
+  }
+  #confirmbtn:active{
+      background-color: #000080;
+  }
+
+  
+  
+  #comment{
+      width: 512px;
+      height: 150px;
+  }
+
+  .rating-cell{
+      vertical-align: top;
+      
+  }
+  .align-center{
+      text-align: center;
   }
 </style>
