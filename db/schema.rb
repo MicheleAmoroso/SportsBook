@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_09_25_170328) do
     t.string "address"
     t.text "description"
     t.string "image", default: "default.jpg"
+    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
