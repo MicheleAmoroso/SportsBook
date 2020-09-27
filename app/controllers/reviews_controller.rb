@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
 
-  skip_before_action :verify_authenticity_token 
   
   def new
     
@@ -8,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     ground_id = params[:ground_id]
-    user_id = session[:user_id]
+    user_id = current_user.id
     @ground = Ground.find(ground_id)
     @review = Review.new(:rating => params[:rating], :comments => params[:review])
     @review.user_id = user_id

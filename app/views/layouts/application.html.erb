@@ -23,7 +23,10 @@
 	</table>
       </div>
       <div class="user">
-	<p>Login</p>
+	<% if user_signed_in? %>
+	<%= current_user.email %>
+	<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+	<% end %>
       </div>
     </div>
     <%= csrf_meta_tags %>

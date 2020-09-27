@@ -8,6 +8,7 @@ class CreateGrounds < ActiveRecord::Migration[6.0]
       t.string :address
       t.text :description
       t.string :image, default: "default.jpg"
+      t.string :category
 
       t.timestamps
     end

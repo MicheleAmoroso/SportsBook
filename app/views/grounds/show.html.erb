@@ -50,7 +50,7 @@
 	  border: 1px solid #ccc;
 	  border-radius: 4px;
 	  box-sizing: border-box;
-	  background-color: #00008B 	;
+	  background-color: #00008B;
 	  font-weight: bold;
 	  color:white;
 	  cursor: pointer;
@@ -75,8 +75,47 @@
 	  border-collapse: collapse;
       }
 
-      .search-time-form{
-	  padding-top: 30px;
+      .day-choice{
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+      }
+
+      #search-timetable-btn{
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  background-color: #c12400;
+	  font-weight: bold;
+	  color:white;
+	  cursor: pointer;
+      }
+      #search-timetable-btn:active{
+	  background-color: #b52100;
+      }
+
+      .booking-div{
+	  padding-top: 50px;
+	  padding-bottom: 50px;
+      }
+
+      #book-link{
+	  
+	  padding-left: 15px;
+      }
+
+      .books-table{
+	  margin-top: 10px;
+      }
+
+      #book-link{
+	  padding: 10px;
       }
     </style>
     
@@ -112,40 +151,42 @@
 	<tr><td class="td-description"><%= @ground.description %></td></tr>
       </table>
 
-      <form class="search-time-form">
-	<select name="dayChoice" id="dayID">
-	  <option> Lunedì </option>
-	  <option> Martedì </option>
-	  <option> Mercoledì </option>
-	  <option> Giovedì </option>
-	  <option> Venerdì </option>
-	  <option> Sabato </option>
-	  <option> Domenica </option>
-	</select>
-	
-	<%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search', id: "search-timetable" %>
-	
-	<table>
-	  <% @books.each do |book| %>
-	  <% if Timetable.find(book.timetable_id).day == params[:dayChoice] %>
-	  <% if book.ground_id == params[:id].to_i %>
-	  <% if book.user_id == nil %>
-	  <tr>
-	    <td style="color: green;"><b><%= book.timetable.from %>:00 - </b></td>
-	    <td style="color: green;"><b><%= book.timetable.to %>:00 </b></td>
-	    <td><%= link_to "Prenota" %></td>
-	  </tr>
-	  <% else %>
-	  <tr>
-	    <td style="color: red;"><%= book.timetable.from %>:00 - </td>
-	    <td style="color: red;"><%= book.timetable.to %>:00</td>
-	  </tr>
-	  <% end %>
-	  <% end %>
-	  <% end %> 
-	  <% end %>
-	</table>
-      </form>
+      <div class="booking-div">
+	<form class="search-time-form">
+	  <select name="dayChoice" id="dayID" class="day-choice">
+	    <option> Lunedì </option>
+	    <option> Martedì </option>
+	    <option> Mercoledì </option>
+	    <option> Giovedì </option>
+	    <option> Venerdì </option>
+	    <option> Sabato </option>
+	    <option> Domenica </option>
+	  </select>
+	  
+	  <%= button_to "Cerca", grounds_path, :method => 'get', class: 'btn-search', id: "search-timetable-btn" %>
+	  
+	  <table class="books-table">
+	    <% @books.each do |book| %>
+	    <% if Timetable.find(book.timetable_id).day == params[:dayChoice] %>
+	    <% if book.ground_id == params[:id].to_i %>
+	    <% if book.user_id == nil %>
+	    <tr>
+	      <td style="color: green;"><b><%= book.timetable.from %>:00 - </b></td>
+	      <td style="color: green;"><b><%= book.timetable.to %>:00 </b></td>
+	      <td id="book-link"><b> <%= link_to "Prenota", ground_books_path(@ground, :timetable_id => book.timetable.id), :method => :post %> </b></td>
+	    </tr>
+	    <% else %>
+	    <tr>
+	      <td style="color: red; padding: 10px;"><b><%= book.timetable.from %>:00 - </b></td>
+	      <td style="color: red;"><b><%= book.timetable.to %>:00</b></td>
+	    </tr>
+	    <% end %>
+	    <% end %>
+	    <% end %> 
+	    <% end %>
+	  </table>
+	</form>
+      </div>
       
       <table class="review-table">
 	<tr><td>

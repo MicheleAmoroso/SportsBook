@@ -1,5 +1,6 @@
 class GroundsController < ApplicationController
 
+
   def index
     grounds = Ground.all
     if "#{params[:search]}" != ""
