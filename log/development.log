@@ -65322,3 +65322,1696 @@ Processing by Devise::RegistrationsController#create as HTML
 Completed 200 OK in 214ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 11114)
 
 
+Started GET "/" for 127.0.0.1 at 2020-09-27 17:34:03 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 1188)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 17:34:03 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 600)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2948)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 11.2ms | ActiveRecord: 0.5ms | Allocations: 18988)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 17:34:06 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 197)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 119)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1881)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 6613)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-27 17:34:40 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"X/gdnIC7OZs8vQK+oUzYjinLOvQQWzgyorbAJyD1uYyUyUEJ6QvS9eoew2WcPQDn/ycM3Kw4GoGCpJsxlzDRrQ==", "user"=>{"email"=>"alfredo@hotmail.it", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alfredo@hotmail.it"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2020-09-27 15:34:40.507345"], ["updated_at", "2020-09-27 15:34:40.507345"], ["email", "alfredo@hotmail.it"], ["encrypted_password", "$2a$12$0PLODY2/YzojFEye9.sZoew683Ljf5O38JAy9XTEDhHE93Q9vOCGC"]]
+  [1m[35m (57.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 256ms (ActiveRecord: 57.8ms | Allocations: 10794)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 17:34:40 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 253)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 6212)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-27 17:34:43 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 8250)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.5ms | Allocations: 14624)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-27 17:34:43 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1547)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 6152)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-27 17:34:45 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:20:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/grounds/show.html.erb:169
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (ground_id LIKE '1')[0m
+  ↳ app/views/grounds/show.html.erb:209
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (ground_id LIKE '1')[0m
+  ↳ app/views/grounds/show.html.erb:211
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/grounds/show.html.erb:213
+  Rendered grounds/show.html.erb within layouts/application (Duration: 8.1ms | Allocations: 7256)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 1.0ms | Allocations: 14110)
+
+
+Started GET "/grounds/1?dayChoice=Luned%C3%AC" for 127.0.0.1 at 2020-09-27 17:35:00 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"dayChoice"=>"Lunedì", "id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:20:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/grounds/show.html.erb:169
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (ground_id LIKE '1')[0m
+  ↳ app/views/grounds/show.html.erb:209
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (ground_id LIKE '1')[0m
+  ↳ app/views/grounds/show.html.erb:211
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/grounds/show.html.erb:213
+  Rendered grounds/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 3275)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.4ms | Allocations: 8437)
+
+
+Started GET "/grounds/1/reviews/new" for 127.0.0.1 at 2020-09-27 17:35:09 +0200
+Processing by ReviewsController#new as HTML
+  Parameters: {"ground_id"=>"1"}
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 332)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 5585)
+
+
+Started POST "/grounds/1/reviews" for 127.0.0.1 at 2020-09-27 17:35:10 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"B2THeJQF7TXpigDqiq11imdUAPVEwQB5hxdoJqN9l7WJJ3Gfb/bEbIUMXtelvIaMaC5q7fXO7xUjcH0aarSp+g==", "rating"=>"1", "review"=>"prova", "ground_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mGround Load (0.0ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:15:in `create'
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:15:in `create'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:15:in `create'
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "comments", "user_id", "ground_id") VALUES (?, ?, ?, ?)[0m  [["rating", 1], ["comments", "prova"], ["user_id", 2], ["ground_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:15:in `create'
+  [1m[35m (150.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:15:in `create'
+Redirected to http://localhost:3000/grounds/1
+Completed 302 Found in 166ms (ActiveRecord: 150.4ms | Allocations: 11339)
+
+
+Started GET "/grounds/1" for 127.0.0.1 at 2020-09-27 17:35:10 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:20:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/grounds/show.html.erb:169
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (ground_id LIKE '1')[0m
+  ↳ app/views/grounds/show.html.erb:209
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (ground_id LIKE '1')[0m
+  ↳ app/views/grounds/show.html.erb:211
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/grounds/show.html.erb:213
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/grounds/show.html.erb:213
+  Rendered grounds/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 4025)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.4ms | Allocations: 9180)
+
+
+Started GET "/grounds/1?dayChoice=Luned%C3%AC" for 127.0.0.1 at 2020-09-27 17:35:21 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"dayChoice"=>"Lunedì", "id"=>"1"}
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:20:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/grounds/show.html.erb:169
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (ground_id LIKE '1')[0m
+  ↳ app/views/grounds/show.html.erb:209
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (ground_id LIKE '1')[0m
+  ↳ app/views/grounds/show.html.erb:211
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/grounds/show.html.erb:213
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/grounds/show.html.erb:213
+  Rendered grounds/show.html.erb within layouts/application (Duration: 7.9ms | Allocations: 4021)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.5ms | Allocations: 9188)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-09-27 17:35:26 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DG/mg0U8Wuj1eu/qn4nrb9tn0HZYjbwveaCT1mH0/+RMyPkm+olRNBvKdJQHVoZt3892JsdRX3T/RNIINu1wJg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2571)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 17:35:26 +0200
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 291)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 17:35:26 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 131)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1044)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 5056)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOmniauthToUsers (20200927154145)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOmniauthToUsers (20200927154145)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (108.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (89.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGrounds (20200924081703)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "grounds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "price" integer, "rating" integer, "city" varchar, "address" varchar, "description" text, "image" varchar DEFAULT 'default.jpg', "category" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200924081703"]]
+  [1m[35m (89.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20200925104455)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ground_id" integer, "timetable_id" integer, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_ground_id" ON "books" ("ground_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_timetable_id" ON "books" ("timetable_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104455"]]
+  [1m[35m (84.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTimetables (20200925104512)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "timetables" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "day" varchar, "from" integer, "to" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104512"]]
+  [1m[35m (77.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20200925104524)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "uid" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104524"]]
+  [1m[35m (74.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReview (20200925170328)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comments" text, "user_id" integer, "ground_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_ground_id" ON "reviews" ("ground_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925170328"]]
+  [1m[35m (154.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDeviseToUsers (20200927113708)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200927113708"]]
+  [1m[35m (85.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddOmniauthToUsers (20200927154145)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-27 15:45:02.374927"], ["updated_at", "2020-09-27 15:45:02.374927"]]
+  [1m[35m (73.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (139.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (83.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGrounds (20200924081703)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "grounds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "price" integer, "rating" integer, "city" varchar, "address" varchar, "description" text, "image" varchar DEFAULT 'default.jpg', "category" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200924081703"]]
+  [1m[35m (81.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20200925104455)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ground_id" integer, "timetable_id" integer, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_ground_id" ON "books" ("ground_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_timetable_id" ON "books" ("timetable_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104455"]]
+  [1m[35m (83.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTimetables (20200925104512)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "timetables" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "day" varchar, "from" integer, "to" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104512"]]
+  [1m[35m (78.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20200925104524)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104524"]]
+  [1m[35m (86.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReview (20200925170328)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comments" text, "user_id" integer, "ground_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_ground_id" ON "reviews" ("ground_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925170328"]]
+  [1m[35m (85.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDeviseToUsers (20200927113708)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200927113708"]]
+  [1m[35m (87.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddOmniauthToUsers (20200927154145)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200927154145"]]
+  [1m[35m (61.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-27 15:45:07.929620"], ["updated_at", "2020-09-27 15:45:07.929620"]]
+  [1m[35m (49.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-09-27 18:29:15 +0200
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 1002)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 18:29:16 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 143)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1057)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 10839)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 18:29:27 +0200
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 323)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 18:29:27 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1030)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 5042)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 18:29:46 +0200
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 311)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 18:29:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 131)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1030)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 5043)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 18:49:34 +0200
+  
+LoadError (cannot load such file -- omniauth):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:2:in `<main>'
+Started GET "/" for 127.0.0.1 at 2020-09-27 18:53:06 +0200
+  
+LoadError (cannot load such file -- omniauth):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:2:in `<main>'
+Started GET "/" for 127.0.0.1 at 2020-09-27 18:57:28 +0200
+  
+LoadError (cannot load such file -- omniauth):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:2:in `<main>'
+Started GET "/" for 127.0.0.1 at 2020-09-27 18:57:54 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-09-27 18:58:25 +0200
+  
+LoadError (cannot load such file -- omniauth):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:2:in `<main>'
+Started GET "/" for 127.0.0.1 at 2020-09-27 18:58:56 +0200
+  
+LoadError (cannot load such file -- omniauth):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:2:in `<main>'
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 18:59:07 +0200
+  
+LoadError (cannot load such file -- omniauth):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:2:in `<main>'
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 18:59:12 +0200
+  
+LoadError (cannot load such file -- omniauth):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:2:in `<main>'
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:00:54 +0200
+  
+LoadError (cannot load such file -- omniauth):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:2:in `<main>'
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:01:56 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_in"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:11:20 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 1204)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:11:20 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 699)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 3046)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 16.4ms | ActiveRecord: 0.7ms | Allocations: 19084)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:11:27 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:11:28 +0200
+Started GET "/users/auth/facebook/callback?code=AQDIx8zDrRq8EXRZx5j5QomBj8m7e-VFApfr57NNvbARaTm2TLPswI4UWDTFp9sfmEWM67mU_Qubbti-doQL-B2udWFDxLhQDCGM4PmlQFHW8Hj3V29l7gVq-hBdS1hnRKNO6x9SMQwELgDg7-90heuH1iDV-hw_CUtICDR4Xw7Rm7W8V2LzffVrHiFw4hJuUp0RI1DacDCTVeyHLvKo1t1YOSiayFKMp9V_ue48-u0dtnrtSr3muI4ozkIRs8tSnMFHhGGqkfr0EZ3U5_KdT-4g-U5rIOzeRZOrA8dUmfNfRKgIT3qq-7r1INFOR1fBrOjxEJy8tnZPxXyLbyb8mLc5&state=08cc92daf20fbe90fa652bb6c12ec03d07ac180ada64281d" for 127.0.0.1 at 2020-09-27 19:11:36 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDIx8zDrRq8EXRZx5j5QomBj8m7e-VFApfr57NNvbARaTm2TLPswI4UWDTFp9sfmEWM67mU_Qubbti-doQL-B2udWFDxLhQDCGM4PmlQFHW8Hj3V29l7gVq-hBdS1hnRKNO6x9SMQwELgDg7-90heuH1iDV-hw_CUtICDR4Xw7Rm7W8V2LzffVrHiFw4hJuUp0RI1DacDCTVeyHLvKo1t1YOSiayFKMp9V_ue48-u0dtnrtSr3muI4ozkIRs8tSnMFHhGGqkfr0EZ3U5_KdT-4g-U5rIOzeRZOrA8dUmfNfRKgIT3qq-7r1INFOR1fBrOjxEJy8tnZPxXyLbyb8mLc5", "state"=>"08cc92daf20fbe90fa652bb6c12ec03d07ac180ada64281d"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 226ms (ActiveRecord: 0.5ms | Allocations: 3244)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:11:38 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 197)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 189)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1954)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 6784)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:11:47 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:11:47 +0200
+Started GET "/users/auth/facebook/callback?code=AQD2_873lFPTuie_fnyNi7RVnOqnIWuEXaKUBKj4gtlFX9qCtS808bD3CgRscVt_LKQewrj2N-HY3N4m3HSbfRVHithS37gLtYfnQfdUVwB6d8WS8o3pZgIUI_iwS9l7pMxKWl4Mem7kZx0AxTkEMlEMZD3IBNUH1FDtf9t9aJVINrM50of-MEBZauG996uShcVDSKSancMDuMI3y6HiZABHJzKm17Nmg3L0Eg1zkWOj6EyvoBB1hLjxX_biEBf_5_d8bNoONBZLE1DjSvbaJR3jnyJSUtkuNk9k2KgbIDP1r3vmjZWL8u2IMylGN7sn86EX7yDmzHDZyPQhUXnIbjqa&state=a0b69070edf1554520c0afe2dfd8bd9c30b07b46c5a06868" for 127.0.0.1 at 2020-09-27 19:11:48 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQD2_873lFPTuie_fnyNi7RVnOqnIWuEXaKUBKj4gtlFX9qCtS808bD3CgRscVt_LKQewrj2N-HY3N4m3HSbfRVHithS37gLtYfnQfdUVwB6d8WS8o3pZgIUI_iwS9l7pMxKWl4Mem7kZx0AxTkEMlEMZD3IBNUH1FDtf9t9aJVINrM50of-MEBZauG996uShcVDSKSancMDuMI3y6HiZABHJzKm17Nmg3L0Eg1zkWOj6EyvoBB1hLjxX_biEBf_5_d8bNoONBZLE1DjSvbaJR3jnyJSUtkuNk9k2KgbIDP1r3vmjZWL8u2IMylGN7sn86EX7yDmzHDZyPQhUXnIbjqa", "state"=>"a0b69070edf1554520c0afe2dfd8bd9c30b07b46c5a06868"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 242ms (ActiveRecord: 0.3ms | Allocations: 1977)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:11:49 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1106)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 5145)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:11:54 +0200
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:11:54 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 201)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 5245)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:11:55 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:11:55 +0200
+Started GET "/users/auth/facebook/callback?code=AQDoNtbrU4X3cuK1YdVbvlelYfB39hrlUOGacKzKp0QnW13Pa2e4ZQEhwUcQJfsw1vztQy-tRVBXvJR44T3aPwMnRgrQN7nXOXJgmGTTbS1d1iZvcAeMbg0pBgBDR-CaH2z6nMeKlNxXEab3vDwtLWd2E7Co6jOI4C29L0iE-8GoTqv3kIZ7rZ9WxtdcOzd0KYnRE0iwh_QqavKciyBn8gsvr1vwSrloQZt1v2kQkJRlVohkCyH8qJs4DgkRqAMaqFrZ8LU2jDHLWZg-ruzOPDI3FL4vSiybfFi7LqklkyWxWNUmEHcCN98FWbDHJ4zKyarSP70mfr8sAb-yao17OvnL&state=46c06e0ef20942d1a42ec15fa0d06f0af8546a71eb29f0b8" for 127.0.0.1 at 2020-09-27 19:11:56 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDoNtbrU4X3cuK1YdVbvlelYfB39hrlUOGacKzKp0QnW13Pa2e4ZQEhwUcQJfsw1vztQy-tRVBXvJR44T3aPwMnRgrQN7nXOXJgmGTTbS1d1iZvcAeMbg0pBgBDR-CaH2z6nMeKlNxXEab3vDwtLWd2E7Co6jOI4C29L0iE-8GoTqv3kIZ7rZ9WxtdcOzd0KYnRE0iwh_QqavKciyBn8gsvr1vwSrloQZt1v2kQkJRlVohkCyH8qJs4DgkRqAMaqFrZ8LU2jDHLWZg-ruzOPDI3FL4vSiybfFi7LqklkyWxWNUmEHcCN98FWbDHJ4zKyarSP70mfr8sAb-yao17OvnL", "state"=>"46c06e0ef20942d1a42ec15fa0d06f0af8546a71eb29f0b8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 239ms (ActiveRecord: 0.3ms | Allocations: 1975)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:11:57 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 5135)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:11:58 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:11:58 +0200
+Started GET "/users/auth/facebook/callback?code=AQDo5WZhN_jhaQt_9w9dqXiVsxL49f4TVv6KKCz-jK54GdUrg6JeO3TewpHzDYuZjqaq9w3ies4bo4eE7zGRPp7YJgXJ6HIuXP3sOnQs2xgKhhOXAAbFtrd87VETS2Kka2mLXI2ynMEEKDFEWl6j77_jzcZ_xjFsuSXfgrP3D8geklna4_0eh7zXb4y4mdl18105WMhtLwxscvAHW_6qHp6ouzazc8nsL48Ig1t7ZCaegn_eluDvSCjEL_0gpDvjfYV859UoZ_wLYN-TKhO9k454E5cTzh97oWXREWpZ0xraHEllzxCKOZV8e8-gFsgez3LjARCsuK13PpCq0rmPiNqX&state=5b9235c56747a81fef38873fc8dc7e87dbb1a18726ab89b2" for 127.0.0.1 at 2020-09-27 19:11:59 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDo5WZhN_jhaQt_9w9dqXiVsxL49f4TVv6KKCz-jK54GdUrg6JeO3TewpHzDYuZjqaq9w3ies4bo4eE7zGRPp7YJgXJ6HIuXP3sOnQs2xgKhhOXAAbFtrd87VETS2Kka2mLXI2ynMEEKDFEWl6j77_jzcZ_xjFsuSXfgrP3D8geklna4_0eh7zXb4y4mdl18105WMhtLwxscvAHW_6qHp6ouzazc8nsL48Ig1t7ZCaegn_eluDvSCjEL_0gpDvjfYV859UoZ_wLYN-TKhO9k454E5cTzh97oWXREWpZ0xraHEllzxCKOZV8e8-gFsgez3LjARCsuK13PpCq0rmPiNqX", "state"=>"5b9235c56747a81fef38873fc8dc7e87dbb1a18726ab89b2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 239ms (ActiveRecord: 0.3ms | Allocations: 1977)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:12:00 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5159)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:12:01 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:12:01 +0200
+Started GET "/users/auth/facebook/callback?code=AQAbsHdPQsewfNOnh3H_Cm7WjR2DHnyT8RvTAT_tpfCddxv1PwT2s9zey1oSEo1yTR6xDuvVYfQhUgBIouwwNtPDzQezlR5C_zhWxU4NFTVzDduM4B17eo8Yotem0IjqraidLf_cSC_LU0wBjtf9TrBP1IEUQ3bYjWRO1aXkj9-XLgZKk_PG3Vj-3qUG9lM060-cOu6xHCaeCEzqgoTh66-ijAwTU08nm2Xj3xvOK-3QPD5KQolX8iHv5kwo_P8nR5S4wl5QzvyCT6g24bDfpXTSFn7juJMCOEOlcq55VBksz-AQXIE0tb_z8KJhCKq69x1LolB-1puFJuKJgxUK9ZgC&state=0df0e5080927c73cf74121340282db70abece41515967e9e" for 127.0.0.1 at 2020-09-27 19:12:02 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAbsHdPQsewfNOnh3H_Cm7WjR2DHnyT8RvTAT_tpfCddxv1PwT2s9zey1oSEo1yTR6xDuvVYfQhUgBIouwwNtPDzQezlR5C_zhWxU4NFTVzDduM4B17eo8Yotem0IjqraidLf_cSC_LU0wBjtf9TrBP1IEUQ3bYjWRO1aXkj9-XLgZKk_PG3Vj-3qUG9lM060-cOu6xHCaeCEzqgoTh66-ijAwTU08nm2Xj3xvOK-3QPD5KQolX8iHv5kwo_P8nR5S4wl5QzvyCT6g24bDfpXTSFn7juJMCOEOlcq55VBksz-AQXIE0tb_z8KJhCKq69x1LolB-1puFJuKJgxUK9ZgC", "state"=>"0df0e5080927c73cf74121340282db70abece41515967e9e"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 293ms (ActiveRecord: 0.3ms | Allocations: 1976)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:12:03 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5149)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:12:06 +0200
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 408)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:12:06 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1100)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5210)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:12:08 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:12:08 +0200
+Started GET "/users/auth/facebook/callback?code=AQCJ7AMQeqDQWpgIoqRkxmeKiAR8QmVB_RI9ikd6zfMW64rVN_WhNpT9faqxwpg_9R04KBMdugv6_Ej3qHNAz_1AYxpe34pv_c-yacajKJebxodQulGJ8w7fXStN6K1BNBe8oHlm-yRiPuVpoF0QnB1r57pvnsQKqxxb_Ef9NQFjVOlf9yU82ZBPkNmkUcwF4lmoIJvOFHpy-KUVjM5Z36J5FRAqaoosDlADEMZo11grKYCISFx1OL_Y3lVBV8vRvj0XjdAQN_S0PnBcVCu0t0B7vjyO-IYmZS-FT1eAqPKs-dtUxZvMIw7LIkMCk5Oabr8lZbhk1UuRBcvnparjlpgg&state=6112acbcdca38c63f20999e646004c4b5b29555cf86e351f" for 127.0.0.1 at 2020-09-27 19:12:08 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCJ7AMQeqDQWpgIoqRkxmeKiAR8QmVB_RI9ikd6zfMW64rVN_WhNpT9faqxwpg_9R04KBMdugv6_Ej3qHNAz_1AYxpe34pv_c-yacajKJebxodQulGJ8w7fXStN6K1BNBe8oHlm-yRiPuVpoF0QnB1r57pvnsQKqxxb_Ef9NQFjVOlf9yU82ZBPkNmkUcwF4lmoIJvOFHpy-KUVjM5Z36J5FRAqaoosDlADEMZo11grKYCISFx1OL_Y3lVBV8vRvj0XjdAQN_S0PnBcVCu0t0B7vjyO-IYmZS-FT1eAqPKs-dtUxZvMIw7LIkMCk5Oabr8lZbhk1UuRBcvnparjlpgg", "state"=>"6112acbcdca38c63f20999e646004c4b5b29555cf86e351f"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 245ms (ActiveRecord: 0.3ms | Allocations: 1989)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:12:10 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 5162)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:12:28 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 1281)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:12:28 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 699)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3046)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 15.2ms | ActiveRecord: 0.7ms | Allocations: 19175)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:12:32 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:12:33 +0200
+Started GET "/users/auth/facebook/callback?code=AQASpxAxHWHCm_MED07U8iaOpW1FGAt9aqMyfYU7WY0RVDM9eMu6lBAla7aWRr6h08dqaLUDo90qZZ9kv71oT3XcY03wiiJfRCXkb4I32YHZujCW5TuWkKOhF4OpIo51KfDPXgRCU5hHgk-Kh8HqpCheq18tP7S4mlkMRyypzelOXA1F7u1p0h0iwktM19UPcTPchj2Ud6zM8BsejnG7cb99hQ6hWGH7DH1b2mRPqmNN4Y981qNypplt3rqjhmk739TUg0No1-mrehVG4Dh5N4HPJr_hwHFVlL3RkEX8psRcsHFtMpLZGz2GLSRUq2t3KNg54Pzl6k1FiIEwo_IyISfp&state=8b6185b7c2ef0d44eb89ae098128134aef2b268acb6f98b5" for 127.0.0.1 at 2020-09-27 19:12:33 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQASpxAxHWHCm_MED07U8iaOpW1FGAt9aqMyfYU7WY0RVDM9eMu6lBAla7aWRr6h08dqaLUDo90qZZ9kv71oT3XcY03wiiJfRCXkb4I32YHZujCW5TuWkKOhF4OpIo51KfDPXgRCU5hHgk-Kh8HqpCheq18tP7S4mlkMRyypzelOXA1F7u1p0h0iwktM19UPcTPchj2Ud6zM8BsejnG7cb99hQ6hWGH7DH1b2mRPqmNN4Y981qNypplt3rqjhmk739TUg0No1-mrehVG4Dh5N4HPJr_hwHFVlL3RkEX8psRcsHFtMpLZGz2GLSRUq2t3KNg54Pzl6k1FiIEwo_IyISfp", "state"=>"8b6185b7c2ef0d44eb89ae098128134aef2b268acb6f98b5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 228ms (ActiveRecord: 0.6ms | Allocations: 3244)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:12:34 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 189)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1954)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 6801)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:12:38 +0200
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 396)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:12:38 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 201)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 5229)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:13:07 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:13:07 +0200
+Started GET "/users/auth/facebook/callback?code=AQADN-GqqXzcWZw7RhD0LvmO8_kxAUzSb0yEtZsB41QThCbXeru1715Zp82jvCRY1aiCDIV-uebyDmhPujRs8wOB5Yvf94fEYDZahVbTrcUOF7scO3nxKSGms2DGigPizhMa1nxpEUsWfah74KoZj5bLei-aU9ofdQMQHpkYhSZ-jhhlMkzA_8F5lEOFZIrMdNeTOTNG-6wHGY670Ktj5U8Mxvwl914opXV3RZUzzcpz-JCspSaPckhsXHbEoWGOrizZ8DOhhe2oQalrDFmtP5BtJ6HDvl8WcAEbanLN_aq48zuTWNJNpgkCD0d1vLbSsj3kuem0O-e9GUo0YIoW_Rq_&state=d0f829e368de76b6b04ca5171858fe03b95597b390d7e191" for 127.0.0.1 at 2020-09-27 19:13:08 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQADN-GqqXzcWZw7RhD0LvmO8_kxAUzSb0yEtZsB41QThCbXeru1715Zp82jvCRY1aiCDIV-uebyDmhPujRs8wOB5Yvf94fEYDZahVbTrcUOF7scO3nxKSGms2DGigPizhMa1nxpEUsWfah74KoZj5bLei-aU9ofdQMQHpkYhSZ-jhhlMkzA_8F5lEOFZIrMdNeTOTNG-6wHGY670Ktj5U8Mxvwl914opXV3RZUzzcpz-JCspSaPckhsXHbEoWGOrizZ8DOhhe2oQalrDFmtP5BtJ6HDvl8WcAEbanLN_aq48zuTWNJNpgkCD0d1vLbSsj3kuem0O-e9GUo0YIoW_Rq_", "state"=>"d0f829e368de76b6b04ca5171858fe03b95597b390d7e191"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 236ms (ActiveRecord: 0.3ms | Allocations: 1998)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:13:09 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1107)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 5162)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:14:34 +0200
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 392)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:14:34 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 200)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1100)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 5219)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:14:36 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 20.4ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.0ms | Allocations: 5135)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:14:41 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:14:41 +0200
+Started GET "/users/auth/facebook/callback?code=AQDARQKd8CO8PVQeagjB3gmXA_4yhB-gEb9_pJgk0zgM7im5SX5fnom_bxvvHBpb02aevneS-wPxILswVVO4RbLGsU_AIm1pWeJ54Wh5VHPE1uMJ-Oc3ikL00YkSVaUJ2j4INu5xql4dk8UfSiooxwt4IbKL3mlRU45KlZm7-ufC838YYcvoNGihfckPbB_mhtWQAc46yQa_hazEBs7dCqlbX12Xqn6GedZWECjFKs64mIY2ZtNhJYSAwGkT3wScWNhv0OVeoFw6qnozS3nUrf6ZeuFoy760ATZvMqY_agW5dmLIihyevh6YGd0dKuYhr4_iTa5IkoOWYrxywpDSXui-&state=8ccca95d02e800f1fe34fba8762c4dec6ae8b2084bb0df0a" for 127.0.0.1 at 2020-09-27 19:14:42 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDARQKd8CO8PVQeagjB3gmXA_4yhB-gEb9_pJgk0zgM7im5SX5fnom_bxvvHBpb02aevneS-wPxILswVVO4RbLGsU_AIm1pWeJ54Wh5VHPE1uMJ-Oc3ikL00YkSVaUJ2j4INu5xql4dk8UfSiooxwt4IbKL3mlRU45KlZm7-ufC838YYcvoNGihfckPbB_mhtWQAc46yQa_hazEBs7dCqlbX12Xqn6GedZWECjFKs64mIY2ZtNhJYSAwGkT3wScWNhv0OVeoFw6qnozS3nUrf6ZeuFoy760ATZvMqY_agW5dmLIihyevh6YGd0dKuYhr4_iTa5IkoOWYrxywpDSXui-", "state"=>"8ccca95d02e800f1fe34fba8762c4dec6ae8b2084bb0df0a"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 245ms (ActiveRecord: 0.4ms | Allocations: 1979)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:14:43 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 5143)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-27 19:14:52 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"sZcMDYV1LSBGYGgc214U5dj7ZGcnN2vLHo921OaH+CETj7eRPNzJiFtyy2szD3VfVaC9Vs1T0SxSyQak+3OhsA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 346)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1435)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 8599)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:14:59 +0200
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:14:59 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1099)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 5224)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:15:05 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5173)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:15:14 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 200)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1099)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 5249)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:15:16 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 5164)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (99.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (148.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGrounds (20200924081703)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "grounds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "price" integer, "rating" integer, "city" varchar, "address" varchar, "description" text, "image" varchar DEFAULT 'default.jpg', "category" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200924081703"]]
+  [1m[35m (101.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20200925104455)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ground_id" integer, "timetable_id" integer, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_ground_id" ON "books" ("ground_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_timetable_id" ON "books" ("timetable_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104455"]]
+  [1m[35m (89.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTimetables (20200925104512)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "timetables" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "day" varchar, "from" integer, "to" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104512"]]
+  [1m[35m (95.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20200925104524)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104524"]]
+  [1m[35m (95.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReview (20200925170328)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comments" text, "user_id" integer, "ground_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_ground_id" ON "reviews" ("ground_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925170328"]]
+  [1m[35m (94.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDeviseToUsers (20200927113708)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200927113708"]]
+  [1m[35m (81.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddOmniauthToUsers (20200927154145)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200927154145"]]
+  [1m[35m (106.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-27 17:16:54.182520"], ["updated_at", "2020-09-27 17:16:54.182520"]]
+  [1m[35m (60.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:18:26 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 1281)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:18:26 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 699)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3046)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 15.5ms | ActiveRecord: 0.7ms | Allocations: 19155)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:18:30 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:18:30 +0200
+Started GET "/users/auth/facebook/callback?code=AQAwT-OiNv43wJZUaq3xl4LE7K0o3W-hy0U9D-sUjzREikdfLc-DkEuPp5AahSZ8V8p0LhQf7Uz9V-VJ4ED4RWt5mZ40-r0-W7DlLEVbfQMrj7wCTahJ37IqQaIOrk8BNS9Ef6gAnX8Dtn0JgtdQ38_FpezdSntJaxNj1G08CFthoCYcGIQC8jOaYvzm_3k7SdjQAHyMJ9QF3vTa2OVLcmCwtq5Lh2IljQfuMi-4kgzmU9fG-JgI6ywHxTEOvn4VMIDbPn8mtLv4zM4N8128N2dIw-tfdntQnEEyxjTAs8yOLGiWQ5SXVQZ-G3wkYCyxkAl2zstZMfigzc0pl3cLK4xU&state=5b87e770b7e0f058c231098a56649837bac2057b7069fb6a" for 127.0.0.1 at 2020-09-27 19:18:31 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAwT-OiNv43wJZUaq3xl4LE7K0o3W-hy0U9D-sUjzREikdfLc-DkEuPp5AahSZ8V8p0LhQf7Uz9V-VJ4ED4RWt5mZ40-r0-W7DlLEVbfQMrj7wCTahJ37IqQaIOrk8BNS9Ef6gAnX8Dtn0JgtdQ38_FpezdSntJaxNj1G08CFthoCYcGIQC8jOaYvzm_3k7SdjQAHyMJ9QF3vTa2OVLcmCwtq5Lh2IljQfuMi-4kgzmU9fG-JgI6ywHxTEOvn4VMIDbPn8mtLv4zM4N8128N2dIw-tfdntQnEEyxjTAs8yOLGiWQ5SXVQZ-G3wkYCyxkAl2zstZMfigzc0pl3cLK4xU", "state"=>"5b87e770b7e0f058c231098a56649837bac2057b7069fb6a"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 233ms (ActiveRecord: 0.6ms | Allocations: 3248)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:18:32 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 189)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1954)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 6781)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-27 19:18:53 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"Db8bzQydSUt/wNl/0Gj9T4vSdQoRsc0hxqWc6vtE6Tqvp6BRtTSt42LSegg4OZz1BomsO/vVd8aK4+ya5rCwqw==", "user"=>{"email"=>"micheleamo@hotmail.it", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "micheleamo@hotmail.it"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2020-09-27 17:18:53.619904"], ["updated_at", "2020-09-27 17:18:53.619904"], ["email", "micheleamo@hotmail.it"], ["encrypted_password", "$2a$12$AMclon6NIZxY7Y5OMvl7eOwnlx.x.HK6rpODjGjsvbIws4Jh0jLV."]]
+  [1m[35m (80.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 349ms (ActiveRecord: 80.9ms | Allocations: 11655)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x000056217673f0f8>):
+  
+activemodel (6.0.3.3) lib/active_model/attribute_methods.rb:432:in `method_missing'
+devise (4.7.3) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.7.3) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.7.3) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.9) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.9) lib/warden/hooks.rb:10:in `each'
+warden (1.2.9) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.9) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.9) lib/warden/proxy.rb:191:in `set_user'
+devise (4.7.3) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.7.3) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.7.3) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (6.0.3.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:19:31 +0200
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 420)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:19:31 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 205)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1118)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 5271)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:19:35 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 149)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1108)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 5135)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-27 19:19:49 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"hcjbiBgFWrnc/MesCXEHxkGXBAnQKtfiA5Lh9cx+Gec+a5C3HH6B8KEQmXoVBW3BxrO4PlSWNai/WqUEKlUFWA==", "user"=>{"email"=>"micheleamo@hotmail.it", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "micheleamo@hotmail.it"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 220)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1311)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 239ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 12306)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-27 19:20:05 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"pxdWAnUR+MnK1/b+PPCX8mqnp0baHbzkK3575UF4mk0FD+2ezLgcYdfFVYnUofZI5/x+dzB5BgNnOAuVXIzD3A==", "user"=>{"email"=>"massimo@hotmail.it", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "massimo@hotmail.it"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2020-09-27 17:20:05.592055"], ["updated_at", "2020-09-27 17:20:05.592055"], ["email", "massimo@hotmail.it"], ["encrypted_password", "$2a$12$DMDOFDec8D7d47hF1b0xe.TR2ltfZxFJQepGy3LQeuXu4t4iNuJqW"]]
+  [1m[35m (85.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 356ms (ActiveRecord: 86.2ms | Allocations: 11409)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x0000562176aafcd8>):
+  
+activemodel (6.0.3.3) lib/active_model/attribute_methods.rb:432:in `method_missing'
+devise (4.7.3) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.7.3) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.7.3) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.9) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.9) lib/warden/hooks.rb:10:in `each'
+warden (1.2.9) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.9) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.9) lib/warden/proxy.rb:191:in `set_user'
+devise (4.7.3) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.7.3) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.7.3) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (6.0.3.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:20:12 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:20:12 +0200
+Started GET "/users/auth/facebook/callback?code=AQD75uHAGGwhJ-AeHZ1JHle75ZANJPLxATbf1z2jkGoj9VJnmC0dL08220AQ85S7S6rXqShI_5BaqNPSvWPhoFNQ2Fv1gH_7Uv0lDqvqxtSkL9oZN0iXHJ43eQgBaioUg37JmdXv8_gbK9PLsblmSTgzjBoMWD7LbJu1U0AyaEnbHuS6uirhF2Lv_wAExd8i7lKuNeZTGiFv6HObK9SBz1BJzKIqzidFDaRSEoBtBJniT4z2VINP9wSnJn22QC-3uxdNLiRA0XnFu8yY7OmHmS7ggrd8atRj5Y3007XaRTO6YWzjVr-mNnweSgR1xncYq6XCajCUvwys1S9NqihMTF_k&state=c8ebfc4811afb87351beefc235e3b32bdf23994f57588775" for 127.0.0.1 at 2020-09-27 19:20:13 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQD75uHAGGwhJ-AeHZ1JHle75ZANJPLxATbf1z2jkGoj9VJnmC0dL08220AQ85S7S6rXqShI_5BaqNPSvWPhoFNQ2Fv1gH_7Uv0lDqvqxtSkL9oZN0iXHJ43eQgBaioUg37JmdXv8_gbK9PLsblmSTgzjBoMWD7LbJu1U0AyaEnbHuS6uirhF2Lv_wAExd8i7lKuNeZTGiFv6HObK9SBz1BJzKIqzidFDaRSEoBtBJniT4z2VINP9wSnJn22QC-3uxdNLiRA0XnFu8yY7OmHmS7ggrd8atRj5Y3007XaRTO6YWzjVr-mNnweSgR1xncYq6XCajCUvwys1S9NqihMTF_k", "state"=>"c8ebfc4811afb87351beefc235e3b32bdf23994f57588775"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 244ms (ActiveRecord: 0.3ms | Allocations: 1999)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:20:14 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 5190)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-27 19:20:22 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"u30vMJMoXCDvz4D36YmgIk0tLoaDE56RXiuHnBKRnMwZZZSsKoG4iPLdI4AB2MGYwHb3t2l3JHYSbffsD2XFXQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 334)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 148)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1423)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 7222)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-27 19:20:44 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"EOoXiLFF8/yHa45XeSu4355WsHHEcDY76TPbsqfzoCay8qwUCOwXVJp5LSCRetllEw1pQC4UjNyldavCugf5tw==", "user"=>{"email"=>"mario@fgf.it", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mario@fgf.it"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2020-09-27 17:20:44.559132"], ["updated_at", "2020-09-27 17:20:44.559132"], ["email", "mario@fgf.it"], ["encrypted_password", "$2a$12$3429.fzj21iPv4o8BTOekOCZL.YQrSz4u6k2Urlz9OTaxf5BicJJ6"]]
+  [1m[35m (87.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 351ms (ActiveRecord: 88.1ms | Allocations: 11371)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x0000562176b8f2c0>):
+  
+activemodel (6.0.3.3) lib/active_model/attribute_methods.rb:432:in `method_missing'
+devise (4.7.3) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.7.3) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.7.3) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.9) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.9) lib/warden/hooks.rb:10:in `each'
+warden (1.2.9) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.9) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.9) lib/warden/proxy.rb:191:in `set_user'
+devise (4.7.3) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.7.3) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.7.3) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (6.0.3.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:35:22 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 1268)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:35:22 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 699)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3047)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 12.6ms | ActiveRecord: 0.5ms | Allocations: 19171)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:35:25 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:35:26 +0200
+Started GET "/users/auth/facebook/callback?code=AQAfwnAIxuYzOI165-fgrcx8NFO71noKMTfzDi00GjZ1L4Pr8Y-qjySX4rNXNX_u4Fdl_GfVy1e4JeNzjxjXsuQ0s7OuJ9f9KBoLj8uALtdKAhDNs2TTJ3pAUV28rhBgbEA9RVVoo8UCxXWrmKyNrtwB0_OB5YRr4-BVRFQxO95U1nrXuh7NxAtHm1O0YZ3vZ2o1pOobQ09ryAu92P37YECzBbXdxXer4oSIhYIYJmwH0qBH9a3rDOc_S1psw5h1t8Hz4PsUeQMf1cpClLWC_qiIms8efz1cyi3plmJJkzvOVE0fprBG0tJ-j3ncM9GklBaovQVDxQpg053ygSMREfjW&state=328fdfc0d8e2fda3bcfd28f1ee3448e1a4c12118ab161be0" for 127.0.0.1 at 2020-09-27 19:35:26 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAfwnAIxuYzOI165-fgrcx8NFO71noKMTfzDi00GjZ1L4Pr8Y-qjySX4rNXNX_u4Fdl_GfVy1e4JeNzjxjXsuQ0s7OuJ9f9KBoLj8uALtdKAhDNs2TTJ3pAUV28rhBgbEA9RVVoo8UCxXWrmKyNrtwB0_OB5YRr4-BVRFQxO95U1nrXuh7NxAtHm1O0YZ3vZ2o1pOobQ09ryAu92P37YECzBbXdxXer4oSIhYIYJmwH0qBH9a3rDOc_S1psw5h1t8Hz4PsUeQMf1cpClLWC_qiIms8efz1cyi3plmJJkzvOVE0fprBG0tJ-j3ncM9GklBaovQVDxQpg053ygSMREfjW", "state"=>"328fdfc0d8e2fda3bcfd28f1ee3448e1a4c12118ab161be0"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 226ms (ActiveRecord: 0.6ms | Allocations: 3244)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:35:28 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 189)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1952)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 6759)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-27 19:35:39 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"qw9RWZOPghWe8Hbqk4dOEfAQqViE2Sq2RTVNS7U5XbgJF+rFKiZmvYPi1Z171i+rfUtwaW69kFEJcz07qM0EKQ==", "user"=>{"email"=>"dfgfe@gfdgfe.it", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dfgfe@gfdgfe.it"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2020-09-27 17:35:40.153592"], ["updated_at", "2020-09-27 17:35:40.153592"], ["email", "dfgfe@gfdgfe.it"], ["encrypted_password", "$2a$12$UYOOsPbk5qr0jSI/Ad8hneIXBlevOOqeL5VBC4qiFk1L3lc08A7Hm"]]
+  [1m[35m (79.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 80.3ms | Allocations: 11674)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x00007f9d40119128>):
+  
+activemodel (6.0.3.3) lib/active_model/attribute_methods.rb:432:in `method_missing'
+devise (4.7.3) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.7.3) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.7.3) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.9) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.9) lib/warden/hooks.rb:10:in `each'
+warden (1.2.9) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.9) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.9) lib/warden/proxy.rb:191:in `set_user'
+devise (4.7.3) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.7.3) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.7.3) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (6.0.3.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (88.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (89.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGrounds (20200924081703)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "grounds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "price" integer, "rating" integer, "city" varchar, "address" varchar, "description" text, "image" varchar DEFAULT 'default.jpg', "category" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200924081703"]]
+  [1m[35m (94.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20200925104455)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ground_id" integer, "timetable_id" integer, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_ground_id" ON "books" ("ground_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_timetable_id" ON "books" ("timetable_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_books_on_user_id" ON "books" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104455"]]
+  [1m[35m (100.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTimetables (20200925104512)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "timetables" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "day" varchar, "from" integer, "to" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104512"]]
+  [1m[35m (112.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20200925104524)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925104524"]]
+  [1m[35m (78.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReview (20200925170328)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comments" text, "user_id" integer, "ground_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_ground_id" ON "reviews" ("ground_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200925170328"]]
+  [1m[35m (79.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDeviseToUsers (20200927113708)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_at" datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_at" datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_ip" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_ip" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200927113708"]]
+  [1m[35m (88.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddOmniauthToUsers (20200927154145)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200927154145"]]
+  [1m[35m (54.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-27 17:44:54.468344"], ["updated_at", "2020-09-27 17:44:54.468344"]]
+  [1m[35m (50.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:45:11 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 1286)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:45:11 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 699)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 3046)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 13.9ms | ActiveRecord: 0.6ms | Allocations: 21938)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:45:13 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-27 19:45:14 +0200
+Started GET "/users/auth/facebook/callback?code=AQAO51Puo5Juq4B7aCxJA8eExbUs3IjCVSC1DOwoQv7B2Z2GCUPOFxRd2LmkrRMH54A3Qo66a7Y4yVFsxnm-u5ek38TGmFAsHWV2xDBXQfirCu0vOsMub9Q0i9UvCvxQw-ti40MMdduCGuBdop2XBK1KFwkzHCsUbiI8GkH-fFr9dz6G4jvpX_wHI_Hak7ileDwclR1h2Me_eksu_y7hBych0o8Gpb5YlhmXnuhMCF_eWEJflw9CGkfAD5HsPe8czjH5Xt2xwDyNXnsJWGksSe6FFBAl4kH2IF1V_iqHRFlpAtsU6ONCg0SZoh0CuXxPqYnh28BbsmlNhamjVKN7XmVJ&state=522266afe95ea05102bd5c747c46cd1f3cfa902f62c1b9ad" for 127.0.0.1 at 2020-09-27 19:45:14 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAO51Puo5Juq4B7aCxJA8eExbUs3IjCVSC1DOwoQv7B2Z2GCUPOFxRd2LmkrRMH54A3Qo66a7Y4yVFsxnm-u5ek38TGmFAsHWV2xDBXQfirCu0vOsMub9Q0i9UvCvxQw-ti40MMdduCGuBdop2XBK1KFwkzHCsUbiI8GkH-fFr9dz6G4jvpX_wHI_Hak7ileDwclR1h2Me_eksu_y7hBych0o8Gpb5YlhmXnuhMCF_eWEJflw9CGkfAD5HsPe8czjH5Xt2xwDyNXnsJWGksSe6FFBAl4kH2IF1V_iqHRFlpAtsU6ONCg0SZoh0CuXxPqYnh28BbsmlNhamjVKN7XmVJ", "state"=>"522266afe95ea05102bd5c747c46cd1f3cfa902f62c1b9ad"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 283ms (ActiveRecord: 0.4ms | Allocations: 3265)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-27 19:45:16 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 189)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1954)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 6809)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-27 19:45:54 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"7BZluPiXbFFwJqf3JVpZUnlYZqWGRByODEkSwlLROuZODt4kQT6I+W00BIDNCzjo9AO/lGwgpmlAD2KyTyVjdw==", "user"=>{"email"=>"micheleamo97@hotmail.it", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "micheleamo97@hotmail.it"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2020-09-27 17:45:54.682298"], ["updated_at", "2020-09-27 17:45:54.682298"], ["email", "micheleamo97@hotmail.it"], ["encrypted_password", "$2a$12$u5Uc6Sc7.WT5T4Hi9rpv3OO0po/WyYXqbe/BB933HCeYmdM4WjoeO"]]
+  [1m[35m (76.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 302ms (ActiveRecord: 77.3ms | Allocations: 9836)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:45:54 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 252)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 11.2ms | ActiveRecord: 0.5ms | Allocations: 6176)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-27 19:45:58 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1989)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.5ms | Allocations: 8456)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-27 19:45:58 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 903)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.2ms | Allocations: 5578)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-27 19:46:01 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 916)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.4ms | Allocations: 5599)
+
+
+Started GET "/grounds?choices-single-defaul=Tennis&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-27 19:46:03 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Tennis", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 903)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.5ms | Allocations: 5581)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-09-27 19:55:46 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YCDJX56tlcflI9A9XnH2LUySwCeacjTSZbIj/YpSG2vCOHLDJwRxb/gxc0q2IJeXwckZFnAWjjUp9FONl6ZC+g=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 0.5ms | Allocations: 4329)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-27 19:55:46 +0200
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-27 19:55:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 201)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 5129)
+
+
