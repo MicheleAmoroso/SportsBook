@@ -210,7 +210,7 @@
       <table>
 	<% @reviews.each do |review| %>
 	<tr class="border-top-row">
-	  <td style="padding-top:20px; padding-left: 10px; padding-bottom:10px;"><b> <%= User.all.find(review.user_id).name %> </b></td>
+	  <td style="padding-top:20px; padding-left: 10px; padding-bottom:10px;"><b> <%= User.all.find(review.user_id).username %> </b></td>
 	  <td style="padding-top:10px;"> Voto: <%= review.rating %> </td>
 
 	</tr>
