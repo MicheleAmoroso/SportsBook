@@ -73,6 +73,18 @@
 	  margin-left: 25%;
       }
 
+      .favoritebtn {
+	  border: none;
+	  margin: 0;
+	  padding: 0;
+	  background: transparent;
+	  cursor: pointer;
+      }
+
+      .star{
+	  width: 25px;
+	  height: 25px;
+      }
       
     </style>
   </head>
@@ -120,7 +132,16 @@
 	  <td> <%= image_tag ground.image %> </td>
 	  <td>
 	    <table class="table-prova">
-	      <tr><td class="ground-title"> <%= link_to ground.title, ground_path(ground) %> </td></tr>
+	      <tr>
+		<td>
+		  <table>
+		    <tr>
+		      <td class="ground-title"> <%= link_to ground.title, ground_path(ground) %> </td>
+		      <td> <button class="favoritebtn"><%= image_tag "star.png", class: "star" %></button> </td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
 	      <tr><td class="ground-element"> <b>Prezzo</b>: <%= ground.price %>€ </td></tr>
 	      <tr><td class="ground-element"> <b>Voto</b>: <%= ground.rating %> </td></tr>
 	      <tr><td class="ground-element"> <b>Città</b>: <%= ground.city %> </td></tr>
