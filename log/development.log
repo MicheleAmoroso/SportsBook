@@ -67031,3 +67031,831 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 327ms (Views: 312.1ms | ActiveRecord: 0.6ms | Allocations: 21846)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGround Create (295.5ms)[0m  [1m[32mINSERT INTO "grounds" ("title", "price", "rating", "city", "address", "description", "image", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Campo da calcio"], ["price", 6], ["rating", 5], ["city", "Roma"], ["address", "Via Roma, 25"], ["description", "Un bel campo"], ["image", "campo-da-calcio.jpg"], ["category", "Calcio"], ["created_at", "2020-09-28 07:53:58.718155"], ["updated_at", "2020-09-28 07:53:58.718155"]]
+  [1m[35m (69.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGround Create (0.6ms)[0m  [1m[32mINSERT INTO "grounds" ("title", "price", "rating", "city", "address", "description", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Campo da tennis"], ["price", 3], ["rating", 6], ["city", "Torino"], ["address", "Via Torino, 12"], ["description", "Super campo"], ["category", "Tennis"], ["created_at", "2020-09-28 07:54:23.116974"], ["updated_at", "2020-09-28 07:54:23.116974"]]
+  [1m[35m (79.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGround Create (0.2ms)[0m  [1m[32mINSERT INTO "grounds" ("title", "price", "rating", "city", "address", "description", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Campo da basket"], ["price", 5], ["rating", 3], ["city", "Napoli"], ["address", "Via Napoli, 22"], ["description", "Ottimo campo da basket"], ["category", "Basket"], ["created_at", "2020-09-28 07:57:37.972440"], ["updated_at", "2020-09-28 07:57:37.972440"]]
+  [1m[35m (326.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-09-28 09:57:44 +0200
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomepageController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 992)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-28 09:57:44 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 599)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 15780)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-28 09:57:52 +0200
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2020-09-28 09:57:53 +0200
+Started GET "/users/auth/facebook/callback?code=AQDHMl4_Bl3d4jd4P2xJe9vj5V_VS_GTJ3FXtjC4IomLh5iqarW_0aW28GpMz4_oxQuVJ7Vm7oYn6uV8KdnZLYv10hLFJrrMX__471rsoMYAbD1h4AJGmDNRqFKUN0l4T_Cr-SE2aWhJtbQtITB-CYtbexOH3J5nqZzSfkXa2WdRe6Yi1-kZD45HLhePWP346TIjL-10oRnHBF9huLLeddAgzBmBpXrCbEHkCoKk-39EqCCogm0-_W9TrXmv9gVqirt1BlP39X_qTj3B1FNPwyN3Be5Lo1tTxUx_EI2GfWXhKz_BLClHBPn6ZHhskcZODj_X8bv6wPgPD6VdPazvXl_s&state=dcd3a645ac12ba32c1361674d459a859e1913dee7266856b" for 127.0.0.1 at 2020-09-28 09:57:54 +0200
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDHMl4_Bl3d4jd4P2xJe9vj5V_VS_GTJ3FXtjC4IomLh5iqarW_0aW28GpMz4_oxQuVJ7Vm7oYn6uV8KdnZLYv10hLFJrrMX__471rsoMYAbD1h4AJGmDNRqFKUN0l4T_Cr-SE2aWhJtbQtITB-CYtbexOH3J5nqZzSfkXa2WdRe6Yi1-kZD45HLhePWP346TIjL-10oRnHBF9huLLeddAgzBmBpXrCbEHkCoKk-39EqCCogm0-_W9TrXmv9gVqirt1BlP39X_qTj3B1FNPwyN3Be5Lo1tTxUx_EI2GfWXhKz_BLClHBPn6ZHhskcZODj_X8bv6wPgPD6VdPazvXl_s", "state"=>"dcd3a645ac12ba32c1361674d459a859e1913dee7266856b"}
+  [1m[36mUser Load (17.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "180016713620448"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 312ms (ActiveRecord: 17.4ms | Allocations: 3251)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-28 09:57:56 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 19.1ms | Allocations: 197)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 189)
+  Rendered /home/michele/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 56.9ms | Allocations: 1951)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 118ms (Views: 117.6ms | ActiveRecord: 0.0ms | Allocations: 6752)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-28 09:58:16 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"YBpCwI9UFq+KTmyd28RRM632ABx1KQ92u1GL3fv3PDnDStObogE9rordDRpcZL2h5Vz2jnB6HOOwOsq13UrJaA==", "user"=>{"email"=>"micheleamo22@hotmail.it", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (15.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "micheleamo22@hotmail.it"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2020-09-28 07:58:16.627151"], ["updated_at", "2020-09-28 07:58:16.627151"], ["email", "micheleamo22@hotmail.it"], ["encrypted_password", "$2a$12$7.lVJ60mY3BLcnk5Lnf6j.I739RyNdWisL5mSQka3Q2Ey/wMKln76"]]
+  [1m[35m (73.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 316ms (ActiveRecord: 90.4ms | Allocations: 9839)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 09:58:16 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 253)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 0.2ms | Allocations: 6191)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 09:58:19 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.4ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 48.2ms | Allocations: 9186)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 53.5ms | ActiveRecord: 1.2ms | Allocations: 15583)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 09:58:19 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2464)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 7118)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 09:58:24 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2466)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 7091)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 09:58:49 +0200
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1594)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 35.9ms | ActiveRecord: 1.6ms | Allocations: 16063)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 09:58:52 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.4ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 936)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 24.6ms | ActiveRecord: 0.6ms | Allocations: 5637)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 09:59:26 +0200
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 8513)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 1.2ms | Allocations: 22845)
+
+
+Started GET "/grounds/2" for 127.0.0.1 at 2020-09-28 09:59:28 +0200
+Processing by GroundsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE "grounds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/grounds_controller.rb:23:in `show'
+  Rendering grounds/show.html.erb within layouts/application
+  [1m[36mBook Load (13.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/grounds/show.html.erb:169
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (ground_id LIKE '2')[0m
+  ↳ app/views/grounds/show.html.erb:209
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (ground_id LIKE '2')[0m
+  ↳ app/views/grounds/show.html.erb:211
+  Rendered grounds/show.html.erb within layouts/application (Duration: 30.4ms | Allocations: 3965)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 28.3ms | ActiveRecord: 16.8ms | Allocations: 10815)
+
+
+Started GET "/grounds?choices-single-defaul=Calcio&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 09:59:32 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Calcio", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2460)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 7072)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=Campo+da+calcio&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 09:59:37 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"Campo da calcio", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%Campo da calcio%') AND (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1584)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 6223)
+
+
+Started GET "/grounds?choices-single-defaul=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 09:59:40 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"choices-single-defaul"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2457)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 7092)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:00:59 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 247)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 7166)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:01:01 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.7ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2967)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.9ms | Allocations: 8240)
+
+
+Started GET "/grounds?category=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 10:01:01 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2451)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.4ms | Allocations: 7024)
+
+
+Started GET "/grounds?category=Calcio&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 10:01:04 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Calcio", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%Calcio%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1579)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.7ms | Allocations: 6208)
+
+
+Started GET "/grounds?category=Tennis&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 10:01:06 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Tennis", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%Tennis%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1579)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 6178)
+
+
+Started GET "/grounds?category=Basket&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 10:01:08 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Basket", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%Basket%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1579)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 6188)
+
+
+Started GET "/grounds?category=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 10:01:11 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2424)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 6998)
+
+
+Started GET "/grounds?category=Calcio&search=&priceFrom=1&priceTo=4&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 10:01:21 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Calcio", "search"=>"", "priceFrom"=>"1", "priceTo"=>"4", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (price >= 1) AND (price <= 4) AND (category LIKE '%Calcio%')[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 945)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 5694)
+
+
+Started GET "/grounds?category=Qualsiasi&search=&priceFrom=&priceTo=&timeFrom=&timeTo=" for 127.0.0.1 at 2020-09-28 10:01:23 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>"", "timeFrom"=>"", "timeTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:131
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2424)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 7008)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:03:23 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 247)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 6527)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:03:24 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2819)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.2ms | Allocations: 8085)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:05:59 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 223)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 6522)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:06:18 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 219)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 6498)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:06:27 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2813)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.7ms | Allocations: 8097)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:06:33 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2355)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 6985)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:06:42 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2355)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 6970)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:06:48 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.6ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2355)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.9ms | Allocations: 6958)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:07:00 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2355)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.7ms | Allocations: 6976)
+
+
+Started GET "/grounds?category=Qualsiasi&search=&priceFrom=1&priceTo=5" for 127.0.0.1 at 2020-09-28 10:07:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Qualsiasi", "search"=>"", "priceFrom"=>"1", "priceTo"=>"5"}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (price >= 1) AND (price <= 5)[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1831)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 6462)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:07:12 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2355)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.8ms | Allocations: 6958)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:07:15 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2359)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.7ms | Allocations: 6975)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:07:17 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2357)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.7ms | Allocations: 6984)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:07:21 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2355)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.7ms | Allocations: 6962)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:09:04 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2355)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 6964)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:09:08 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 2355)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.7ms | Allocations: 6978)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:09:50 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2355)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 6963)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:10:45 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 248)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.1ms | Allocations: 6552)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:11:51 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2818)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 8103)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:11:55 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.7ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2355)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 1.1ms | Allocations: 6951)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:12:00 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.3ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2359)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.3ms | Allocations: 6984)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:12:06 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 2355)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.7ms | Allocations: 6962)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:15:12 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 225)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 6533)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:15:21 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 2809)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.7ms | Allocations: 8099)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:15:50 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 224)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 6516)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:17:36 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2809)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 8525)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:18:59 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 223)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 6520)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:19:01 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2822)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 8083)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:19:26 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 222)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.2ms | Allocations: 6508)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:19:27 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.7ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 2818)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 0.8ms | Allocations: 8087)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:19:51 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2822)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 8540)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:19:56 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 223)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 6095)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:19:58 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2364)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 6985)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:20:15 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 227)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 6523)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:20:16 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 2822)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 0.7ms | Allocations: 8094)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:20:20 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2355)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 6973)
+
+
+Started GET "/grounds?category=Qualsiasi&search=&priceFrom=&priceTo=" for 127.0.0.1 at 2020-09-28 10:20:21 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Qualsiasi", "search"=>"", "priceFrom"=>"", "priceTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds"[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2328)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 6906)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:20:24 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2355)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 6970)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:20:26 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2355)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 6972)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:20:27 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.5ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2355)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.7ms | Allocations: 6982)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 10:20:59 +0200
+Processing by HomepageController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 223)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 6517)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:21:05 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2808)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 8084)
+
+
+Started GET "/grounds?category=Qualsiasi&search=Campo+da+calcio&priceFrom=&priceTo=" for 127.0.0.1 at 2020-09-28 10:21:05 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Qualsiasi", "search"=>"Campo da calcio", "priceFrom"=>"", "priceTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (title LIKE '%Campo da calcio%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1489)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 6108)
+
+
+Started GET "/grounds" for 127.0.0.1 at 2020-09-28 10:21:18 +0200
+Processing by GroundsController#index as HTML
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.1ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2357)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 6979)
+
+
+Started GET "/grounds?category=Calcio&search=&priceFrom=&priceTo=" for 127.0.0.1 at 2020-09-28 10:21:18 +0200
+Processing by GroundsController#index as HTML
+  Parameters: {"category"=>"Calcio", "search"=>"", "priceFrom"=>"", "priceTo"=>""}
+  Rendering grounds/index.html.erb within layouts/application
+  [1m[36mGround Load (0.2ms)[0m  [1m[34mSELECT "grounds".* FROM "grounds" WHERE (category LIKE '%Calcio%')[0m
+  ↳ app/views/grounds/index.html.erb:118
+  Rendered grounds/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1483)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 6072)
+
+

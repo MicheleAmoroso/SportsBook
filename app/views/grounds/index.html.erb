@@ -14,10 +14,6 @@
 	  width: 60px;
       }
 
-      .time-text{
-	  width: 60px;
-      }
-
       #w2{
 	  width: 100%;
 	  padding: 12px 20px;
@@ -88,7 +84,7 @@
 	  <table class="search-table">
 	    <tr>
 	      <td>
-		<select id="w1" class="category-select" name="choices-single-defaul">
+		<select id="w1" class="category-select" name="category">
                   <option placeholder="" value="Qualsiasi">Qualsiasi</option>
                   <option value="Calcio">Calcio</option>
                   <option value="Tennis">Tennis</option>
@@ -102,7 +98,6 @@
 	  <table>
 	    <tr>
 	      <td><input type="checkbox" onClick="priceChecked()" id="priceCheckBox">Prezzo</input></td>
-	      <td><input type="checkbox" onClick="timeChecked()" id="timeCheckBox">Orario</input></td>
 	    </tr>
 	    <tr>
 	      <td>
@@ -110,14 +105,6 @@
 		  <tr>
 		    <td><%= text_field_tag :priceFrom, params[:priceFrom], placeholder: 'Da...', class: 'price-text', id: 'price-text1'%>€</td>
 		    <td><%= text_field_tag :priceTo, params[:priceTo], placeholder: 'a...', class: 'price-text', id: 'price-text2'%>€</td>
-		  </tr>
-		</table>
-	      </td>
-	      <td>
-		<table id="time-table">
-		  <tr>
-		    <td><%= text_field_tag :timeFrom, params[:timeFrom], placeholder: 'Dalle...', class: 'time-text', id: 'time-text1'%></td>
-		    <td><%= text_field_tag :timeTo, params[:timeTo], placeholder: 'alle...', class: 'time-text', id: 'time-text2'%></td>
 		  </tr>
 		</table>
 	      </td>
@@ -150,19 +137,13 @@
   <script>
     function init(){
 	document.getElementById("price-table").style.visibility="hidden";
-	document.getElementById("time-table").style.visibility="hidden";
 	document.getElementById("price-text1").value="";
 	document.getElementById("price-text2").value="";
-	document.getElementById("time-text1").value="";
-	document.getElementById("time-text2").value="";
-	
 	if(localStorage.getItem("homepage") == "true"){
 	    document.getElementById("w2").value = localStorage.getItem("search_text");
 	    document.getElementById("w1").value = localStorage.getItem("category");
 	    document.getElementById("price-text1").value = localStorage.getItem("priceFrom");
 	    document.getElementById("price-text2").value = localStorage.getItem("priceTo");
-	    document.getElementById("time-text1").value = localStorage.getItem("timeFrom");
-	    document.getElementById("time-text2").value = localStorage.getItem("timeTo");
 	    document.getElementById("w3").click();
 	    localStorage.setItem("homepage", "false");
 	}
@@ -180,17 +161,6 @@
 	}
     }
 
-    function timeChecked(){
-	var checkBox = document.getElementById("timeCheckBox");
-	if (checkBox.checked == true){
-	    document.getElementById("time-table").style.visibility="visible";
-	} else {
-	    document.getElementById("time-table").style.visibility="hidden";
-	    document.getElementById("time-text1").value="";
-	    document.getElementById("time-text2").value="";
-	}
-    }
-    
   </script>
 
 <html>

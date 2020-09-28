@@ -12,6 +12,9 @@ class GroundsController < ApplicationController
     if "#{params[:priceTo]}" != ""
       grounds = grounds.where(["price <= ?", "#{params[:priceTo]}".to_i])
     end
+    if "#{params[:category]}" != "Qualsiasi"
+      grounds = grounds.where(["category LIKE ?", "%#{params[:category]}%"])
+    end
     @grounds = grounds
   end
 

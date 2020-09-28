@@ -90,7 +90,6 @@
 	  <table>
 	    <tr>
 	      <td><input type="checkbox" onClick="priceChecked()" id="priceCheckBox">Prezzo</input></td>
-	      <td><input type="checkbox" onClick="timeChecked()" id="timeCheckBox">Orario</input></td>
 	    </tr>
 	    <tr>
 	      <td>
@@ -98,14 +97,6 @@
 		  <tr>
 		    <td><input id="priceFrom" class="price-text" type="text" placeholder="Da..."/>€</td>
 		    <td><input id="priceTo" class="price-text" type="text" placeholder="a..."/>€</td>
-		  </tr>
-		</table>
-	      </td>
-	      <td>
-		<table id="time-table">
-		  <tr>
-		    <td><input id="timeFrom" class="time-text" type="text" placeholder="Dalle..."/></td>
-		    <td><input id="timeTo" class="time-text" type="text" placeholder="alle..."/></td>
 		  </tr>
 		</table>
 	      </td>
@@ -118,7 +109,6 @@
   <script>
     function init(){
 	document.getElementById("price-table").style.visibility="hidden";
-	document.getElementById("time-table").style.visibility="hidden";
     }
     init();
 
@@ -129,18 +119,10 @@
 	localStorage.setItem("category", selected);
 	var search_text = document.getElementById("w2").value;
 	localStorage.setItem("search_text", search_text);
-	var priceCheck = document.getElementById("priceCheckBox");
-	localStorage.setItem("priceChecked", priceCheck.checked);
-	var timeCheck = document.getElementById("timeCheckBox");
-	localStorage.setItem("timeChecked", timeCheck.checked);
 	var priceFrom_text = document.getElementById("priceFrom").value;
 	localStorage.setItem("priceFrom", priceFrom_text);
 	var priceTo_text = document.getElementById("priceTo").value;
 	localStorage.setItem("priceTo", priceTo_text);
-	var timeFrom_text = document.getElementById("timeFrom").value;
-	localStorage.setItem("timeFrom", timeFrom_text);
-	var timeTo_text = document.getElementById("timeTo").value;
-	localStorage.setItem("timeTo", timeTo_text);
 
 	//Variabile locale per segnarsi se vengo dalla homepage
 	localStorage.setItem("homepage", "true");
@@ -158,15 +140,8 @@
 	    document.getElementById("price-table").style.visibility="visible";
 	} else {
 	    document.getElementById("price-table").style.visibility="hidden";
-	}
-    }
-
-    function timeChecked(){
-	var checkBox = document.getElementById("timeCheckBox");
-	if (checkBox.checked == true){
-	    document.getElementById("time-table").style.visibility="visible";
-	} else {
-	    document.getElementById("time-table").style.visibility="hidden";
+	    document.getElementById("priceFrom").value="";
+	    document.getElementById("priceTo").value="";
 	}
     }
     
