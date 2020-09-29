@@ -35,7 +35,8 @@ ActiveRecord::Schema.define(version: 2020_09_28_173803) do
   create_table "grounds", force: :cascade do |t|
     t.string "title"
     t.integer "price"
-    t.integer "rating"
+    t.integer "ratingNum", default: 0
+    t.integer "ratingSum", default: 0
     t.string "city"
     t.string "address"
     t.text "description"

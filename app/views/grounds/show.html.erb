@@ -26,7 +26,9 @@
 	  margin-left: 25%;
       }
       .ground-element{
-	  padding: 20px;
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+	  padding-right: 20px;
       }
       .td-description{
 	  width: 512px;
@@ -117,6 +119,19 @@
       #book-link{
 	  padding: 10px;
       }
+
+      .ratingStars{
+	  width: 25px;
+	  height: 25px;
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+	  
+	  
+      }
+      .table-prova{
+	  margin-left: 25px;
+      }
+      
     </style>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -139,7 +154,53 @@
 	  <td>
 	    <table class="table-prova">
 	      <tr><td class="ground-element" id ="prezzo"><b><%= @ground.price %>€ </b></td></tr>
-	      <tr><td class="ground-element"> <b>Voto</b>: <%= @ground.rating %> </td></tr>
+	      <% if @ground.ratingNum != 0 %>
+	      <tr>
+		<% if (@ground.ratingSum.to_f/@ground.ratingNum.to_f).round == 1 %>
+		<td>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		</td>
+		<% elsif (@ground.ratingSum.to_f/@ground.ratingNum.to_f).round == 2 %>
+		<td>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		</td>
+		<% elsif (@ground.ratingSum.to_f/@ground.ratingNum.to_f).round == 3 %>
+		<td>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		</td>
+		<% elsif (@ground.ratingSum.to_f/@ground.ratingNum.to_f).round == 4 %>
+		<td>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		</td>
+		<% elsif (@ground.ratingSum.to_f/@ground.ratingNum.to_f).round == 5 %>
+		<td>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		</td>
+		<% end %>
+	      </tr>
+	      <% else %>
+	      <tr><td class="ground-element"> <b>Voto</b>: Nessun voto </td></tr>
+	      <% end %>
 	      <tr><td class="ground-element"> <b>Città</b>: <%= @ground.city %> </td></tr>
 	      <tr><td class="ground-element"> <b>Indirizzo</b>: <%= @ground.address %> </td></tr>
 	    </table>
@@ -213,17 +274,15 @@
 	  <table>
 	    <% if review.user_id == current_user.id %>
 	    <tr><td><%= link_to "Elimina commento", ground_review_path(:id => review.id, :ground_id => @ground.id), :method => :delete%></td></tr>
-	    <% else %>
-	    <tr><td style="visibility: hidden;">Elimina commento</td></tr> <!-- implementazione brutta brutta: ha il solo scopo di creare lo spazio tra nome utente e voto -->
 	    <% end %>
 	    <tr class="border-top-row">
-	      <td style="padding-top:20px; padding-left: 10px; padding-bottom:10px;"><b> <%= User.all.find(review.user_id).username %> </b></td>
+	      <td style="padding-top:20px; padding-left: 10px; padding-bottom:10px;  width: 512px;"><b> <%= User.all.find(review.user_id).username %> </b></td>
 	      <td style="padding-top:10px;"> Voto: <%= review.rating %> </td>
 	    </tr>
 	  </table>
 	</tr>
 	<table>
-	  <tr><td style="padding-left:10px; padding-bottom:20px"> <%= review.comments %> </td></tr>
+	  <tr><td style="padding-left:10px; padding-bottom:20px; width: 512px;"> <%= review.comments %> </td></tr>
 	</table>
 	<% end %>
       </table>

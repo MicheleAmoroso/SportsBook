@@ -69,7 +69,6 @@
 	  font-size: 18px;
       }
       .grounds-info{
-	  position: relative;
 	  margin-left: 25%;
       }
 
@@ -78,8 +77,20 @@
 	  height: 25px;
       }
       .yellowstar{
-	  width: 35px;
-	  height: 35px;
+	  width: 25px;
+	  height: 25px;
+      }
+
+      .ratingStars{
+	  width: 25px;
+	  height: 25px;
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+	  
+	  
+      }
+      .table-prova{
+	  margin-left: 25px;
       }
       
     </style>
@@ -134,9 +145,9 @@
 		    <tr>
 		      <td class="ground-title"> <%= link_to ground.title, ground_path(ground) %> </td>
 		      <% if Favorite.all.where(:user_id => current_user.id, :ground_id => ground.id).first == nil %>
-		      <td> <%= link_to image_tag('star.png', class: "star"), ground_favorites_path(ground.id), :method => :post %> </td>
+		      <td> <%= link_to image_tag('heart.png', class: "star"), ground_favorites_path(ground.id), :method => :post %> </td>
 		      <% else %>
-		      <td> <%= link_to image_tag('yellow_star.png', class: "yellowstar"), ground_favorite_path(:id => Favorite.all.where(:ground_id => ground.id, :user_id => current_user.id).first.id, :ground_id => ground.id), :method => :delete %> </td>
+		      <td> <%= link_to image_tag('red_heart.png', class: "yellowstar"), ground_favorite_path(:id => Favorite.all.where(:ground_id => ground.id, :user_id => current_user.id).first.id, :ground_id => ground.id), :method => :delete %> </td>
 		      <% end %>
 		      
 		    </tr>
@@ -144,7 +155,53 @@
 		</td>
 	      </tr>
 	      <tr><td class="ground-element"> <b>Prezzo</b>: <%= ground.price %>€ </td></tr>
-	      <tr><td class="ground-element"> <b>Voto</b>: <%= ground.rating %> </td></tr>
+	      <% if ground.ratingNum != 0 %>
+	      <tr>
+		<% if (ground.ratingSum.to_f/ground.ratingNum.to_f).round == 1 %>
+		<td>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		</td>
+		<% elsif (ground.ratingSum.to_f/ground.ratingNum.to_f).round == 2 %>
+		<td>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		</td>
+		<% elsif (ground.ratingSum.to_f/ground.ratingNum.to_f).round == 3 %>
+		<td>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		</td>
+		<% elsif (ground.ratingSum.to_f/ground.ratingNum.to_f).round == 4 %>
+		<td>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "star.png", class: "ratingStars"%>
+		</td>
+		<% elsif (ground.ratingSum.to_f/ground.ratingNum.to_f).round == 5 %>
+		<td>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		  <%= image_tag "yellow_star.png", class: "ratingStars"%>
+		</td>
+		<% end %>
+	      </tr>
+	      <% else %>
+	      <tr><td class="ground-element"> <b>Voto</b>: Nessun voto </td></tr>
+	      <% end %>
 	      <tr><td class="ground-element"> <b>Città</b>: <%= ground.city %> </td></tr>
 	      <tr><td class="ground-element"> <b>Indirizzo</b>: <%= ground.address %> </td></tr>
 	      <tr><td class="ground-element"> <b>Descrizione</b>: <%= ground.description %> </td></tr>

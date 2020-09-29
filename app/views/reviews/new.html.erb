@@ -9,7 +9,7 @@
       </tr>
       <tr>
 	<td class="rating-cell"><input type="text" class="align-center" name="rating" id="rating_id" readonly/></td>
-	<td><input type="text" name="review" id="comment" readonly/></td>
+	<td><textarea name="review" id="comment" readonly> </textarea></td>
 	<td><input type="submit" id="confirmbtn" value="Confermo"/></td>
       </tr>
     </table>
@@ -50,6 +50,7 @@
   #comment{
       width: 512px;
       height: 150px;
+      resize: none;
   }
 
   .rating-cell{

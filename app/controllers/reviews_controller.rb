@@ -13,6 +13,9 @@ class ReviewsController < ApplicationController
     @review.user_id = user_id
     @review.ground_id = ground_id
     @review.save!
+    @ground.ratingNum = @ground.ratingNum + 1
+    @ground.ratingSum = @ground.ratingSum + params[:rating].to_i
+    @ground.save!
     redirect_to ground_path(@ground)
   end
 
@@ -22,6 +25,9 @@ class ReviewsController < ApplicationController
     @ground = Ground.find(id_ground)
     @review = Review.find(id)
     @review.destroy
+    @ground.ratingNum = @ground.ratingNum - 1
+    @ground.ratingSum = @ground.ratingSum - @review.rating.to_i
+    @ground.save!
     flash[:notice] = "Your review has been deleted."
     redirect_to ground_path(id_ground)
   end
