@@ -13,5 +13,14 @@ class BooksController < ApplicationController
     b.save!
     redirect_to ground_path(ground_id)
   end
+
+  def update
+    id = params[:id]
+    @book = Book.find(id)
+    @book.user_id = nil
+    @book.save!
+    flash[:notice] = "Your book has been deleted."
+    redirect_to user_path(current_user.id)
+  end
   
 end

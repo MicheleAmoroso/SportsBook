@@ -1,6 +1,98 @@
+<style>
+
+  .all{
+      margin-left: 30%;
+  }
+  
+  .settings{
+      color: gray;
+      width: 30px;
+      height: 30px;
+  }
+
+  .title-td{
+      padding: 5px;
+  }
+
+  .favorites-table{
+      margin-left: 70px;
+  }
+
+  .books-td{
+      padding: 5px;
+  }
+  
+  
+</style>
+
 <body>
-  
-  <h1> <%= @current_user.username  %></h1>
-  
+
+  <div class="all">
+    <div class="title">
+      <table>
+	<tr>
+	  <td class="title-td"><%= link_to image_tag('settings.png', class: "settings"), edit_user_registration_path(current_user.id) %></td>
+	  <td class="title-td"><h2> <%= @current_user.username  %></h2></td>
+	  <td class="title-td"><h2> (<%= @current_user.email%>)  </h2></td>
+	</tr>
+      </table>
+    </div>
+
+    <div class="user-info">
+      <table>
+	<tr>
+	  <td valign="top">
+	    <table>
+	      <tr>
+		<td style="text-align: center;"><h2><%= @current_user.books.count %> Prenotazioni:</h2></td>
+	      </tr>
+	      <tr>
+		<td>
+		  <table>
+		    <tr>
+		      <td class="books-td"></td>
+		      <td class="books-td"><b> Nome del campo </b></td>
+		      <td class="books-td"><b> Orario </b></td>
+		    </tr>
+		    <% @current_user.books.each do |book| %>
+		    <tr>
+		      <td class="books-td"> <%= link_to "Rimuovi", ground_book_path(:id => book.id, :ground_id => Ground.all.where(:id => book.ground_id).first.id), :method => :put %> </td>
+		      <td class="books-td"> <%= link_to Ground.all.where(:id => book.ground_id).first.title, ground_path(Ground.all.where(:id => book.ground_id).first.id) %> </td>
+		      <td class="books-td"> <%= Timetable.all.where(:id => book.timetable_id).all.first.from %>:00 - </td>
+		      <td> <%= Timetable.all.where(:id => book.timetable_id).all.first.to %>:00 </td>
+		    </tr>
+		    <% end %>
+		  </table>
+		</td>
+	      </tr>
+	    </table>
+	  </td>
+	  <td valign="top">
+	    <table class="favorites-table">
+	      <tr>
+		<td><h2><%= @current_user.favorites.count %> Preferiti:</h2></td>
+	      </tr>
+	      <tr>
+		<td>
+		  <table>
+		    <tr>
+		      <td class="books-td"><b> Nome del campo </b></td>
+		    </tr>
+		    <% @current_user.favorites.each do |favorite| %>
+		    <tr>
+		      <td class="books-td"> <%= link_to Ground.all.where(:id => favorite.ground_id).first.title,  ground_path(Ground.all.where(:id => favorite.ground_id).first.id) %> </td>
+		    </tr>
+		    <% end %>
+		  </table>
+		</td>
+	      </tr>
+	    </table>
+	  </td>
+	</tr>
+      </table>
+    </div>
+
+    
+  </div>
   
 </body>
