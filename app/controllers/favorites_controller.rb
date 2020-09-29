@@ -17,7 +17,7 @@ class FavoritesController < ApplicationController
     @ground = Ground.find(id_ground)
     @favorite = Favorite.find(id)
     @favorite.destroy
-    flash[:notice] = "Your review has been deleted."
+    flash[:notice] = "Your favorite ground has been deleted."
     redirect_to grounds_path
   end
   

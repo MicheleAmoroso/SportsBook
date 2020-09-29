@@ -29,4 +29,8 @@ class GroundsController < ApplicationController
     @reviews = reviews
   end
 
+  def destroy
+    
+  end
+
 end

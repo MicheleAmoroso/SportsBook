@@ -209,12 +209,22 @@
       <h2> <%= @reviews.count %> Commenti: </h2>
       <table>
 	<% @reviews.each do |review| %>
-	<tr class="border-top-row">
-	  <td style="padding-top:20px; padding-left: 10px; padding-bottom:10px;"><b> <%= User.all.find(review.user_id).username %> </b></td>
-	  <td style="padding-top:10px;"> Voto: <%= review.rating %> </td>
-
+	<tr>
+	  <table>
+	    <% if review.user_id == current_user.id %>
+	    <tr><td><%= link_to "Elimina commento", ground_review_path(:id => review.id, :ground_id => @ground.id), :method => :delete%></td></tr>
+	    <% else %>
+	    <tr><td style="visibility: hidden;">Elimina commento</td></tr> <!-- implementazione brutta brutta: ha il solo scopo di creare lo spazio tra nome utente e voto -->
+	    <% end %>
+	    <tr class="border-top-row">
+	      <td style="padding-top:20px; padding-left: 10px; padding-bottom:10px;"><b> <%= User.all.find(review.user_id).username %> </b></td>
+	      <td style="padding-top:10px;"> Voto: <%= review.rating %> </td>
+	    </tr>
+	  </table>
 	</tr>
-	<tr><td style="padding-left:10px; padding-bottom:20px"> <%= review.comments %> </td></tr>
+	<table>
+	  <tr><td style="padding-left:10px; padding-bottom:20px"> <%= review.comments %> </td></tr>
+	</table>
 	<% end %>
       </table>
     </div>
