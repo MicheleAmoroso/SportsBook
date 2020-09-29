@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :grounds do
     resources :books
     resources :reviews
+    resources :favorites
   end
   resources :users
   

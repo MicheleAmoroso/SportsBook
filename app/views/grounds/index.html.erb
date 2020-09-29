@@ -73,17 +73,13 @@
 	  margin-left: 25%;
       }
 
-      .favoritebtn {
-	  border: none;
-	  margin: 0;
-	  padding: 0;
-	  background: transparent;
-	  cursor: pointer;
-      }
-
       .star{
 	  width: 25px;
 	  height: 25px;
+      }
+      .yellowstar{
+	  width: 35px;
+	  height: 35px;
       }
       
     </style>
@@ -137,7 +133,12 @@
 		  <table>
 		    <tr>
 		      <td class="ground-title"> <%= link_to ground.title, ground_path(ground) %> </td>
-		      <td> <button class="favoritebtn"><%= image_tag "star.png", class: "star" %></button> </td>
+		      <% if Favorite.all.where(:user_id => current_user.id, :ground_id => ground.id).first == nil %>
+		      <td> <%= link_to image_tag('star.png', class: "star"), ground_favorites_path(ground.id), :method => :post %> </td>
+		      <% else %>
+		      <td> <%= link_to image_tag('yellow_star.png', class: "yellowstar"), ground_favorite_path(:id => Favorite.all.where(:ground_id => ground.id, :user_id => current_user.id).first.id, :ground_id => ground.id), :method => :delete %> </td>
+		      <% end %>
+		      
 		    </tr>
 		  </table>
 		</td>

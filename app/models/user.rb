@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :reviews
+  has_many :favorites
 
   attr_writer :login
   validate :validate_username
