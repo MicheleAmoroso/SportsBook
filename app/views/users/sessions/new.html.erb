@@ -1,28 +1,80 @@
-<h2>Log in</h2>
+<style>
+  html{
+      background-color: #275a74;
+      color: white;
+  }
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="field">
-  <%= f.label :login %><br />
-  <%= f.text_field :login, autofocus: true %>
+  .login-form{
+      position:fixed;
+      top: 35%;
+      left: 50%;
+      width:45em;
+      margin-top: -9em;
+      margin-left: -25em;
+      padding: 10px;
+      border-radius: 25px;
+      background-color: #24536b;
+      padding-bottom: 25px;
+  }
+  .login-content{
+      position: relative;
+      text-align: center;
+  }
+  .field{
+      padding: 10px;
+  }
+  .btn-login{
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #c12400;
+      font-weight: bold;
+      color:white;
+      cursor: pointer;
+  }
+  .btn-login:active{
+      background-color: #b52100;
+  }
+  .btn-login:hover{
+      background-color: #b52100;
+  }
+
+  a{
+      color: lightblue;
+  }
+</style>
+
+<div class="login-form">
+  <div class="login-content">
+    <h2 class="title">Log in</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label "username o email" %><br />
+      <%= f.text_field :login, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label "Ricordami" %>
+    </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: "btn-login"%>
+    </div>
+
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
 </div>
-
-<div class="field">
-  <%= f.label :password %><br />
-  <%= f.password_field :password, autocomplete: "current-password" %>
-</div>
-
-<% if devise_mapping.rememberable? %>
-<div class="field">
-  <%= f.check_box :remember_me %>
-  <%= f.label :remember_me %>
-</div>
-<% end %>
-
-<div class="actions">
-  <%= f.submit "Log in" %>
-</div>
-
-
-<% end %>
-
-<%= render "users/shared/links" %>

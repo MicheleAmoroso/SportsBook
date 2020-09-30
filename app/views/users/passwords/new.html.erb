@@ -1,16 +1,72 @@
-<h2>Forgot your password?</h2>
+<style>
+  html{
+      background-color: #275a74;
+      color: white;
+  }
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+  .password-form{
+      position:fixed;
+      top: 35%;
+      left: 50%;
+      width:45em;
+      margin-top: -9em;
+      margin-left: -25em;
+      padding: 10px;
+      border-radius: 25px;
+      background-color: #24536b;
+      padding-bottom: 25px;
+  }
+  .password-content{
+      position: relative;
+      text-align: center;
+  }
+  .field{
+      padding: 10px;
+  }
+  .btn-password{
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #c12400;
+      font-weight: bold;
+      color:white;
+      cursor: pointer;
+  }
+  .btn-password:active{
+      background-color: #b52100;
+  }
+  .btn-password:hover{
+      background-color: #b52100;
+  }
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  a{
+      color: lightblue;
+  }
+</style>
+
+<div class="password-form">
+  <div class="password-content">
+    <h2>Password dimenticata?</h2>
+    
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+    
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit "Richiedi nuova password", class: "btn-password"%>
+    </div>
+    <% end %>
+    
+    <!-- Non serve in questo caso
+    <%= render "users/shared/links" %>
+    -->
+
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
