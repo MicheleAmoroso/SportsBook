@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
     id_ground = params[:ground_id]
     @ground = Ground.find(id_ground)
     @review = Review.find(id)
-    if (current_user.has_role? :writer, @review) #Se l'utente è lo scrittore del commento allora può eliminarlo
+    if (current_user.has_role? :writer, @review) || (current_user.has_role? :admin) #Se l'utente è lo scrittore del commento allora può eliminarlo
       @review.destroy
       @ground.ratingNum = @ground.ratingNum - 1
       @ground.ratingSum = @ground.ratingSum - @review.rating.to_i

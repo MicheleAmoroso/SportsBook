@@ -131,6 +131,11 @@
       .table-prova{
 	  margin-left: 25px;
       }
+
+      .ground-image{
+	  width: 512px;
+	  height: 350px;
+      }
       
     </style>
     
@@ -151,7 +156,7 @@
       <h3 style="color: red;"><%= flash[:notice] %></h3>
       <table id="fixedheight">
 	<tr>
-	  <td> <%= image_tag @ground.image %> </td>
+	  <td> <image src="<%=(url_for(@ground.ground_image))%>" class="ground-image"> </td>
 	  <td>
 	    <table class="table-prova">
 	      <tr><td class="ground-element" id ="prezzo"><b><%= @ground.price %>€ </b></td></tr>

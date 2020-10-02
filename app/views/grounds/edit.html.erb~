@@ -1,0 +1,117 @@
+<style>
+  html{
+      background-color: #275a74;
+      color: white;
+  }
+
+  .ground-form{
+      position:fixed;
+      top: 30%;
+      left: 50%;
+      width:45em;
+      margin-top: -9em;
+      margin-left: -25em;
+      padding: 10px;
+      border-radius: 25px;
+      background-color: #24536b;
+      padding-bottom: 25px;
+  }
+  .ground-content{
+      position: relative;
+      text-align: center;
+  }
+  .field{
+      padding: 10px;
+  }
+  .btn-login{
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #c12400;
+      font-weight: bold;
+      color:white;
+      cursor: pointer;
+  }
+  .btn-login:active{
+      background-color: #b52100;
+  }
+  .btn-login:hover{
+      background-color: #b52100;
+  }
+
+  .category-select{
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+  .price-text{
+      width: 60px;
+  }
+  .description-text{
+      width: 400px;
+      height: 100px;
+      resize: none;
+  }
+  
+</style>
+
+<div class="ground-form">
+  <div class="ground-content">
+    <h2 class="title">Modifica campo sportivo</h2>
+
+    <%= form_tag ground_path(), :method => :put, multipart: true do %>
+    
+      <div class="field">
+	<label>Categoria </label> <br />
+	<select name="category" class="category-select">
+	  <option value="Calcio"> Calcio </option>
+	  <option value="Tennis"> Tennis </option>
+	  <option value="Basket"> Basket </option>
+	</select>
+      </div>
+      
+      <div class="field">
+	<%= label_tag "Nome del campo sportivo" %> <br />
+	<%= text_field_tag :title, params[:title], autofocus: true%>
+      </div>
+
+      <div class="field">
+	<%= label_tag "Prezzo" %><br />
+	<%= text_field_tag :price1, params[:price1], class: "price-text" %> <b>,</b> <%= text_field_tag :price2, params[:price2], class: "price-text" %>€
+      </div>
+
+      <div class="field">
+	<%= label_tag "Città" %> <br />
+	<%= text_field_tag :city, params[:city] %>
+      </div>
+
+      <div class="field">
+	<%= label_tag "Indirizzo" %> <br />
+	<%= text_field_tag :address, params[:address] %>
+      </div>
+
+      <div class="field">
+	<%= label_tag "Immagine" %><br />
+	<%= file_field_tag :ground_image %>
+      </div>
+
+      <div class="field" >
+	<%= label_tag :description %> <br />
+	<%= text_area_tag :description, params[:description], class: "description-text" %>
+      </div>
+
+      <div class="actions">
+	<%= submit_tag "Aggiungi", class: "btn-login" %>
+      </div>
+
+      <% end %>
+
+      <%= button_to "Elimina campo", ground_path(), :method => :delete %>
+  </div>
+</div>

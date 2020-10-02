@@ -26,6 +26,22 @@
   .books-td{
       padding: 5px;
   }
+
+  .btn-ground{
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #c12400;
+      font-weight: bold;
+      color:white;
+      cursor: pointer;
+  }
+  .btn-ground:hover{
+      background-color: #b52100;
+  }
   
 </style>
 
@@ -46,7 +62,7 @@
       <table>
 	<tr>
 	  <td valign="top">
-	    <% if current_user.has_role? :proprietor %>
+	    <% if (current_user.has_role? :proprietor) || (current_user.has_role? :admin) %>
 	    <table>
 	      <tr>
 		<td style="text-align: center;"><h2><%= @current_user.roles.where(:name => "owner").count %> Campi posseduti:</h2></td>
@@ -58,9 +74,9 @@
 		      <td class="books-td"></td>
 		      <td class="books-td"><b> Nome del campo </b></td>
 		    </tr>
-		    <% Ground.with_role("owner").each do |ground| %>
+		    <% Ground.with_role(:owner, current_user).each do |ground| %>
 		    <tr>
-		      <td class="books-td"> <%= link_to "Rimuovi", ground_path(ground.id), :method => :delete %> </td>
+		      <td class="books-td"> <%= link_to "Modifica", edit_ground_path(ground.id) %> </td>
 		      <td class="books-td"> <%= link_to ground.title, ground_path(ground.id) %> </td>
 		    </tr>
 		    <% end %>
@@ -68,7 +84,8 @@
 		</td>
 	      </tr>
 	    </table>
-	    <% else %>
+	    <% end %>
+	    <% if (current_user.has_role? :player) || (current_user.has_role? :admin) %>
 	    <table>
 	      <tr>
 		<td style="text-align: center;"><h2><%= @current_user.books.count %> Prenotazioni:</h2></td>
@@ -118,8 +135,8 @@
 	  </td>
 	</tr>
       </table>
-      <% if current_user.has_role? :proprietor %>
-      <%= button_to "Aggiungi campo sportivo", new_ground_path, :method => 'get', class: 'btn-search' %>
+      <% if (current_user.has_role? :proprietor) || (current_user.has_role? :admin)%>
+      <%= button_to "Aggiungi campo sportivo", new_ground_path, :method => 'get', class: 'btn-ground' %>
       <% end %>
     </div>
 

@@ -65,50 +65,51 @@
   <div class="ground-content">
     <h2 class="title">Nuovo campo sportivo</h2>
 
-    <form>
+    <%= form_tag grounds_path(), :method => :post, multipart: true do %>
+    
       <div class="field">
 	<label>Categoria </label> <br />
 	<select name="category" class="category-select">
-	  <option> Calcio </option>
-	  <option> Tennis </option>
-	  <option> Basket </option>
+	  <option value="Calcio"> Calcio </option>
+	  <option value="Tennis"> Tennis </option>
+	  <option value="Basket"> Basket </option>
 	</select>
       </div>
       
       <div class="field">
-	<label>Nome del campo sportivo </label><br />
+	<%= label_tag "Nome del campo sportivo" %> <br />
 	<%= text_field_tag :title, params[:title], autofocus: true%>
       </div>
 
       <div class="field">
-	<label> Prezzo </label><br />
+	<%= label_tag "Prezzo" %><br />
 	<%= text_field_tag :price1, params[:price1], class: "price-text" %> <b>,</b> <%= text_field_tag :price2, params[:price2], class: "price-text" %>€
       </div>
 
       <div class="field">
-	<label>Città</label><br />
+	<%= label_tag "Città" %> <br />
 	<%= text_field_tag :city, params[:city] %>
       </div>
 
       <div class="field">
-	<label>Indirizzo</label><br />
+	<%= label_tag "Indirizzo" %> <br />
 	<%= text_field_tag :address, params[:address] %>
       </div>
 
       <div class="field">
-	<label>Immagine</label><br />
-	<%= text_field_tag :image, params[:image] %>
+	<%= label_tag "Immagine" %><br />
+	<%= file_field_tag :ground_image %>
       </div>
 
       <div class="field" >
-	<label>Descrizione</label><br />
-	<textarea name="description" class="description-text"></textarea>
+	<%= label_tag :description %> <br />
+	<%= text_area_tag :description, params[:description], class: "description-text" %>
       </div>
 
       <div class="actions">
 	<%= submit_tag "Aggiungi", class: "btn-login" %>
       </div>
 
-    </form>
+    <% end %>
   </div>
 </div>

@@ -92,6 +92,11 @@
       .table-prova{
 	  margin-left: 25px;
       }
+
+      .ground-image{
+	  width: 512px;
+	  height: 350px;
+      }
       
     </style>
   </head>
@@ -136,7 +141,7 @@
       <table id="fixedheight">
 	<% @grounds.each do |ground| %>
 	<tr>
-	  <td> <%= image_tag ground.image %> </td>
+	  <td> <image src="<%=(url_for(ground.ground_image))%>" class="ground-image" </td>
 	  <td>
 	    <table class="table-prova">
 	      <tr>
