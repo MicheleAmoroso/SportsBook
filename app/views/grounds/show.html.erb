@@ -148,6 +148,7 @@
       <h1 class="title"><%= @ground.title %></h1>
     </div>
     <div class="grounds-info">
+      <h3 style="color: red;"><%= flash[:notice] %></h3>
       <table id="fixedheight">
 	<tr>
 	  <td> <%= image_tag @ground.image %> </td>
@@ -211,7 +212,7 @@
 	<tr class="border-top-row"><td style="padding-top: 10px;"><b> DESCRIZIONE </b></td></tr>
 	<tr><td class="td-description"><%= @ground.description %></td></tr>
       </table>
-
+      <% if !(current_user.has_role? :proprietor) %>
       <div class="booking-div">
 	<form class="search-time-form">
 	  <select name="dayChoice" id="dayID" class="day-choice">
@@ -234,7 +235,7 @@
 	    <tr>
 	      <td style="color: green;"><b><%= book.timetable.from %>:00 - </b></td>
 	      <td style="color: green;"><b><%= book.timetable.to %>:00 </b></td>
-	      <td id="book-link"><b> <%= link_to "Prenota", ground_books_path(@ground, :timetable_id => book.timetable.id), :method => :post %> </b></td>
+	      <td id="book-link"><b> <%= link_to "Prenota", ground_book_path(@ground, :timetable_id => book.timetable.id)+"&book_action=add", :method => :put %> </b></td>
 	    </tr>
 	    <% else %>
 	    <tr>
@@ -248,6 +249,7 @@
 	  </table>
 	</form>
       </div>
+
       
       <table class="review-table">
 	<tr><td>
@@ -263,8 +265,8 @@
       </table>
       <td><button id="commentbtn" onclick="addReview()">Commenta!</button></td>
       <%= link_to "Commenta!", new_ground_review_path(@ground), id:"hidden-link"%>
+      <% end %>
     </div>
-
     
     <div class="users-reviews">
       <h2> <%= @reviews.count %> Commenti: </h2>
