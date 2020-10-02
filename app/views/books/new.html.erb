@@ -1,1 +1,104 @@
-<h1> Book reservation </h1>
+<style>
+  html{
+      background-color: #275a74;
+      color: white;
+  }
+
+  .ground-form{
+      position:fixed;
+      top: 30%;
+      left: 50%;
+      width:45em;
+      margin-top: -9em;
+      margin-left: -25em;
+      padding: 10px;
+      border-radius: 25px;
+      background-color: #24536b;
+      padding-bottom: 25px;
+  }
+  .ground-content{
+      position: relative;
+      text-align: center;
+  }
+  .field{
+      padding: 10px;
+  }
+  .btn-book{
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #c12400;
+      font-weight: bold;
+      color:white;
+      cursor: pointer;
+  }
+  .btn-book:active{
+      background-color: #b52100;
+  }
+  .btn-book:hover{
+      background-color: #b52100;
+  }
+
+  .day-select{
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+  .time-text{
+      width: 60px;
+  }
+  .timetable{
+      position: relative;
+      margin-left: 33%;
+  }
+  
+</style>
+
+<div class="ground-form">
+  <div class="ground-content">
+    <h2 class="title">Nuova prenotazione</h2>
+
+    <%= form_tag ground_books_path(params[:ground_id]), :method => :post do %>
+    
+      <div class="field">
+	<label>Categoria </label> <br />
+	<select name="day" class="day-select">
+	  <option value="Lunedì"> Lunedì </option>
+	  <option value="Martedì"> Martedì </option>
+	  <option value="Mercoledì"> Mercoledì </option>
+	  <option value="Giovedì"> Giovedì </option>
+	  <option value="Venerdì"> Venerdì </option>
+	  <option value="Sabato"> Sabato </option>
+	  <option value="Domenica"> Domenica </option>
+	</select>
+      </div>
+
+      <table class="timetable">
+	<tr>
+	  <td>
+	    <div class="field">
+	      <%= label_tag "Dalle" %> <br />
+	      <%= text_field_tag :from, params[:from], autofocus: true, class: "time-text"%>:00
+	    </div>
+	  </td>
+	  <td>
+	    <div class="field">
+	      <%= label_tag "Alle" %><br />
+	      <%= text_field_tag :to, params[:to], class: "time-text" %>:00
+	    </div>
+	  </td>
+	</tr>
+      </table>
+      <div class="actions">
+	<%= submit_tag "Aggiungi", class: "btn-book" %>
+      </div>
+      
+      <% end %>
+  </div>
+</div>

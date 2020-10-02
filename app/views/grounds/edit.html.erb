@@ -6,7 +6,7 @@
 
   .ground-form{
       position:fixed;
-      top: 30%;
+      top: 25%;
       left: 50%;
       width:45em;
       margin-top: -9em;
@@ -107,11 +107,13 @@
       </div>
 
       <div class="actions">
-	<%= submit_tag "Aggiungi", class: "btn-login" %>
+	<%= submit_tag "Salva", class: "btn-login" %>
       </div>
 
       <% end %>
-
+      
+      <%= button_to "Aggiungi prenotazione", new_ground_book_path(params[:id]), :method => :get, class: "btn-login" %>
+      
       <%= button_to "Elimina campo", ground_path(), :method => :delete, class: "btn-login" %>
   </div>
 </div>

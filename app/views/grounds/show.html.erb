@@ -217,7 +217,18 @@
 	<tr class="border-top-row"><td style="padding-top: 10px;"><b> DESCRIZIONE </b></td></tr>
 	<tr><td class="td-description"><%= @ground.description %></td></tr>
       </table>
-      <% if !(current_user.has_role? :proprietor) %>
+      <% if (current_user.has_role? :proprietor) || (current_user.has_role? :admin) %>
+      <table class="books-table">
+	<% Book.with_role(:owner, current_user).where(:ground_id => params[:id]).each do |book| %>
+	<tr>
+	  <td style="color: green;"><b><%= book.timetable.from %>:00 - </b></td>
+	  <td style="color: green;"><b><%= book.timetable.to %>:00 </b></td>
+	  <td id="book-link"><b> <%= link_to "Rimuovi", ground_book_path(:id => book.id, :ground_id => params[:id]), :method => :delete %> </b></td>
+	</tr>
+	<% end %>
+      </table>
+      <% end %>
+      <% if (current_user.has_role? :player) || (current_user.has_role? :admin) %>
       <div class="booking-div">
 	<form class="search-time-form">
 	  <select name="dayChoice" id="dayID" class="day-choice">
@@ -293,6 +304,7 @@
 	</table>
 	<% end %>
       </table>
+      
     </div>
     
   </body>
