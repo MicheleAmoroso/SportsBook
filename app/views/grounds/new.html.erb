@@ -64,6 +64,8 @@
 <div class="ground-form">
   <div class="ground-content">
     <h2 class="title">Nuovo campo sportivo</h2>
+    
+    <p style="color: white; margin-left: 10px;"><%= flash[:notice] %></p>
 
     <%= form_tag grounds_path(), :method => :post, multipart: true do %>
     

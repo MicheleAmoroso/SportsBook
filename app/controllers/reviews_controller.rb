@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
       redirect_to ground_path(@ground)
     else
       flash[:notice] = "Non ti è permesso scrivere recensioni!"
-      redirect_to ground_path(@ground)
+      redirect_to root_path
     end
   end
 
@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
       redirect_to ground_path(id_ground)
     else
       flash[:notice] = "Non puoi eliminare le recensioni degli altri!"
-      redirect_to ground_path(@ground)
+      redirect_to root_path
     end
   end
   

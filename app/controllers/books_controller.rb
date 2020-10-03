@@ -10,25 +10,46 @@ class BooksController < ApplicationController
   end
   
   def create
-    if (current_user.has_role? :player)
-      flash[:notice] = "Non hai il permesso di creare prenotazioni."
-      redirect_to root_path
+    @control_flag = false
+
+    flash[:notice] = ""
+    
+    if (params[:from] == "") || (params[:to] == "")
+      flash[:notice] += "• L'orario deve essere completo | "
+      @control_flag = true
+    end
+    if (params[:from].to_i.to_s != params[:from]) || (params[:to].to_i.to_s != params[:to]) #Questo metodo serve per verificare che i prezzi siano numero ma non è molto bello a vedersi
+      flash[:notice] += "• Gli orari devono essere numeri | "
+      @control_flag = true
+    elsif (params[:from].to_i > params[:to].to_i) || (params[:from].to_i < 0) || (params[:to].to_i > 24)
+      flash[:notice] += "• Il formato dell'orario è sbagliato | "
+      @control_flag = true
+    end
+    if @control_flag
+      redirect_to new_ground_book_path(params[:ground_id])
     else
-      ground_id = params[:ground_id]
-      @ground = Ground.find(ground_id)
-      if (current_user.has_role? :owner, @ground) || (current_user.has_role? :admin)
-        b = Book.new()
-        g = Ground.all.where(:id => ground_id).first
-        t = Timetable.create!(:day => params[:day], :from => params[:from], :to => params[:to])
-        g.books << b
-        t.books << b
-        b.save!
-        current_user.add_role :owner, b #Assegno all'utente che crea la prenotazione il ruolo di possessore della prenotazione stessa
-        redirect_to user_path(current_user.id)
-      else
-        flash[:notice] = "Non puoi creare le prenotazioni agli altri."
+    
+      if (current_user.has_role? :player)
+        flash[:notice] = "Non hai il permesso di creare prenotazioni."
         redirect_to root_path
+      else
+        ground_id = params[:ground_id]
+        @ground = Ground.find(ground_id)
+        if (current_user.has_role? :owner, @ground) || (current_user.has_role? :admin)
+          b = Book.new()
+          g = Ground.all.where(:id => ground_id).first
+          t = Timetable.create!(:day => params[:day], :from => params[:from], :to => params[:to])
+          g.books << b
+          t.books << b
+          b.save!
+          current_user.add_role :owner, b #Assegno all'utente che crea la prenotazione il ruolo di possessore della prenotazione stessa
+          redirect_to user_path(current_user.id)
+        else
+          flash[:notice] = "Non puoi creare le prenotazioni agli altri."
+          redirect_to root_path
+        end
       end
+      
     end
   end
 
@@ -50,7 +71,7 @@ class BooksController < ApplicationController
     elsif params[:book_action] == "remove" #Se voglio eliminarla
       if (current_user.has_role? :proprietor)
         flash[:notice] = "Non puoi eliminare le prenotazioni dei campi sportivi."
-        redirect_to ground_path(Book.find(params[:id]).ground_id)
+        redirect_to root_path
       else
         id = params[:id]
         @book = Book.find(id)
@@ -60,7 +81,7 @@ class BooksController < ApplicationController
           redirect_to user_path(current_user.id)
         else
           flash[:notice] = "Non puoi eliminare le prenotazioni degli altri!"
-          redirect_to ground_path(@book.ground_id)
+          redirect_to root_path
         end
       end
     end

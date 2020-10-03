@@ -27,6 +27,26 @@
 	  color: white;
 	  text-decoration: none;
       }
+
+      .profile-image-application{
+	  width: 70px;
+	  height: 70px;
+	  border-radius: 50%;
+	  border: 2px solid black;
+	  margin-right: 10px;
+      }
+      .profile-image-application:hover{
+	  opacity: 0.8;
+      }
+      
+      .logout{
+	  color: lightblue;
+	  margin: 10px;
+      }
+      .logout:hover{
+	  color: blue;
+      }
+      
     </style>
     <div class="header">
       <div class="logo">
@@ -36,9 +56,13 @@
       </div>
       <div class="user">
 	<% if user_signed_in? %>
-	<%= current_user.email %>
-	<%= link_to "Profile", user_path(current_user.id), :method => :get %>
-	<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+	<table>
+	  <tr>
+	    <td><%= current_user.email %></td>
+	    <td> <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "logout" %></td>
+	    <td><%= link_to image_tag(url_for(current_user.profile_image), class: "profile-image-application"), user_path(current_user.id), :method => :get %></td>
+	  </tr>
+	</table>
 	<% end %>
       </div>
     </div>

@@ -64,6 +64,8 @@
   <div class="ground-content">
     <h2 class="title">Nuova prenotazione</h2>
 
+    <p style="color: white; margin-left: 10px;"><%= flash[:notice] %></p>
+
     <%= form_tag ground_books_path(params[:ground_id]), :method => :post do %>
     
       <div class="field">

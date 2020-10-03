@@ -35,20 +35,48 @@ class GroundsController < ApplicationController
   end
   
   def create
-    if (current_user.has_role? :proprietor) || (current_user.has_role? :admin) #Possono creare nuovi campo i proprietor e l'admin, non i player
-      price = params[:price1].to_f + (params[:price2].to_f/100)
-      @ground = Ground.create!(:title => params[:title], :price => price, :city => params[:city], :address => params[:address], :description => params[:description], :category => params[:category])
-      if params[:ground_image] != nil
-        @ground.ground_image.attach(params[:ground_image])
-      else
-        @ground.ground_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
-      end
-      @ground.save!
-      current_user.add_role :owner, @ground #Serve per associare il campo al proprietario, per evitare che un altro utente elimini un campo non suo
-      redirect_to ground_path(@ground)
+    @control_flag = false
+    flash[:notice] = ""
+    if (params[:title] == "")
+      flash[:notice] += "• Il campo nome non può essere vuoto | "
+      @control_flag = true
+    end
+    if (params[:price1] == "") && (params[:price2] == "")
+      flash[:notice] += "• Non possono essere vuoti tutti e due i campi del prezzo | "
+      @control_flag = true
+    end
+    if (params[:price1].to_i.to_s != params[:price1]) || (params[:price2].to_i.to_s != params[:price2]) #Questo metodo serve per verificare che i prezzi siano numero ma non è molto bello a vedersi
+      flash[:notice] += "• I prezzi devono essere numeri | "
+      @control_flag = true
+    end
+    if (params[:city] == "")
+      flash[:notice] += "• Il campo città non può essere vuoto | "
+      @control_flag = true
+    end
+    if (params[:address] == "")
+      flash[:notice] += "• Il campo indirizzo non può essere vuoto | "
+      @control_flag = true
+    end
+    if @control_flag
+      redirect_to new_ground_path
     else
-      flash[:notice] = "Non ti è permesso creare campi sportivi!"
-      redirect_to root_path
+    
+      if (current_user.has_role? :proprietor) || (current_user.has_role? :admin) #Possono creare nuovi campo i proprietor e l'admin, non i player
+        price = params[:price1].to_f + (params[:price2].to_f/100)
+        @ground = Ground.create!(:title => params[:title], :price => price, :city => params[:city], :address => params[:address], :description => params[:description], :category => params[:category])
+        if params[:ground_image] != nil
+          @ground.ground_image.attach(params[:ground_image])
+        else
+          @ground.ground_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
+        end
+        @ground.save!
+        current_user.add_role :owner, @ground #Serve per associare il campo al proprietario, per evitare che un altro utente elimini un campo non suo
+        redirect_to ground_path(@ground)
+      else
+        flash[:notice] = "Non ti è permesso creare campi sportivi!"
+        redirect_to root_path
+      end
+      
     end
   end
 
@@ -103,6 +131,8 @@ class GroundsController < ApplicationController
         Timetable.all.where(:id => book.timetable_id).destroy_all
         book.destroy #Elimino tutte le prenotazioni di quel campo
       end
+      @ground.reviews.destroy_all #Elimino tutte le recensioni di quel campo
+      @ground.favorites.destroy_all #Elimino tutte le preferenze di quel campo
       @ground.destroy
       redirect_to user_path(current_user.id)
     else

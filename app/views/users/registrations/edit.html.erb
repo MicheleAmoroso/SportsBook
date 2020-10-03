@@ -42,8 +42,11 @@
       background-color: #b52100;
   }
 
-  a{
+  .link-color{
       color: lightblue;
+  }
+  .link-color:hover{
+      color: blue;
   }
 </style>
 
@@ -51,7 +54,7 @@
   <div class="edituser-content">
     <h2>Modifica Utente <!--<%= resource_name.to_s.humanize %>--></h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
     <%= render "users/shared/error_messages", resource: resource %>
 
     <div class="field">
@@ -67,6 +70,11 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
+
+    <div class="field">
+      <%= label_tag "Immagine del profilo" %><br />
+      <%= file_field_tag :profile_image %>
+    </div>
 
     <div class="field">
       <%= f.label :password %> <i>(lasciare vuoto se non si vuole modificare)</i><br />
@@ -96,6 +104,6 @@
 
     <p><%= button_to "Elimina account", registration_path(resource_name), data: { confirm: "Sicuro di voler eliminare l'account?" }, method: :delete, class: "btn-update" %></p>
 
-    <%= link_to "Indietro", :back %>
+    <%= link_to "Indietro", :back, class: "link-color" %>
   </div>
 </div>

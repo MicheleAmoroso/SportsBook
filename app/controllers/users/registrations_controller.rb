@@ -4,7 +4,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
 
-    
+    if current_user
+      current_user.profile_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "default_profile.png")), filename: 'default_profile.png' , content_type: "image/jpg")
+    end
 
     if current_user
       if params[:role] == "player"
@@ -45,6 +47,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     
     super
+  end
+
+  def update
+    super
+
+    current_user.profile_image.attach(params[:profile_image])
   end
 
 end

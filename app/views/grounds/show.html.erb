@@ -4,6 +4,7 @@
       body{
 	  color: black;
 	  margin: 0px;
+	  margin-bottom: 50px;
       }
 
       .title-container{
@@ -11,10 +12,9 @@
 	  position: relative;
 	  background-color: #275a74;
 	  padding: 25px;
+	  text-align: center;
       }
       .title{
-	  position:relative;
-	  margin-left: 40%;
 	  margin-top: 0%;
       }
       #prezzo{
@@ -57,7 +57,7 @@
 	  color:white;
 	  cursor: pointer;
       }
-      #commentbtn:active{
+      #commentbtn:hover{
 	  background-color: #000080;
       }
 
@@ -98,7 +98,7 @@
 	  color:white;
 	  cursor: pointer;
       }
-      #search-timetable-btn:active{
+      #search-timetable-btn:hover{
 	  background-color: #b52100;
       }
 
@@ -136,6 +136,12 @@
 	  width: 512px;
 	  height: 350px;
       }
+      .profile-image{
+	  width: 70px;
+	  height: 70px;
+	  border-radius: 50%;
+	  margin-top: 5px;
+      }
       
     </style>
     
@@ -153,7 +159,7 @@
       <h1 class="title"><%= @ground.title %></h1>
     </div>
     <div class="grounds-info">
-      <h3 style="color: red;"><%= flash[:notice] %></h3>
+      
       <table id="fixedheight">
 	<tr>
 	  <td> <image src="<%=(url_for(@ground.ground_image))%>" class="ground-image"> </td>
@@ -291,10 +297,11 @@
 	<tr>
 	  <table>
 	    <% if review.user_id == current_user.id %>
-	    <tr><td><%= link_to "Elimina commento", ground_review_path(:id => review.id, :ground_id => @ground.id), :method => :delete%></td></tr>
+	    <tr><td></td><td><%= link_to "Elimina commento", ground_review_path(:id => review.id, :ground_id => @ground.id), :method => :delete%></td></tr>
 	    <% end %>
 	    <tr class="border-top-row">
-	      <td style="padding-top:20px; padding-left: 10px; padding-bottom:10px;  width: 512px;"><b> <%= User.all.find(review.user_id).username %> </b></td>
+	      <td><image src="<%=(url_for(User.find(review.user_id).profile_image))%>" class="profile-image" /></td>
+	      <td style="padding-top:20px; padding-left: 10px; padding-bottom:10px;  width: 512px; text-decoration: underline;"><b> <%= User.all.find(review.user_id).username %> </b></td>
 	      <td style="padding-top:10px;"> Voto: <%= review.rating %> </td>
 	    </tr>
 	  </table>
