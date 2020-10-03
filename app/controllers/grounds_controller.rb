@@ -38,7 +38,11 @@ class GroundsController < ApplicationController
     if (current_user.has_role? :proprietor) || (current_user.has_role? :admin) #Possono creare nuovi campo i proprietor e l'admin, non i player
       price = params[:price1].to_f + (params[:price2].to_f/100)
       @ground = Ground.create!(:title => params[:title], :price => price, :city => params[:city], :address => params[:address], :description => params[:description], :category => params[:category])
-      @ground.ground_image.attach(params[:ground_image])
+      if params[:ground_image] != nil
+        @ground.ground_image.attach(params[:ground_image])
+      else
+        @ground.ground_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
+      end
       @ground.save!
       current_user.add_role :owner, @ground #Serve per associare il campo al proprietario, per evitare che un altro utente elimini un campo non suo
       redirect_to ground_path(@ground)
@@ -94,6 +98,11 @@ class GroundsController < ApplicationController
     id_ground = params[:id]
     @ground = Ground.find(id_ground)
     if (current_user.has_role? :owner, @ground) || (current_user.has_role? :admin) #Se l'utente è il possessore del campo allora può eliminarlo
+      books = Book.with_role(:owner, current_user).where(:ground_id => id_ground)
+      books.each do |book|
+        Timetable.all.where(:id => book.timetable_id).destroy_all
+        book.destroy #Elimino tutte le prenotazioni di quel campo
+      end
       @ground.destroy
       redirect_to user_path(current_user.id)
     else

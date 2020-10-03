@@ -74,6 +74,7 @@ class BooksController < ApplicationController
         id = params[:id]
         @book = Book.find(id)
         if (current_user.has_role? :owner, @book) || (current_user.has_role? :admin) #Se l'utente è l'effettivo possessore della prenotazione allora può eliminarla
+          Timetable.all.where(:id => @book.timetable_id).destroy_all
           @book.destroy
           redirect_to ground_path(params[:ground_id])
         else

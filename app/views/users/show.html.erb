@@ -138,6 +138,8 @@
       <% if (current_user.has_role? :proprietor) || (current_user.has_role? :admin)%>
       <%= button_to "Aggiungi campo sportivo", new_ground_path, :method => 'get', class: 'btn-ground' %>
       <% end %>
+
+      
       
     </div>
 

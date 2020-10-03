@@ -7,7 +7,7 @@ class User < ApplicationRecord
   end
 
   def assign_default_role
-    self.add_role(:player) if self.roles.blank?
+    # self.add_role(:player) if self.roles.blank?
   end
   
   # Include default devise modules. Others available are:
@@ -20,6 +20,8 @@ class User < ApplicationRecord
   has_many :books
   has_many :reviews
   has_many :favorites
+
+  has_one_attached :profile_image
 
   attr_writer :login
   validate :validate_username

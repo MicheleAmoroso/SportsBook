@@ -50,7 +50,7 @@
 <div class="signup-form">
   <div class="signup-content">
     <h2>Registrati</h2>
-
+    
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "users/shared/error_messages", resource: resource %>
 
@@ -62,6 +62,14 @@
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= hidden_field_tag :role, 'player' , id: "hidden_role"%>
+      <input type="checkbox" id="playerCheckBox" onclick="checkPlayer()" checked>
+      <label for="scales">Cliente</label>
+      <input type="checkbox" id="proprietorCheckBox" onclick="checkProprietor()">
+      <label for="scales">Proprietario</label>
     </div>
 
     <div class="field">
@@ -85,3 +93,37 @@
     <%= render "users/shared/links" %>
   </div>
 </div>
+
+<script>
+
+  function checkPlayer(){
+      
+      playerCheckBox = document.getElementById("playerCheckBox");
+      proprietorCheckBox = document.getElementById("proprietorCheckBox");
+      
+      if(playerCheckBox.checked == true){
+	  proprietorCheckBox.checked = false;
+	  document.getElementById("hidden_role").value = "player";
+	  
+      }else{
+	  proprietorCheckBox.checked = true;
+	  document.getElementById("hidden_role").value = "proprietor";
+      }
+      
+  }
+
+  function checkProprietor(){
+
+      playerCheckBox = document.getElementById("playerCheckBox");
+      proprietorCheckBox = document.getElementById("proprietorCheckBox");
+      
+      if(proprietorCheckBox.checked == true){
+	  playerCheckBox.checked = false;
+	  document.getElementById("hidden_role").value = "proprietor";
+      }else{
+	  playerCheckBox.checked = true;
+	  document.getElementById("hidden_role").value = "player";
+      }
+  }
+  
+</script>
