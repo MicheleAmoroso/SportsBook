@@ -60,7 +60,7 @@
 	  <tr>
 	    <td><%= current_user.email %></td>
 	    <td> <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "logout" %></td>
-	    <td><%= link_to image_tag(url_for(current_user.profile_image), class: "profile-image-application"), user_path(current_user.id), :method => :get %></td>
+	    <td><%= link_to image_tag(url_for(current_user.profile_image), class: "profile-image-application"), user_path(current_user.id), :method => :get, id: "profileLink"%></td>
 	  </tr>
 	</table>
 	<% end %>

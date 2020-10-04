@@ -272,21 +272,39 @@
 	</form>
       </div>
 
-      
+
       <table class="review-table">
-	<tr><td>
-	    <big><big><span class="fa fa-star checked" id="star1" onclick="ratingChecked1()"></span></big></big>
-	    <big><big><span class="fa fa-star" id="star2" onclick="ratingChecked2()"></span></big></big>
-	    <big><big><span class="fa fa-star" id="star3" onclick="ratingChecked3()"></span></big></big>
-	    <big><big><span class="fa fa-star" id="star4" onclick="ratingChecked4()"></span></big></big>
-	    <big><big><span class="fa fa-star" id="star5" onclick="ratingChecked5()"></span></big></big>
-	</td></tr>
 	<tr>
-	  <td><textarea id="comment" placeholder="Scrivi una recensione"></textarea></td>
+	  <td>
+	    <!-- Qui c'è una tabella inutile che ho dovute mettere perché sennò il submit funziona solo se la pagina viene refreshata, è un problema di HTML (la form deve essere all'interno di una td) -->
+	    <%= form_tag ground_reviews_path(params[:id]), :method => :post do %>
+	    <table>
+	      <tr><td>
+		  <big><big><span class="fa fa-star checked" id="star1" onclick="ratingChecked1()"></span></big></big>
+		  <big><big><span class="fa fa-star" id="star2" onclick="ratingChecked2()"></span></big></big>
+		  <big><big><span class="fa fa-star" id="star3" onclick="ratingChecked3()"></span></big></big>
+		  <big><big><span class="fa fa-star" id="star4" onclick="ratingChecked4()"></span></big></big>
+		  <big><big><span class="fa fa-star" id="star5" onclick="ratingChecked5()"></span></big></big>
+	      </td></tr>
+	      <tr><td><%= text_area(:comment, :body, placeholder: "Scrivi una recensione", id: "comment", name: "review")%></td></tr>
+	      <tr>
+		<td><%= submit_tag "Commenta!", id: "commentbtn" %></td>
+		<td>
+		  <select name="rating" style="visibility: hidden;" id="ratingSelect">
+		    <option value="1">1</option>
+		    <option value="2">2</option>
+		    <option value="3">3</option>
+		    <option value="4">4</option>
+		    <option value="5">5</option>
+		  </select>
+		</td>
+	      </tr>
+	    </table>
+	    <% end %>
+	  </td>
 	</tr>
       </table>
-      <td><button id="commentbtn" onclick="addReview()">Commenta!</button></td>
-      <%= link_to "Commenta!", new_ground_review_path(@ground), id:"hidden-link"%>
+      
       <% end %>
     </div>
     
@@ -332,6 +350,7 @@
 	}else{
 	    localStorage.setItem("rating", "1");
 	}
+
 	document.getElementById("hidden-link").click();
     }
 
@@ -342,8 +361,11 @@
 	    document.getElementById("star3").className = "fa fa-star";
 	    document.getElementById("star2").className = "fa fa-star";
 	}else{
-	    document.getElementById("star1").className = "fa fa-star checked";
+	    document.getElementById("star1").className = "fa fa-star checked";    
 	}
+
+	document.getElementById("ratingSelect").value="1";
+	
     }
 
     function ratingChecked2(){
@@ -355,6 +377,9 @@
 	    document.getElementById("star1").className = "fa fa-star checked";
 	    document.getElementById("star2").className = "fa fa-star checked";
 	}
+
+	document.getElementById("ratingSelect").value="2";
+
     }
 
     function ratingChecked3(){
@@ -366,6 +391,9 @@
 	    document.getElementById("star2").className = "fa fa-star checked";
 	    document.getElementById("star3").className = "fa fa-star checked";
 	}
+
+	document.getElementById("ratingSelect").value="3";
+
     }
 
     function ratingChecked4(){
@@ -377,6 +405,9 @@
 	    document.getElementById("star3").className = "fa fa-star checked";
 	    document.getElementById("star4").className = "fa fa-star checked";
 	}
+
+	document.getElementById("ratingSelect").value="4";
+
     }
 
     function ratingChecked5(){
@@ -387,6 +418,9 @@
 	    document.getElementById("star4").className = "fa fa-star checked";
 	    document.getElementById("star5").className = "fa fa-star checked";
 	}
+
+	document.getElementById("ratingSelect").value="5";
+
     }
     
   </script>
