@@ -1,0 +1,17 @@
+FactoryBot.define do   
+  factory :user, class: User do
+    username        {"Test"}
+    email           {"test@mail.it"}
+    password        {"test"}
+  end
+  factory :ground, class: Ground do
+    title           {"Test"}
+    price           {1}
+    ratingNum       {0}
+    ratingSum       {0}
+    city            {"Roma"}
+    address         {"Via Roma, 25"}
+    description     {"DescrizioneTest"}
+    category        {"C"}
+  end
+end
