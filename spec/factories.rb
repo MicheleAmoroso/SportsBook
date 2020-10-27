@@ -14,4 +14,8 @@ FactoryBot.define do
     description     {"DescrizioneTest"}
     category        {"C"}
   end
+  factory :review, class: Review do
+    rating          {0}
+    comments        {"Bel campo"}
+  end
 end
