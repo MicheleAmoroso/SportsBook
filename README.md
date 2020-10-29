@@ -24,10 +24,6 @@ SportsBook è un sito che permette agli amanti dello sport di prenotare campi sp
 Locale e OAuth.
 
 
-# Servizio REST esterno
-Come servizio REST esterno si utilizzeranno le API di Google Maps per localizzare il luogo dei campi sportivi.
-
-
 # User Stories
 
 1.	As a registered user THAT IS NOT LOGGED I want to login with email
