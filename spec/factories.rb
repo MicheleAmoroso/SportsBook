@@ -1,3 +1,4 @@
+# coding: utf-8
 FactoryBot.define do   
   factory :user, class: User do
     username        {"Test"}
@@ -17,5 +18,10 @@ FactoryBot.define do
   factory :review, class: Review do
     rating          {0}
     comments        {"Bel campo"}
+  end
+  factory :timetable, class: Timetable do
+    day             {"Lunedì"}
+    from            {20}
+    to              {21}
   end
 end

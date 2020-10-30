@@ -1,4 +1,4 @@
-Feature: Create and Manage Examinations2
+Feature: Create and Manage Examinations
 
 Scenario: Add a review
 	  Given a proprietor has created a sports ground
