@@ -89,7 +89,7 @@ Given /^I am a registered user as cliente$/ do
   @user.profile_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "default_profile.png")), filename: 'default_profile.png' , content_type: "image/jpg")
 end
 
-Given /^a proprietor has created a sports ground/ do
+Given /^a proprietor created a sports ground/ do
   steps %Q{
     Given I am a registered user as proprietario
     When I am on the login page

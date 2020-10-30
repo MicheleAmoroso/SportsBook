@@ -19,9 +19,9 @@ RSpec.describe Book, type: :model do
       expect(book).to eq(true)
     end
 
-    it "is not valid without the user" do
+    it "is valid without the user" do
       book = Book.new(ground_id: @ground.id, timetable_id: @timetable.id).save
-      expect(book).to eq(false)
+      expect(book).to eq(true)
     end
 
     it "is not valid without the ground" do
