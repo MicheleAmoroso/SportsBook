@@ -1,0 +1,19 @@
+Feature: Create and Manage Examinations
+
+Scenario: Add a book
+	  Given I am a registered user as proprietario
+	  And I created a sports ground
+	  And I follow "profileLink"
+	  And I follow "Modifica"
+	  Then I should be on the Edit Ground page
+	  When I press "Aggiungi prenotazione"
+	  Then I should be on the New Book page
+	  When I fill in "day" with "Lunedì"
+	  And I fill in "from" with "20"
+	  And I fill in "to" with "21"
+	  And I press "Aggiungi"
+	  Then I should be on the Profile page
+	  When I follow "Campo"
+	  Then I should be on the Ground page
+	  And I should see "20:00 - 21:00 Rimuovi"
+	  

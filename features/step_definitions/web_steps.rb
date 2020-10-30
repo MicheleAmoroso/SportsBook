@@ -113,11 +113,44 @@ Given /^a proprietor has created a sports ground/ do
   }
 end
 
-When /^I log in$/ do
+Given /^I created a sports ground/ do
+  steps %Q{
+    Given I am a registered user as proprietario
+    When I am on the login page
+    And I fill in "username" with "proprietario"
+    And I fill in "password" with "pppppppp"
+    And I press "Log in"
+    Then I should be on the homepage
+    When I follow "profileLink"
+    Then I should be on the profile page
+    When I press "Aggiungi campo sportivo"
+    Then I should be on the New Ground page
+    When I fill in "title" with "Campo sportivo"
+    And I fill in "price1" with "1"
+    And I fill in "price2" with "2"
+    And I fill in "city" with "Roma"
+    And I fill in "address" with "Via Roma, 25"
+    And I press "Aggiungi"
+    Then I should be on the Ground page
+    And I should see "Campo sportivo"
+  }
+end
+
+When /^I log in as client$/ do
   steps %Q{
     Given I am on the login page
     When I fill in "username" with "client"
     And I fill in "password" with "cccccccc"
+    And I press "loginButton"
+    Then I should be on the homepage
+  }
+end
+
+When /^I log in as proprietor$/ do
+  steps %Q{
+    Given I am on the login page
+    When I fill in "username" with "proprietario"
+    And I fill in "password" with "pppppppp"
     And I press "loginButton"
     Then I should be on the homepage
   }

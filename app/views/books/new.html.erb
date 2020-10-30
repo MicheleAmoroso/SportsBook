@@ -69,7 +69,7 @@
     <%= form_tag ground_books_path(params[:ground_id]), :method => :post do %>
     
       <div class="field">
-	<label>Categoria </label> <br />
+	<label>Giorno </label> <br />
 	<select name="day" class="day-select">
 	  <option value="Lunedì"> Lunedì </option>
 	  <option value="Martedì"> Martedì </option>
@@ -86,13 +86,13 @@
 	  <td>
 	    <div class="field">
 	      <%= label_tag "Dalle" %> <br />
-	      <%= text_field_tag :from, params[:from], autofocus: true, class: "time-text"%>:00
+	      <%= text_field_tag :from, params[:from], autofocus: true, class: "time-text", id: "form"%>:00
 	    </div>
 	  </td>
 	  <td>
 	    <div class="field">
 	      <%= label_tag "Alle" %><br />
-	      <%= text_field_tag :to, params[:to], class: "time-text" %>:00
+	      <%= text_field_tag :to, params[:to], class: "time-text", id: "to" %>:00
 	    </div>
 	  </td>
 	</tr>

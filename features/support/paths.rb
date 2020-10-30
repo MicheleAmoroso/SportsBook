@@ -25,6 +25,11 @@ module NavigationHelpers
       '/grounds/new'
     when /^the New Review page/
       '/grounds/1/reviews/new'
+    when /^the Edit Ground page/
+      '/grounds/1/edit'
+    when /^the New Book page/
+      '/grounds/1/books/new'
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

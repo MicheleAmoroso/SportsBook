@@ -1,10 +1,10 @@
-Feature: Create and Manage Examinations
+Feature: Create and Manage Examinations2
 
 Scenario: Add a review
 	  Given a proprietor has created a sports ground
 	  And I am a registered user as cliente
-	  When I log in
-	  When I go to the Ground page
+	  When I log in as client
+	  And I go to the Ground page
 	  And I fill in "comment" with "Bel campo"
 	  And I press "Commenta!"
 	  Then I should be on the Ground page
